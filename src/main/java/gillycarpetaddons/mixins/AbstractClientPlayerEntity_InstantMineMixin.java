@@ -2,6 +2,7 @@ package gillycarpetaddons.mixins;
 
 import com.mojang.authlib.GameProfile;
 import gillycarpetaddons.helpers.InstantMineHelper;
+import gillycarpetaddons.instantmining.BlockBreakingSpeedRatioCalculator;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,6 +19,7 @@ public abstract class AbstractClientPlayerEntity_InstantMineMixin extends Player
     @Override
     public float getBlockBreakingSpeed(BlockState block) {
         float vanillaBlockBreakingSpeed = super.getBlockBreakingSpeed(block);
-        return InstantMineHelper.getBlockBreakingSpeedForPlayerEntity(this, block, vanillaBlockBreakingSpeed);
+        float blockBreakingSpeedRatio = BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
+        return vanillaBlockBreakingSpeed * blockBreakingSpeedRatio;
     }
 }

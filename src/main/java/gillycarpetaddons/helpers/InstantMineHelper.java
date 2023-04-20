@@ -47,7 +47,7 @@ public class InstantMineHelper {
         // Haste amplifier starts at 0, so for haste 2 it would be equal to 1
         if (hasteAmplifier < 1
                 || efficiencyLevel < 5
-                || !(GillyCarpetAddonsSettings.netheriteAxeInstantMineWood && IsBlockMaterialWood(blockMaterial))) {
+                || !(GillyCarpetAddonsSettings.netheriteAxeInstantMineWood && MaterialHelper.IsBlockMaterialWood(blockMaterial))) {
             return vanillaBlockBreakingSpeed;
         }
 
@@ -57,9 +57,5 @@ public class InstantMineHelper {
         float toolMaterialRatio =
                 ToolMaterials.GOLD.getMiningSpeedMultiplier() / ToolMaterials.NETHERITE.getMiningSpeedMultiplier();
         return hasteSpeedRatio * toolMaterialRatio * vanillaBlockBreakingSpeed;
-    }
-
-    private static boolean IsBlockMaterialWood(Material material) {
-        return material == Material.WOOD || material == Material.NETHER_WOOD;
     }
 }
