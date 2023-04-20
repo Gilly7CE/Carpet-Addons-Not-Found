@@ -1,3 +1,4 @@
 {
-  "carpet.category.gilly7ce_carpet_addons" : "gilly7ce-carpet-addons"
+  "carpet.category.gilly7ce_carpet_addons" : "gilly7ce-carpet-addons",
+  "carpet.rule.netheriteAxeInstantMineWood.desc" : "A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks."
 }
