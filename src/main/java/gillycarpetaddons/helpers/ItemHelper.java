@@ -7,7 +7,12 @@ import net.minecraft.item.ToolMaterial;
 
 public class ItemHelper {
     public static Boolean IsNetheriteAxe(Item item) {
-        return item instanceof AxeItem;
+        if (!(item instanceof AxeItem axeItem)) {
+            return false;
+        }
+
+        ToolMaterial toolMaterial = axeItem.getMaterial();
+        return ToolMaterialHelper.IsNetheriteTool(toolMaterial);
     }
 
     public static Boolean IsNetheritePickaxe(Item item) {

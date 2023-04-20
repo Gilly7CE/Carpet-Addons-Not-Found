@@ -1,7 +1,6 @@
 package gillycarpetaddons.mixins;
 
 import com.mojang.authlib.GameProfile;
-import gillycarpetaddons.helpers.InstantMineHelper;
 import gillycarpetaddons.instantmining.BlockBreakingSpeedRatioCalculator;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.AbstractClientPlayerEntity;

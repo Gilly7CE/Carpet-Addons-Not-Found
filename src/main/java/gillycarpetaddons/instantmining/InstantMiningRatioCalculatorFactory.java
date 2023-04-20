@@ -10,6 +10,10 @@ public class InstantMiningRatioCalculatorFactory {
             calculator = new NetheritePickaxeDeepslateInstantMiningRatioCalculator(calculator);
         }
 
+        if (GillyCarpetAddonsSettings.netheriteAxeInstantMineWood) {
+            calculator = new NetheriteAxeWoodInstantMiningRatioCalculator(calculator);
+        }
+
         return calculator;
     }
 }

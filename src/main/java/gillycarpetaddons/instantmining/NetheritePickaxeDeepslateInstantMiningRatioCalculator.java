@@ -11,31 +11,6 @@ import java.util.HashSet;
 
 public final class NetheritePickaxeDeepslateInstantMiningRatioCalculator implements InstantMiningRatioCalculator {
     private final InstantMiningRatioCalculator wrappedInstantMiningRatioCalculator;
-
-    public NetheritePickaxeDeepslateInstantMiningRatioCalculator(InstantMiningRatioCalculator instantMiningRatioCalculator) {
-        this.wrappedInstantMiningRatioCalculator = instantMiningRatioCalculator;
-    }
-    @Override
-    public float getInstantMiningRatio(BlockState blockState) {
-        Block block = blockState.getBlock();
-        if (!deepslateBlocks.contains(block)) {
-            return this.wrappedInstantMiningRatioCalculator.getInstantMiningRatio(blockState);
-        }
-
-        // Deepslate can be instant mined when haste 8 is applied to an efficiency V netherite pickaxe
-        if (block == Blocks.DEEPSLATE) {
-            return 13.0f / 7.0f;
-        }
-
-        // All other deepslate types can be instant mined when haste 10 is applied to an efficiency V netherite pickaxe
-        return 15.0f / 7.0f;
-    }
-
-    @Override
-    public boolean isInstantMiningTool(Item item) {
-        return ItemHelper.IsNetheritePickaxe(item);
-    }
-
     private final HashSet<Block> deepslateBlocks = new HashSet<>(Arrays.asList(Blocks.DEEPSLATE,
             Blocks.COBBLED_DEEPSLATE,
             Blocks.COBBLED_DEEPSLATE_STAIRS,
@@ -56,4 +31,29 @@ public final class NetheritePickaxeDeepslateInstantMiningRatioCalculator impleme
             Blocks.CHISELED_DEEPSLATE,
             Blocks.CRACKED_DEEPSLATE_BRICKS,
             Blocks.CRACKED_DEEPSLATE_TILES));
+
+    public NetheritePickaxeDeepslateInstantMiningRatioCalculator(InstantMiningRatioCalculator instantMiningRatioCalculator) {
+        this.wrappedInstantMiningRatioCalculator = instantMiningRatioCalculator;
+    }
+
+    @Override
+    public float getInstantMiningRatio(BlockState blockState) {
+        Block block = blockState.getBlock();
+        if (!deepslateBlocks.contains(block)) {
+            return this.wrappedInstantMiningRatioCalculator.getInstantMiningRatio(blockState);
+        }
+
+        // Deepslate can be instant mined when haste 8 is applied to an efficiency V netherite pickaxe
+        if (block == Blocks.DEEPSLATE) {
+            return 13.0f / 7.0f;
+        }
+
+        // All other deepslate types can be instant mined when haste 10 is applied to an efficiency V netherite pickaxe
+        return 15.0f / 7.0f;
+    }
+
+    @Override
+    public boolean isInstantMiningTool(Item item) {
+        return ItemHelper.IsNetheritePickaxe(item);
+    }
 }
