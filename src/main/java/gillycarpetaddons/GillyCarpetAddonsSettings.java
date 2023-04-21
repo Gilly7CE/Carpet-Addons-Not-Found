@@ -15,4 +15,7 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineBlueIce = false;
+
+    @Rule(categories = {SURVIVAL, GILLY})
+    public static boolean netheritePickaxeInstantMineEndStone = false;
 }

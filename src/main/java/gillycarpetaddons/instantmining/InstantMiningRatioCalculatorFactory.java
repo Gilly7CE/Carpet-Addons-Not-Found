@@ -18,6 +18,10 @@ public class InstantMiningRatioCalculatorFactory {
             calculator = new NetheritePickaxeBlueIceInstantMiningRatioCalculator(calculator);
         }
 
+        if (GillyCarpetAddonsSettings.netheritePickaxeInstantMineEndStone) {
+            calculator = new NetheritePickaxeEndStoneInstantMiningRatioCalculator(calculator);
+        }
+
         return calculator;
     }
 }
