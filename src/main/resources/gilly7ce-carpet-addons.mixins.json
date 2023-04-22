@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "gillycarpetaddons.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "AbstractClientPlayerEntity_InstantMineMixin",
+    "ServerPlayerEntity_InstantMineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
