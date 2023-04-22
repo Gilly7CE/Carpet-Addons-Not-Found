@@ -31,6 +31,16 @@ public class BlockList {
             Blocks.CHISELED_DEEPSLATE,
             Blocks.CRACKED_DEEPSLATE_BRICKS,
             Blocks.CRACKED_DEEPSLATE_TILES);
+    public static List<Block> cobblestone = Arrays.asList(
+            Blocks.COBBLESTONE,
+            Blocks.COBBLESTONE_SLAB,
+            Blocks.COBBLESTONE_STAIRS,
+            Blocks.COBBLESTONE_WALL,
+            Blocks.MOSSY_COBBLESTONE,
+            Blocks.MOSSY_COBBLESTONE_SLAB,
+            Blocks.MOSSY_COBBLESTONE_STAIRS,
+            Blocks.MOSSY_COBBLESTONE_WALL
+    );
     public static List<Block> deepslate = Collections.singletonList(
             Blocks.DEEPSLATE);
     public static List<Block> endStone = Arrays.asList(

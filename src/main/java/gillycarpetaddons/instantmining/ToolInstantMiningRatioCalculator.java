@@ -32,6 +32,14 @@ public enum ToolInstantMiningRatioCalculator implements InstantMiningRatioCalcul
             ToolMaterials.NETHERITE,
             ToolMaterials.NETHERITE,
             new HashSet<>(BlockList.cobbledDeepslate)),
+    NetheritePickaxeCobblestone(
+            InstantMiningCarpetRuleKeys.netheritePickaxeCobblestone,
+            PickaxeItem.class,
+            2,
+            3,
+            ToolMaterials.NETHERITE,
+            ToolMaterials.GOLD,
+            new HashSet<>(BlockList.cobblestone)),
     NetheritePickaxeDeepslate(
             InstantMiningCarpetRuleKeys.netheritePickaxeDeepslate,
             PickaxeItem.class,
