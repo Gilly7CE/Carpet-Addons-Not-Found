@@ -50,6 +50,19 @@ public class BlockList {
             Blocks.END_STONE_BRICK_STAIRS,
             Blocks.END_STONE_BRICK_WALL
     );
+    public static List<Block> netherBricks = Arrays.asList(
+            Blocks.NETHER_BRICKS,
+            Blocks.NETHER_BRICK_FENCE,
+            Blocks.NETHER_BRICK_SLAB,
+            Blocks.NETHER_BRICK_STAIRS,
+            Blocks.NETHER_BRICK_WALL,
+            Blocks.CRACKED_NETHER_BRICKS,
+            Blocks.CHISELED_NETHER_BRICKS,
+            Blocks.RED_NETHER_BRICKS,
+            Blocks.RED_NETHER_BRICK_SLAB,
+            Blocks.RED_NETHER_BRICK_STAIRS,
+            Blocks.RED_NETHER_BRICK_WALL
+    );
     public static List<Block> wood = Arrays.asList(
             Blocks.OAK_FENCE_GATE,
             Blocks.SPRUCE_FENCE_GATE,

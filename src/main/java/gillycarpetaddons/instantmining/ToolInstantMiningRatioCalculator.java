@@ -55,7 +55,15 @@ public enum ToolInstantMiningRatioCalculator implements InstantMiningRatioCalcul
                     8,
             ToolMaterials.NETHERITE,
             ToolMaterials.NETHERITE,
-            new HashSet<>(BlockList.endStone));
+            new HashSet<>(BlockList.endStone)),
+    NetheritePickaxeNetherBricks(
+            InstantMiningCarpetRuleKeys.netheritePickaxeNetherBricks,
+            PickaxeItem.class,
+            2,
+            3,
+            ToolMaterials.NETHERITE,
+            ToolMaterials.GOLD,
+            new HashSet<>(BlockList.netherBricks));
 
     private final String carpetRuleKey;
     private final int originalHasteLevel;

@@ -14,5 +14,6 @@ public class InstantMiningCarpetRuleAccessor {
         carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeCobblestone, () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineCobblestone);
         carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeDeepslate, () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineDeepslate);
         carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeEndStone, () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineEndStone);
+        carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeNetherBricks, () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineNetherBricks);
     }
 }
