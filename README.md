@@ -83,6 +83,7 @@ To contribute a code change to the repository, please do the following:
 - Create a branch with a name that matches the following format: \<type of issue>-\<author name>-\<issue number>-\<description>
   - The issue can be omitted until one is created, however the branch should be renamed to include the issue. You can do this before creating a PR. You can also create the issue in advance and assign yourself to indicate you're working on it.
   - The branch base should be targeting `main`, unless the issue is specific to a particular minecraft version of the mod.
+- When writing commits, please follow these [guidelines](https://initialcommit.com/blog/git-commit-messages-best-practices).
 - Once code changes have been made to the branch, push it and create a PR.
 
 If you have any issues doing any of these, please contact the following:
