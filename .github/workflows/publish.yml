@@ -4,8 +4,11 @@ on:
     types:
       - published
 
+permissions:
+  contents: write
+
 jobs:
-  Build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
