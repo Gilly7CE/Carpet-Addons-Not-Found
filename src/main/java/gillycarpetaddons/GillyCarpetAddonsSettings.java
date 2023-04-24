@@ -24,4 +24,7 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineNetherBricks = false;
+
+    @Rule(categories = {SURVIVAL,GILLY})
+    public static boolean dropEyeFromFrame = false;
 }
