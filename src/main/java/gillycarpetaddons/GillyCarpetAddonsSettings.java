@@ -2,12 +2,16 @@ package gillycarpetaddons;
 
 import carpet.api.settings.Rule;
 
+import static carpet.api.settings.RuleCategory.EXPERIMENTAL;
 import static carpet.api.settings.RuleCategory.FEATURE;
 import static carpet.api.settings.RuleCategory.SURVIVAL;
 
 public class GillyCarpetAddonsSettings {
     private static final String GILLY = "gilly7ce-carpet-addons";
-
+    
+    @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
+    public static boolean dropEyesOfEnderFromEndPortalFrame = false;
+  
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheriteAxeInstantMineWood = false;
 
