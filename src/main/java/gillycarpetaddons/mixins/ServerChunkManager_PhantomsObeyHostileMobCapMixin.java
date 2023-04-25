@@ -34,7 +34,6 @@ public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
         SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
         if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
             ChunkManagerHelper.setInfo(info);
-            ChunkManagerHelper.setSpawningChunkCount(spawningChunkCount);
         }
         return info;
     }
