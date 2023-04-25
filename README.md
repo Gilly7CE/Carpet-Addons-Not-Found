@@ -64,6 +64,15 @@ A netherite pickaxe with efficiency V combined with the haste II status effect w
 - Required options: `true`, `false`
 - Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
 
+### dropEyesOfEnderFromEndPortalFrame
+
+A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`,`EXPERIMENTAL`
+
 ## Contributing
 
 Anyone can contribute to this repository. However, please follow the following guidelines when contributing.
