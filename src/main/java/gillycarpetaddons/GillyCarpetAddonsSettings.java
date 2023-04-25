@@ -2,6 +2,7 @@ package gillycarpetaddons;
 
 import carpet.api.settings.Rule;
 
+import static carpet.api.settings.RuleCategory.EXPERIMENTAL;
 import static carpet.api.settings.RuleCategory.SURVIVAL;
 
 public class GillyCarpetAddonsSettings {
@@ -24,4 +25,7 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineNetherBricks = false;
+
+    @Rule(categories = {SURVIVAL,GILLY,EXPERIMENTAL})
+    public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 }

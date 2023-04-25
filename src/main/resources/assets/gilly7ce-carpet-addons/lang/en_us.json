@@ -5,5 +5,6 @@
   "carpet.rule.netheritePickaxeInstantMineCobblestone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine cobblestone type blocks.",
   "carpet.rule.netheritePickaxeInstantMineDeepslate.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine deepslate type blocks.",
   "carpet.rule.netheritePickaxeInstantMineEndStone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine end stone type blocks.",
-  "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks."
+  "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks.",
+  "carpet.rule.dropEyeFromFrame.desc": "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break."
 }
