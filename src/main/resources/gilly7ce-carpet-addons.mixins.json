@@ -4,6 +4,8 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractClientPlayerEntity_InstantMineMixin",
+    "PhantomSpawner_PhantomsObeyHostileMobCapMixin",
+    "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin"
   ],
   "injectors": {

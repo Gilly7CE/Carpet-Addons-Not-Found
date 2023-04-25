@@ -2,6 +2,7 @@ package gillycarpetaddons;
 
 import carpet.api.settings.Rule;
 
+import static carpet.api.settings.RuleCategory.FEATURE;
 import static carpet.api.settings.RuleCategory.SURVIVAL;
 
 public class GillyCarpetAddonsSettings {
@@ -11,17 +12,20 @@ public class GillyCarpetAddonsSettings {
     public static boolean netheriteAxeInstantMineWood = false;
 
     @Rule(categories = {SURVIVAL, GILLY})
-    public static boolean netheritePickaxeInstantMineDeepslate = false;
-
-    @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineBlueIce = false;
-
-    @Rule(categories = {SURVIVAL, GILLY})
-    public static boolean netheritePickaxeInstantMineEndStone = false;
 
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineCobblestone = false;
 
     @Rule(categories = {SURVIVAL, GILLY})
+    public static boolean netheritePickaxeInstantMineDeepslate = false;
+
+    @Rule(categories = {SURVIVAL, GILLY})
+    public static boolean netheritePickaxeInstantMineEndStone = false;
+
+    @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheritePickaxeInstantMineNetherBricks = false;
+
+    @Rule(categories = {FEATURE, GILLY})
+    public static boolean phantomsObeyHostileMobCap = false;
 }
