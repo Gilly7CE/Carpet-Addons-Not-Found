@@ -10,6 +10,15 @@ You also need to download the [carpet mod](https://github.com/gnembon/fabric-car
 
 ## Features
 
+### dropEyesOfEnderFromEndPortalFrame
+
+A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+
 ### netheriteAxeInstantMineWood
 
 A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks.
@@ -64,14 +73,14 @@ A netherite pickaxe with efficiency V combined with the haste II status effect w
 - Required options: `true`, `false`
 - Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
 
-### dropEyesOfEnderFromEndPortalFrame
+### phantomsObeyHostileMobCap
 
-A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
+Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`,`EXPERIMENTAL`
+- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
 ## Contributing
 
