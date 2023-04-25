@@ -6,7 +6,8 @@
     "AbstractClientPlayerEntity_InstantMineMixin",
     "PhantomSpawner_PhantomsObeyHostileMobCapMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
-    "ServerPlayerEntity_InstantMineMixin"
+    "ServerPlayerEntity_InstantMineMixin",
+    "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
