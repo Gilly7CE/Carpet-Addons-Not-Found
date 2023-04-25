@@ -4,8 +4,11 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractClientPlayerEntity_InstantMineMixin",
+    "EndFrameBlock_EyeToggleMixin",
+    "PhantomSpawner_PhantomsObeyHostileMobCapMixin",
+    "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
-    "EndFrameBlock_EyeToggleMixin"
+    "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
