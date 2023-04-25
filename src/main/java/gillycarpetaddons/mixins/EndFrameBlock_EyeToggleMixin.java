@@ -20,12 +20,13 @@ import org.spongepowered.asm.mixin.Shadow;
 import static net.minecraft.block.Block.dropStack;
 
 @Mixin(EndPortalFrameBlock.class)
-public class EndFrameBlock_EyeToggleMixin {
+abstract public class EndFrameBlock_EyeToggleMixin {
     @Shadow @Final public static BooleanProperty EYE;
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(GillyCarpetAddonsSettings.dropEyeFromFrame && state.get(EYE)){
+        if(GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)){
             BlockState newState=state.with(EYE,false);
             world.setBlockState(pos,newState);
+            //remove portal this frame used to create
             removePortal(world, pos.north());
             removePortal(world, pos.west());
             removePortal(world, pos.south());
@@ -35,6 +36,7 @@ public class EndFrameBlock_EyeToggleMixin {
         }
         return ActionResult.FAIL;
     }
+    //recursive method to remove portal blocks near frame
     public void removePortal(World world, BlockPos pos){
         if(world.getBlockState(pos).getBlock()==Blocks.END_PORTAL){
             world.setBlockState(pos,Blocks.AIR.getDefaultState());
