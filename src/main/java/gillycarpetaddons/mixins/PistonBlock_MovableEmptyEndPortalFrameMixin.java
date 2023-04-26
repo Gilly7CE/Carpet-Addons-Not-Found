@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(PistonBlock.class)
-public class PistonBlock_MovableEndPortalFrameMixin {
+public class PistonBlock_MovableEmptyEndPortalFrameMixin {
     @Redirect(
             method = "isMovable",
             at = @At(
@@ -19,7 +19,7 @@ public class PistonBlock_MovableEndPortalFrameMixin {
     private static float getHardnessRedirect(BlockState instance, BlockView blockView, BlockPos blockPos) {
         Block currentBlock = instance.getBlock();
         // Only allow empty end portal frames to be moved
-        if (GillyCarpetAddonsSettings.movableEndPortalFrames
+        if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames
                 && currentBlock == Blocks.END_PORTAL_FRAME
                 && !instance.get(EndPortalFrameBlock.EYE)) {
             // If hardness is -1.0f then the piston cannot be moved. This is the vanilla behaviour for end portal frames
