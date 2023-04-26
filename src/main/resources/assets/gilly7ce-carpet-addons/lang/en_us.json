@@ -1,5 +1,6 @@
 {
   "carpet.category.gilly7ce_carpet_addons": "gilly7ce-carpet-addons",
+  "carpet.rule.disablePhantomSpawningInMushroomFields": "Phantoms will no longer spawn in a mushroom fields biome.",
   "carpet.rule.dropEyesOfEnderFromEndPortalFrame.desc": "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.",
   "carpet.rule.movableEmptyEndPortalFrames.desc": "Allows empty end portal frames to be moved.",
   "carpet.rule.netheriteAxeInstantMineWood.desc": "A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks.",
