@@ -28,6 +28,16 @@ Allows empty end portal frames to be moved.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
 
+### movableSpawners
+
+Allows spawners to be moved.
+This requires the carpet `movableBlockEntities` rule to be enabled.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+
 ### netheriteAxeInstantMineWood
 
 A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks.
