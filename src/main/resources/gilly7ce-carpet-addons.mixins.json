@@ -9,6 +9,7 @@
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
+    "PistonBlock_MovableSpawnersMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
