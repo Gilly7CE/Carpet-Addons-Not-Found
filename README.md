@@ -10,6 +10,15 @@ You also need to download the [carpet mod](https://github.com/gnembon/fabric-car
 
 ## Features
 
+### disablePhantomSpawningInMushroomFields
+
+Phantoms will no longer spawn in a mushroom fields biome.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+
 ### dropEyesOfEnderFromEndPortalFrame
 
 A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
