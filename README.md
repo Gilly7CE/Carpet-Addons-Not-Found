@@ -28,6 +28,15 @@ A full end portal frame will drop an eye of ender when right clicked by a player
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
 
+### movableEmptyEndPortalFrames
+
+Allows empty end portal frames to be moved.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+
 ### netheriteAxeInstantMineWood
 
 A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks.
