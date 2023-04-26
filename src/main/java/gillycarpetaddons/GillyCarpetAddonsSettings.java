@@ -8,6 +8,9 @@ import static carpet.api.settings.RuleCategory.SURVIVAL;
 
 public class GillyCarpetAddonsSettings {
     private static final String GILLY = "gilly7ce-carpet-addons";
+
+    @Rule(categories = {FEATURE, GILLY})
+    public static boolean disablePhantomSpawningInMushroomFields = false;
     
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean dropEyesOfEnderFromEndPortalFrame = false;
@@ -32,7 +35,4 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE, GILLY})
     public static boolean phantomsObeyHostileMobCap = false;
-
-    @Rule(categories = {FEATURE, GILLY})
-    public static boolean disablePhantomSpawningInMushroomFields = false;
 }

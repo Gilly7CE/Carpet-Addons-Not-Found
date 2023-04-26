@@ -5,7 +5,7 @@
   "mixins": [
     "AbstractClientPlayerEntity_InstantMineMixin",
     "EndFrameBlock_EyeToggleMixin",
-    "PhantomSpawner_PhantomsObeyHostileMobCapMixin",
+    "PhantomSpawnerMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
     "invokers.SpawnHelperInfoInvokerMixin"

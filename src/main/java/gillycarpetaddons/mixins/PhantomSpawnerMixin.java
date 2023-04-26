@@ -28,7 +28,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * Most of the code here is different to lunaar now, as the mob cap is per player and not global anymore.
  */
 @Mixin(PhantomSpawner.class)
-public abstract class PhantomSpawner_PhantomsObeyHostileMobCapMixin {
+public abstract class PhantomSpawnerMixin {
     /**
      * Redirects the isSpectator method of the playerEntity when called
      * in the 'phantomSpawner.spawn' method. This is called in a loop of all
@@ -66,7 +66,6 @@ public abstract class PhantomSpawner_PhantomsObeyHostileMobCapMixin {
             )
     )
     private void isInMooshromBiome(ServerWorld instance, Entity entity) {
-        System.out.println("bruh");
         BlockPos pos=new BlockPos(entity.getPos());
         RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
         if(GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields && registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS){
