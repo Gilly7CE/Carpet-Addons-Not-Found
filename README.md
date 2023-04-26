@@ -82,6 +82,15 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
+### disablePhantomSpawningInMushroomFields
+
+Phantoms will no longer spawn in a mushroom fields biome.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+
 ## Contributing
 
 Anyone can contribute to this repository. However, please follow the following guidelines when contributing.

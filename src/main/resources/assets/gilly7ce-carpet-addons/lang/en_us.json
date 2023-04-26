@@ -7,5 +7,6 @@
   "carpet.rule.netheritePickaxeInstantMineDeepslate.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine deepslate type blocks.",
   "carpet.rule.netheritePickaxeInstantMineEndStone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine end stone type blocks.",
   "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks.",
-  "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player."
+  "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
+  "carpet.rule.phantomObeyMushroomBiome.desc": "Phantoms will no longer spawn in a mushroom fields biome."
 }

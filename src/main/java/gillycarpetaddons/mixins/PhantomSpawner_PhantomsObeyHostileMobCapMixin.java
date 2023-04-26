@@ -3,12 +3,17 @@ package gillycarpetaddons.mixins;
 import gillycarpetaddons.GillyCarpetAddonsSettings;
 import gillycarpetaddons.helpers.ChunkManagerHelper;
 import gillycarpetaddons.mixins.invokers.SpawnHelperInfoInvokerMixin;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.world.SpawnHelper;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.spawner.PhantomSpawner;
-import org.spongepowered.asm.mixin.Debug;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -51,5 +56,21 @@ public abstract class PhantomSpawner_PhantomsObeyHostileMobCapMixin {
         SpawnHelper.Info info = ChunkManagerHelper.getInfo();
         boolean canSpawn = ((SpawnHelperInfoInvokerMixin) info).invokeIsBelowCap(SpawnGroup.MONSTER, playerChunkPos);
         return isSpectator | !canSpawn;
+    }
+
+    @Redirect(
+            method = "spawn",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/server/world/ServerWorld;spawnEntityAndPassengers(Lnet/minecraft/entity/Entity;)V"
+            )
+    )
+    private void isInMooshromBiome(ServerWorld instance, Entity entity) {
+        System.out.println("bruh");
+        BlockPos pos=new BlockPos(entity.getPos());
+        RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
+        if(GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields && registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS){
+            instance.spawnNewEntityAndPassengers(entity);
+        }
     }
 }

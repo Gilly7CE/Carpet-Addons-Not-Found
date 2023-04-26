@@ -32,4 +32,7 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE, GILLY})
     public static boolean phantomsObeyHostileMobCap = false;
+
+    @Rule(categories = {FEATURE, GILLY})
+    public static boolean disablePhantomSpawningInMushroomFields = false;
 }
