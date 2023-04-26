@@ -6,6 +6,7 @@
     "AbstractClientPlayerEntity_InstantMineMixin",
     "EndFrameBlock_EyeToggleMixin",
     "PhantomSpawner_PhantomsObeyHostileMobCapMixin",
+    "PistonBlock_MovableEndPortalFrameMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
     "invokers.SpawnHelperInfoInvokerMixin"

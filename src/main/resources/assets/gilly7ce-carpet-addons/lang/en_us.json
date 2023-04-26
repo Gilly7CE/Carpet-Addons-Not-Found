@@ -1,6 +1,7 @@
 {
   "carpet.category.gilly7ce_carpet_addons": "gilly7ce-carpet-addons",
   "carpet.rule.dropEyesOfEnderFromEndPortalFrame.desc": "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.",
+  "carpet.rule.movableEndPortalFrames.desc" : "Allows end portal frames to be moved.\nThis only works for empty portal frames.",
   "carpet.rule.netheriteAxeInstantMineWood.desc": "A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and nether wood type blocks.",
   "carpet.rule.netheritePickaxeInstantMineBlueIce.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine blue ice blocks.",
   "carpet.rule.netheritePickaxeInstantMineCobblestone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine cobblestone type blocks.",
