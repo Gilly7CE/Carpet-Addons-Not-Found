@@ -40,5 +40,5 @@ public class GillyCarpetAddonsSettings {
     public static boolean phantomsObeyHostileMobCap = false;
 
     @Rule(categories = {FEATURE,EXPERIMENTAL,GILLY})
-    public static boolean spectatorPortalFix = false;
+    public static boolean spectatorPlayersUsePortals = false;
 }
