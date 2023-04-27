@@ -110,6 +110,15 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
+### spectatorPlayersUsePortals
+
+Spectator players can go through nether portals, end portals and end gateways.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+
 ## Contributing
 
 Anyone can contribute to this repository. However, please follow the following guidelines when contributing.
