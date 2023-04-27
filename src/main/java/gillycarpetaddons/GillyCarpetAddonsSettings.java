@@ -17,6 +17,9 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean movableEmptyEndPortalFrames = false;
+
+    @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
+    public static boolean movableSpawners = false;
   
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheriteAxeInstantMineWood = false;
