@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "AbstractClientPlayerEntity_InstantMineMixin",
+    "DispenserBlock_GetCustomBehaviorMixin",
     "EndFrameBlock_EyeToggleMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",

@@ -3,12 +3,31 @@ package gillycarpetaddons.helpers;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
+import net.minecraft.item.EnderEyeItem;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class EndPortalFrameHelper {
+public final class EndPortalFrameHelper {
+    /**
+     * Checks if the block state has an eye of ender
+     * @param blockState the block state to check
+     * @author Gilly7CE
+     */
     public static boolean HasEyeOfEnder(BlockState blockState) {
         return blockState.get(EndPortalFrameBlock.EYE);
+    }
+
+    /**
+     * Sets an end portal frame blocks state to full
+     * @param item the ender eye item
+     * @param context the item usage context
+     * @author Gilly7CE
+     */
+    public static void setFullEndPortalFrameState(EnderEyeItem item,
+                                                  ItemUsageContext context) {
+        item.useOnBlock(context);
     }
 
     /**
