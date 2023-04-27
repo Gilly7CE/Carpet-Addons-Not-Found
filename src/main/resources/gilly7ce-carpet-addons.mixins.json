@@ -10,6 +10,7 @@
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
     "SpectatorPortalFix",
+    "PistonBlock_MovableSpawnersMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
