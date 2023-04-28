@@ -2,12 +2,13 @@ package gillycarpetaddons;
 
 import carpet.api.settings.Rule;
 
-import static carpet.api.settings.RuleCategory.EXPERIMENTAL;
-import static carpet.api.settings.RuleCategory.FEATURE;
-import static carpet.api.settings.RuleCategory.SURVIVAL;
+import static carpet.api.settings.RuleCategory.*;
 
 public class GillyCarpetAddonsSettings {
     private static final String GILLY = "gilly7ce-carpet-addons";
+
+    @Rule(categories = {FEATURE, CREATIVE, GILLY})
+    public static boolean creativePlayerOneHitKill = false;
 
     @Rule(categories = {FEATURE, GILLY})
     public static boolean disablePhantomSpawningInMushroomFields = false;

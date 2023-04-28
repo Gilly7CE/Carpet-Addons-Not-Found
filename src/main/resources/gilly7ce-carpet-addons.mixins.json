@@ -7,10 +7,13 @@
     "EndFrameBlock_EyeToggleMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
+    "PistonBlock_MovableSpawnersMixin",
+    "PlayerEntity_CreativePlayerOneHitKillMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
-    "PistonBlock_MovableSpawnersMixin",
+    "accessors.EntityAccessorMixin",
+    "invokers.EntityInvokerMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
