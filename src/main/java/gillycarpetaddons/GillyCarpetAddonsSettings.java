@@ -13,6 +13,9 @@ public class GillyCarpetAddonsSettings {
     @Rule(categories = {FEATURE, DISPENSER, GILLY})
     public static boolean dispensersPlaceEyesOfEnder = false;
 
+    @Rule(categories = {FEATURE, EXPERIMENTAL, DISPENSER, GILLY})
+    public static boolean dispensersRemoveEyesOfEnder = false;
+
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 

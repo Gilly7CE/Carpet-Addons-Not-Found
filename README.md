@@ -28,6 +28,15 @@ Dispensers can place eyes of ender into end portal frames.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
 
+### dispensersRemoveEyesOfEnder
+
+Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
+
 ### dropEyesOfEnderFromEndPortalFrame
 
 A full end portal frame will drop an eye of ender when right-clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.

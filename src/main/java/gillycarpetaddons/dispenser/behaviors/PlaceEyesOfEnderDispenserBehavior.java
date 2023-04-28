@@ -1,12 +1,12 @@
 package gillycarpetaddons.dispenser.behaviors;
 
 import gillycarpetaddons.dispenser.DispenserItemUsageContext;
-import gillycarpetaddons.dispenser.GillyCarpetAddonDispenserBehavior;
 import gillycarpetaddons.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DispenserBlock;
+import net.minecraft.block.dispenser.FallibleItemDispenserBehavior;
 import net.minecraft.item.EnderEyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 
-public final class PlaceEyesOfEnderDispenserBehavior extends GillyCarpetAddonDispenserBehavior {
+public final class PlaceEyesOfEnderDispenserBehavior extends FallibleItemDispenserBehavior {
     @Override
     protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
         this.setSuccess(true);
