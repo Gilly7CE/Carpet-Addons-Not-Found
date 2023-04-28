@@ -42,7 +42,6 @@ public final class PlaceEyesOfEnderDispenserBehavior extends FallibleItemDispens
                 false);
         DispenserItemUsageContext context = new DispenserItemUsageContext(world, stack, hitResult);
         EndPortalFrameHelper.setFullEndPortalFrameState(enderEyeItem, context);
-        stack.decrement(1);
         return stack;
     }
 }
