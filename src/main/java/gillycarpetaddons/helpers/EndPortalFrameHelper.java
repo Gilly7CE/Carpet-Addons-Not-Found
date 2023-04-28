@@ -4,7 +4,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.item.EnderEyeItem;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -41,10 +40,7 @@ public final class EndPortalFrameHelper {
         BlockState newState = blockState.with(EndPortalFrameBlock.EYE, false);
         world.setBlockState(pos, newState);
         //remove portal this frame used to create
-        removePortal(world, pos.north());
-        removePortal(world, pos.west());
-        removePortal(world, pos.south());
-        removePortal(world, pos.east());
+        removePortal(world, pos.offset(blockState.get(EndPortalFrameBlock.FACING), 1));
     }
 
 
@@ -60,7 +56,7 @@ public final class EndPortalFrameHelper {
             return;
         }
 
-        world.setBlockState(pos,Blocks.AIR.getDefaultState());
+        world.setBlockState(pos, Blocks.AIR.getDefaultState());
         removePortal(world, pos.north());
         removePortal(world, pos.west());
         removePortal(world, pos.south());
