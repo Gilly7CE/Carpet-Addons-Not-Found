@@ -40,7 +40,7 @@ public class GillyCarpetAddonDispenserBehaviors {
     }
 
     private static DispenserBehavior getEndPortalFrameDispenserBehavior(BlockState frontBlockState, Item item) {
-        if (!EndPortalFrameHelper.HasEyeOfEnder(frontBlockState)
+        if (!EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)
                 && item == Items.ENDER_EYE
                 && GillyCarpetAddonsSettings.dispensersPlaceEyesOfEnder) {
             return PLACE_EYE_OF_ENDER;

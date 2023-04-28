@@ -30,7 +30,7 @@ public final class PlaceEyesOfEnderDispenserBehavior extends FallibleItemDispens
 
         if (!(item instanceof EnderEyeItem enderEyeItem)
                 || frontBlock != Blocks.END_PORTAL_FRAME
-                || EndPortalFrameHelper.HasEyeOfEnder(frontBlockState)) {
+                || EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)) {
             this.setSuccess(false);
             return stack;
         }

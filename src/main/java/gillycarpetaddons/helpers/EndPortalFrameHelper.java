@@ -14,7 +14,7 @@ public final class EndPortalFrameHelper {
      * @param blockState the block state to check
      * @author Gilly7CE
      */
-    public static boolean HasEyeOfEnder(BlockState blockState) {
+    public static boolean hasEyeOfEnder(BlockState blockState) {
         return blockState.get(EndPortalFrameBlock.EYE);
     }
 

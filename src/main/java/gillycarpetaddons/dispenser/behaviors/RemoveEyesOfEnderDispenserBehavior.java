@@ -24,7 +24,7 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
         Block frontBlock = frontBlockState.getBlock();
 
         if (frontBlock != Blocks.END_PORTAL_FRAME
-                || !EndPortalFrameHelper.HasEyeOfEnder(frontBlockState)
+                || !EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)
                 || (!stack.isEmpty() && stack.getItem() != Items.ENDER_EYE)) {
             this.setSuccess(false);
             return stack;

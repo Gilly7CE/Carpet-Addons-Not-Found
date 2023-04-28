@@ -22,7 +22,7 @@ public class PistonBlock_MovableEmptyEndPortalFrameMixin {
         // Only allow empty end portal frames to be moved
         if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames
                 && currentBlock == Blocks.END_PORTAL_FRAME
-                && !EndPortalFrameHelper.HasEyeOfEnder(instance)) {
+                && !EndPortalFrameHelper.hasEyeOfEnder(instance)) {
             // If hardness is -1.0f then the piston cannot be moved. This is the vanilla behaviour for end portal frames
             // which matches with the bedrock block. Instead of overriding the hardness for end portal frames everywhere,
             // just do it when it is called inside the PistonBlock.
