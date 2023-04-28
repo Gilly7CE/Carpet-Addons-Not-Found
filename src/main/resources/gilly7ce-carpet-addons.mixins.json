@@ -5,12 +5,14 @@
   "mixins": [
     "AbstractClientPlayerEntity_InstantMineMixin",
     "EndFrameBlock_EyeToggleMixin",
+    "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
+    "PistonBlock_MovableSpawnersMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
-    "PistonBlock_MovableSpawnersMixin",
+    "invokers.ExperienceOrbEntityInvokerMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
