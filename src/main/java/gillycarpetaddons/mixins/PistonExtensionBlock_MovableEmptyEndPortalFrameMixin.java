@@ -37,7 +37,7 @@ public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
             return;
         }
 
-        var droppedStacks = Collections.singletonList(new ItemStack(Items.END_PORTAL_FRAME));
+        List<ItemStack> droppedStacks = Collections.singletonList(new ItemStack(Items.END_PORTAL_FRAME));
         cir.setReturnValue(droppedStacks);
     }
 }
