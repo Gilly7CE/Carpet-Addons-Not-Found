@@ -16,7 +16,7 @@ public class GillyCarpetAddonsSettings {
     public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
-    public static boolean movableEmptyEndPortalFrames = false;
+    public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean movableSpawners = false;
@@ -47,4 +47,10 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE, GILLY})
     public static boolean xpBubbleColumnInteraction = false;
+  
+    public enum MovableBlockOptions {
+        TRUE(),
+        FALSE(),
+        DROP_AS_ITEM_ON_EXPLOSION();
+    }
 }

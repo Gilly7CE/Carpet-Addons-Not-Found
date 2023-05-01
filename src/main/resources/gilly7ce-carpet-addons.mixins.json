@@ -13,6 +13,10 @@
     "ServerPlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
+    "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
+    "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
+    "ServerPlayerEntity_InstantMineMixin",
+    "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
