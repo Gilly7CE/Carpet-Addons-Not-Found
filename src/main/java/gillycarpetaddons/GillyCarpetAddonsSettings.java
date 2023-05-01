@@ -45,6 +45,9 @@ public class GillyCarpetAddonsSettings {
     @Rule(categories = {FEATURE,EXPERIMENTAL,GILLY})
     public static boolean spectatorPlayersUsePortals = false;
 
+    @Rule(categories = {FEATURE, GILLY})
+    public static boolean xpBubbleColumnInteraction = false;
+  
     public enum MovableBlockOptions {
         TRUE(),
         FALSE(),
