@@ -41,11 +41,13 @@ A full end portal frame will drop an eye of ender when right clicked by a player
 
 ### movableEmptyEndPortalFrames
 
-Allows empty end portal frames to be moved.
+Allows empty end portal frames to be moved. 
+The `drop_as_items_on_explosion` option will allow end portal frames to drop as items when an explosion occurs whilst
+being pushed by a piston.
 
-- Type: `boolean`
+- Type: `MovableBlockOptions`
 - Default value: `false`
-- Required options: `true`, `false`
+- Required options: `true`, `false`, `drop_as_items_on_explosion`
 - Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
 
 ### movableSpawners
@@ -129,6 +131,15 @@ Spectator players can go through nether portals, end portals and end gateways.
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+
+### xpBubbleColumnInteraction
+
+Bubble columns will push or pull XP orb entities like with other entities and items.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
 ## Contributing
 
