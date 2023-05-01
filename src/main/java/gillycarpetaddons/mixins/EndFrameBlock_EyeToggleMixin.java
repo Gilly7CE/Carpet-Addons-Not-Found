@@ -1,8 +1,8 @@
 package gillycarpetaddons.mixins;
 
 import gillycarpetaddons.GillyCarpetAddonsSettings;
+import gillycarpetaddons.helpers.EndPortalFrameHelper;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -20,30 +20,21 @@ import org.spongepowered.asm.mixin.Shadow;
 import static net.minecraft.block.Block.dropStack;
 
 @Mixin(EndPortalFrameBlock.class)
-abstract public class EndFrameBlock_EyeToggleMixin {
+public abstract class EndFrameBlock_EyeToggleMixin {
     @Shadow @Final public static BooleanProperty EYE;
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+
+    public ActionResult onUse(BlockState state,
+                              World world,
+                              BlockPos pos,
+                              PlayerEntity player,
+                              Hand hand,
+                              BlockHitResult hit) {
         if(GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)){
-            BlockState newState=state.with(EYE,false);
-            world.setBlockState(pos,newState);
-            //remove portal this frame used to create
-            removePortal(world, pos.north());
-            removePortal(world, pos.west());
-            removePortal(world, pos.south());
-            removePortal(world, pos.east());
+            EndPortalFrameHelper.setEmptyEndPortalFrameState(world, state, pos);
             dropStack(world, pos, new ItemStack(Items.ENDER_EYE,1));
             return ActionResult.success(world.isClient);
         }
+
         return ActionResult.FAIL;
-    }
-    //recursive method to remove portal blocks near frame
-    public void removePortal(World world, BlockPos pos){
-        if(world.getBlockState(pos).getBlock()==Blocks.END_PORTAL){
-            world.setBlockState(pos,Blocks.AIR.getDefaultState());
-            removePortal(world, pos.north());
-            removePortal(world, pos.west());
-            removePortal(world, pos.south());
-            removePortal(world, pos.east());
-        }
     }
 }

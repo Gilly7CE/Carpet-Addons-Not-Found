@@ -2,6 +2,8 @@
   "carpet.category.gilly7ce_carpet_addons": "gilly7ce-carpet-addons",
   "carpet.rule.creativePlayerOneHitKill.desc" : "Allows players in Creative mode to kill entities in one hit.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",
+  "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
+  "carpet.rule.dispensersRemoveEyesOfEnder.desc": "Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.",
   "carpet.rule.dropEyesOfEnderFromEndPortalFrame.desc": "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.",
   "carpet.rule.movableEmptyEndPortalFrames.desc": "Allows empty end portal frames to be moved.\nThe `drop_as_items_on_explosion` option will allow end portal frames to drop as items when an explosion occurs whilst being pushed by a piston.",
   "carpet.rule.movableSpawners.desc": "Allows spawners to be moved.\nThis requires the carpet movableBlockEntities rule to be enabled",

@@ -4,7 +4,7 @@ This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and 
 
 ## Installation
 
-Download the the `.jar` which corresponds to the minecraft version you are using and place it inside the 'mods' directory within your minecraft installation folder.
+Download the `.jar` which corresponds to the minecraft version you are using and place it inside the 'mods' directory within your minecraft installation folder.
 
 You also need to download the [carpet mod](https://github.com/gnembon/fabric-carpet) and [fabric loader](https://fabricmc.net/).
 
@@ -30,9 +30,27 @@ Phantoms will no longer spawn in a mushroom fields biome.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
+### dispensersPlaceEyesOfEnder
+
+Dispensers can place eyes of ender into end portal frames.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
+
+### dispensersRemoveEyesOfEnder
+
+Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
+
 ### dropEyesOfEnderFromEndPortalFrame
 
-A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
+A full end portal frame will drop an eye of ender when right-clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.
 
 - Type: `boolean`
 - Default value: `false`
@@ -151,7 +169,7 @@ If you have a question, feature request or bug report please raise it in the iss
 
 ### Code setup
 
-Follow these [guidlines](https://fabricmc.net/wiki/tutorial:setup) to setup a dev environment to contribute code to this repository. [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows) is the preferred IDE to use, and the one which I use (Gilly7CE). You do not need to clone the fabric example mod, instead clone this repo. Once setup, you can build the mod. If building using fabric isn't working, try running `./gradlew idea` in the terminal whilst in the repo directory. I'd recommend running this each time before debugging the code anyway. Since this mod is dependent on carpet, it will automatically build the carpet mod `.jar` needed and place it within the mods/ folder of the running minecraft instance along with this mod.
+Follow these [guidelines](https://fabricmc.net/wiki/tutorial:setup) to setup a dev environment to contribute code to this repository. [Intellij IDEA](https://www.jetbrains.com/idea/download/#section=windows) is the preferred IDE to use, and the one which I use (Gilly7CE). You do not need to clone the fabric example mod, instead clone this repo. Once setup, you can build the mod. If building using fabric isn't working, try running `./gradlew idea` in the terminal whilst in the repo directory. I'd recommend running this each time before debugging the code anyway. Since this mod is dependent on carpet, it will automatically build the carpet mod `.jar` needed and place it within the mods/ folder of the running minecraft instance along with this mod.
 
 ### Workflow for PRs
 

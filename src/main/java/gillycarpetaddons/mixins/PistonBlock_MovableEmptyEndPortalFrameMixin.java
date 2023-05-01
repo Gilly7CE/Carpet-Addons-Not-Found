@@ -1,6 +1,7 @@
 package gillycarpetaddons.mixins;
 
 import gillycarpetaddons.GillyCarpetAddonsSettings;
+import gillycarpetaddons.helpers.EndPortalFrameHelper;
 import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -36,7 +37,7 @@ public class PistonBlock_MovableEmptyEndPortalFrameMixin {
         // Only allow empty end portal frames to be moved
         if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames != GillyCarpetAddonsSettings.MovableBlockOptions.FALSE
                 && currentBlock == Blocks.END_PORTAL_FRAME
-                && !state.get(EndPortalFrameBlock.EYE)) {
+                && !EndPortalFrameHelper.hasEyeOfEnder(state)) {
             cir.setReturnValue(true);
         }
     }
