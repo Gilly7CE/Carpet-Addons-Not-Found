@@ -34,7 +34,7 @@ public class PistonBlock_MovableEmptyEndPortalFrameMixin {
                                                      CallbackInfoReturnable<Boolean> cir) {
         Block currentBlock = state.getBlock();
         // Only allow empty end portal frames to be moved
-        if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames
+        if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames != GillyCarpetAddonsSettings.MovableBlockOptions.FALSE
                 && currentBlock == Blocks.END_PORTAL_FRAME
                 && !state.get(EndPortalFrameBlock.EYE)) {
             cir.setReturnValue(true);
