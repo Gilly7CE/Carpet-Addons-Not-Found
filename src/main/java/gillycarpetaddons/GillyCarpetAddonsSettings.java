@@ -7,6 +7,9 @@ import static carpet.api.settings.RuleCategory.*;
 public class GillyCarpetAddonsSettings {
     private static final String GILLY = "gilly7ce-carpet-addons";
 
+    @Rule(categories = {FEATURE, CREATIVE, GILLY})
+    public static boolean creativePlayerOneHitKill = false;
+
     @Rule(categories = {FEATURE, GILLY})
     public static boolean disablePhantomSpawningInMushroomFields = false;
 
@@ -20,7 +23,7 @@ public class GillyCarpetAddonsSettings {
     public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
-    public static boolean movableEmptyEndPortalFrames = false;
+    public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean movableSpawners = false;
@@ -48,4 +51,13 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE,EXPERIMENTAL,GILLY})
     public static boolean spectatorPlayersUsePortals = false;
+
+    @Rule(categories = {FEATURE, GILLY})
+    public static boolean xpBubbleColumnInteraction = false;
+  
+    public enum MovableBlockOptions {
+        TRUE(),
+        FALSE(),
+        DROP_AS_ITEM_ON_EXPLOSION();
+    }
 }
