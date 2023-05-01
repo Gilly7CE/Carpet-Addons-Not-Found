@@ -10,6 +10,17 @@ You also need to download the [carpet mod](https://github.com/gnembon/fabric-car
 
 ## Features
 
+### creativePlayerOneHitKill
+
+Allows players in Creative mode to kill entities in one hit.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `CREATIVE`, `GILLY7CE-CARPET-ADDON`
+- Additional notes:
+  - This only works on non-player entities.
+
 ### disablePhantomSpawningInMushroomFields
 
 Phantoms will no longer spawn in a mushroom fields biome.
