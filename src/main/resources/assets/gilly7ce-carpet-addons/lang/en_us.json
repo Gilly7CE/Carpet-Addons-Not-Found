@@ -1,6 +1,7 @@
 {
   "carpet.category.gilly7ce_carpet_addons": "gilly7ce-carpet-addons",
   "carpet.rule.creativePlayerOneHitKill.desc" : "Allows players in Creative mode to kill entities in one hit.",
+  "disablePhantomSpawningForCreativePlayers": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
   "carpet.rule.dispensersRemoveEyesOfEnder.desc": "Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.",

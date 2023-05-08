@@ -18,6 +18,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
+import static gillycarpetaddons.GillyCarpetAddonsSettings.disablePhantomSpawningForCreativePlayers;
+import static gillycarpetaddons.GillyCarpetAddonsSettings.phantomsObeyHostileMobCap;
+
 /**
  * This is originally adapted from the
  * <a href="https://github.com/Lunaar-SMP/lunaar-carpet-addons">lunaar carpet extensions mod</a>.
@@ -46,12 +49,17 @@ public abstract class PhantomSpawnerMixin {
                     target = "Lnet/minecraft/entity/player/PlayerEntity;isSpectator()Z"
             )
     )
-    private boolean isSpectatorOrAtMobCap(PlayerEntity instance) {
+    private boolean isSpectatorCreativeOrAtMobCap(PlayerEntity instance) {
         boolean isSpectator = instance.isSpectator();
-        if (!GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
-            return isSpectator;
+        if(isSpectator){
+            return true;
         }
-
+        if(disablePhantomSpawningForCreativePlayers && instance.isCreative()){
+            return true;
+        }
+        if(!phantomsObeyHostileMobCap){
+            return false;
+        }
         ChunkPos playerChunkPos = instance.getChunkPos();
         SpawnHelper.Info info = ChunkManagerHelper.getInfo();
         boolean canSpawn = ((SpawnHelperInfoInvokerMixin) info).invokeIsBelowCap(SpawnGroup.MONSTER, playerChunkPos);
@@ -68,7 +76,7 @@ public abstract class PhantomSpawnerMixin {
     private void isInMooshromBiome(ServerWorld instance, Entity entity) {
         BlockPos pos=new BlockPos(entity.getPos());
         RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
-        if(GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields && registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS){
+        if(!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields || registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS){
             instance.spawnNewEntityAndPassengers(entity);
         }
     }
