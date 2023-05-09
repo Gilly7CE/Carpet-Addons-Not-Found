@@ -51,10 +51,8 @@ public abstract class PhantomSpawnerMixin {
     )
     private boolean isSpectatorCreativeOrAtMobCap(PlayerEntity instance) {
         boolean isSpectator = instance.isSpectator();
-        if(isSpectator){
-            return true;
-        }
-        if(disablePhantomSpawningForCreativePlayers && instance.isCreative()){
+        boolean isCreative = disablePhantomSpawningForCreativePlayers && instance.isCreative();
+        if(isSpectator || isCreative){
             return true;
         }
         if(!phantomsObeyHostileMobCap){
@@ -63,7 +61,7 @@ public abstract class PhantomSpawnerMixin {
         ChunkPos playerChunkPos = instance.getChunkPos();
         SpawnHelper.Info info = ChunkManagerHelper.getInfo();
         boolean canSpawn = ((SpawnHelperInfoInvokerMixin) info).invokeIsBelowCap(SpawnGroup.MONSTER, playerChunkPos);
-        return isSpectator | !canSpawn;
+        return !canSpawn;
     }
 
     @Redirect(
