@@ -10,6 +10,9 @@ public class GillyCarpetAddonsSettings {
     @Rule(categories = {FEATURE, CREATIVE, GILLY})
     public static boolean creativePlayerOneHitKill = false;
 
+    @Rule(categories = {CREATIVE,FEATURE,GILLY})
+    public static boolean disablePhantomSpawningForCreativePlayers = false;
+
     @Rule(categories = {FEATURE, GILLY})
     public static boolean disablePhantomSpawningInMushroomFields = false;
 

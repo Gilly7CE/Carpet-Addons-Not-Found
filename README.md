@@ -22,6 +22,15 @@ Allows players in Creative mode to kill entities in one hit.
 - Categories: `FEATURE`, `CREATIVE`, `GILLY7CE-CARPET-ADDON`
 - Additional notes:
   - This only works on non-player entities.
+  
+### disablePhantomSpawningForCreativePlayers
+
+Phantoms will no longer spawn for creative players.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
 ### disablePhantomSpawningInMushroomFields
 
