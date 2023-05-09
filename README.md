@@ -1,5 +1,7 @@
 # Gilly7CE-Carpet-Addons
 
+![GitHub all releases](https://img.shields.io/github/downloads/Gilly7CE/Gilly7CE-Carpet-Addons/total?style=social) ![GitHub](https://img.shields.io/github/license/Gilly7CE/Gilly7CE-Carpet-Addons) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Gilly7CE/Gilly7CE-Carpet-Addons?include_prereleases) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/mainbuild.yml?label=production%20build) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/prbuild.yml?label=dev%20build) ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/publish.yml?label=publish%20build)
+
 This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and adds useful features to the game which I personally would like to be in vanilla.
 
 ## Installation
