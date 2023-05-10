@@ -31,7 +31,7 @@ public abstract class EndFrameBlock_EyeToggleMixin {
                               BlockHitResult hit) {
         if(GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)){
             EndPortalFrameHelper.setEmptyEndPortalFrameState(world, state, pos);
-            dropStack(world, pos, new ItemStack(Items.ENDER_EYE,1));
+            dropStack(world, pos.up(), new ItemStack(Items.ENDER_EYE,1));
             return ActionResult.success(world.isClient);
         }
 
