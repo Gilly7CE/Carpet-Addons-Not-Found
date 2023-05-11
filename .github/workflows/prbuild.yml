@@ -23,8 +23,6 @@ jobs:
         run: chmod +x ./gradlew
       - name: build with gradle
         run: ./gradlew build
-      - name: test with gradle
-        run: ./gradlew test
       - uses: actions/upload-artifact@v2
         with:
           name: "Compiled artifacts for Pull Request #${{github.event.number}}"
