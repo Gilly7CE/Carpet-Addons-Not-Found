@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '0.11-SNAPSHOT'
+	id 'fabric-loom' version '1.2-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -36,6 +36,12 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed", "standardOut", "standardError"
+		outputs.upToDateWhen {
+			false
+		}
+	}
 }
 
 processResources {
