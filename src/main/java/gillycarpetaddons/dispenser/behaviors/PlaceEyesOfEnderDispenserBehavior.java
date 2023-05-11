@@ -18,30 +18,30 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 
 public final class PlaceEyesOfEnderDispenserBehavior extends FallibleItemDispenserBehavior {
-    @Override
-    protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
-        this.setSuccess(true);
-        Item item = stack.getItem();
-        ServerWorld world = pointer.getWorld();
-        Direction dispenserFacing = pointer.getBlockState().get(DispenserBlock.FACING);
-        BlockPos frontBlockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
-        BlockState frontBlockState = world.getBlockState(frontBlockPos);
-        Block frontBlock = frontBlockState.getBlock();
+  @Override
+  protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
+    this.setSuccess(true);
+    Item item = stack.getItem();
+    ServerWorld world = pointer.getWorld();
+    Direction dispenserFacing = pointer.getBlockState().get(DispenserBlock.FACING);
+    BlockPos frontBlockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
+    BlockState frontBlockState = world.getBlockState(frontBlockPos);
+    Block frontBlock = frontBlockState.getBlock();
 
-        if (!(item instanceof EnderEyeItem enderEyeItem)
-                || frontBlock != Blocks.END_PORTAL_FRAME
-                || EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)) {
-            this.setSuccess(false);
-            return stack;
-        }
-
-        BlockHitResult hitResult = new BlockHitResult(
-                Vec3d.ofCenter(frontBlockPos),
-                dispenserFacing.getOpposite(),
-                frontBlockPos,
-                false);
-        DispenserItemUsageContext context = new DispenserItemUsageContext(world, stack, hitResult);
-        EndPortalFrameHelper.setFullEndPortalFrameState(enderEyeItem, context);
-        return stack;
+    if (!(item instanceof EnderEyeItem enderEyeItem)
+        || frontBlock != Blocks.END_PORTAL_FRAME
+        || EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)) {
+      this.setSuccess(false);
+      return stack;
     }
+
+    BlockHitResult hitResult = new BlockHitResult(
+            Vec3d.ofCenter(frontBlockPos),
+            dispenserFacing.getOpposite(),
+            frontBlockPos,
+            false);
+    DispenserItemUsageContext context = new DispenserItemUsageContext(world, stack, hitResult);
+    EndPortalFrameHelper.setFullEndPortalFrameState(enderEyeItem, context);
+    return stack;
+  }
 }

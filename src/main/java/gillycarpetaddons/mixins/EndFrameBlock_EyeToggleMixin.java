@@ -21,22 +21,22 @@ import static net.minecraft.block.Block.dropStack;
 
 @Mixin(EndPortalFrameBlock.class)
 public abstract class EndFrameBlock_EyeToggleMixin {
-    @Shadow
-    @Final
-    public static BooleanProperty EYE;
+  @Shadow
+  @Final
+  public static BooleanProperty EYE;
 
-    public ActionResult onUse(BlockState state,
-                              World world,
-                              BlockPos pos,
-                              PlayerEntity player,
-                              Hand hand,
-                              BlockHitResult hit) {
-        if (GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)) {
-            EndPortalFrameHelper.setEmptyEndPortalFrameState(world, state, pos);
-            dropStack(world, pos.up(), new ItemStack(Items.ENDER_EYE, 1));
-            return ActionResult.success(world.isClient);
-        }
-
-        return ActionResult.FAIL;
+  public ActionResult onUse(BlockState state,
+                            World world,
+                            BlockPos pos,
+                            PlayerEntity player,
+                            Hand hand,
+                            BlockHitResult hit) {
+    if (GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)) {
+      EndPortalFrameHelper.setEmptyEndPortalFrameState(world, state, pos);
+      dropStack(world, pos.up(), new ItemStack(Items.ENDER_EYE, 1));
+      return ActionResult.success(world.isClient);
     }
+
+    return ActionResult.FAIL;
+  }
 }

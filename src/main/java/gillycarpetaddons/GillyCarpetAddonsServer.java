@@ -10,25 +10,25 @@ import net.fabricmc.api.ModInitializer;
 import java.util.Map;
 
 public class GillyCarpetAddonsServer implements CarpetExtension, ModInitializer {
-    @Override
-    public void onInitialize() {
-        CarpetServer.manageExtension(new GillyCarpetAddonsServer());
-    }
+  @Override
+  public void onInitialize() {
+    CarpetServer.manageExtension(new GillyCarpetAddonsServer());
+  }
 
-    @Override
-    public void onGameStarted() {
-        SettingsManager.registerGlobalRuleObserver(new movableSpawnerRuleObserver());
-        CarpetServer.settingsManager.parseSettingsClass(GillyCarpetAddonsSettings.class);
-    }
+  @Override
+  public void onGameStarted() {
+    SettingsManager.registerGlobalRuleObserver(new movableSpawnerRuleObserver());
+    CarpetServer.settingsManager.parseSettingsClass(GillyCarpetAddonsSettings.class);
+  }
 
-    @Override
-    public String version() {
-        return "gilly7ce-carpet-addons";
-    }
+  @Override
+  public String version() {
+    return "gilly7ce-carpet-addons";
+  }
 
-    @Override
-    public Map<String, String> canHasTranslations(String lang) {
-        return Translations.getTranslationFromResourcePath(
-                String.format("assets/gilly7ce-carpet-addons/lang/%s.json", lang));
-    }
+  @Override
+  public Map<String, String> canHasTranslations(String lang) {
+    return Translations.getTranslationFromResourcePath(
+            String.format("assets/gilly7ce-carpet-addons/lang/%s.json", lang));
+  }
 }

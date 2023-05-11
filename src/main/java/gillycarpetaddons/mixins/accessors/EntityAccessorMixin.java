@@ -7,6 +7,6 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(Entity.class)
 public interface EntityAccessorMixin {
-    @Accessor("world")
-    World getWorld();
+  @Accessor("world")
+  World getWorld();
 }

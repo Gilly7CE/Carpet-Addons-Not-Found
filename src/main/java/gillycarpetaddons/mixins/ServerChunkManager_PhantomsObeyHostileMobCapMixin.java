@@ -19,22 +19,24 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  */
 @Mixin(ServerChunkManager.class)
 public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
-    @Redirect(
-            method = "tickChunks",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/SpawnHelper;setupSpawn(ILjava/lang/Iterable;Lnet/minecraft/world/SpawnHelper$ChunkSource;Lnet/minecraft/world/SpawnDensityCapper;)Lnet/minecraft/world/SpawnHelper$Info;"
-            )
-    )
-    public SpawnHelper.Info infoSetter(
-            int spawningChunkCount,
-            Iterable<Entity> entities,
-            SpawnHelper.ChunkSource chunkSource,
-            SpawnDensityCapper densityCapper) {
-        SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
-        if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
-            ChunkManagerHelper.setInfo(info);
-        }
-        return info;
+  @Redirect(
+          method = "tickChunks",
+          at = @At(
+                  value = "INVOKE",
+                  target = "Lnet/minecraft/world/SpawnHelper;setupSpawn(ILjava/lang/Iterable;" +
+                           "Lnet/minecraft/world/SpawnHelper$ChunkSource;Lnet/minecraft/world/SpawnDensityCapper;)" +
+                           "Lnet/minecraft/world/SpawnHelper$Info;"
+          )
+  )
+  public SpawnHelper.Info infoSetter(
+          int spawningChunkCount,
+          Iterable<Entity> entities,
+          SpawnHelper.ChunkSource chunkSource,
+          SpawnDensityCapper densityCapper) {
+    SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
+    if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
+      ChunkManagerHelper.setInfo(info);
     }
+    return info;
+  }
 }

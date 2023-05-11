@@ -10,13 +10,13 @@ import net.minecraft.world.SpawnHelper;
  * carpet rule out of respect for the lunaar mod.
  */
 public class ChunkManagerHelper {
-    private static SpawnHelper.Info info;
+  private static SpawnHelper.Info info;
 
-    public static SpawnHelper.Info getInfo() {
-        return info;
-    }
+  public static SpawnHelper.Info getInfo() {
+    return info;
+  }
 
-    public static void setInfo(SpawnHelper.Info info) {
-        ChunkManagerHelper.info = info;
-    }
+  public static void setInfo(SpawnHelper.Info info) {
+    ChunkManagerHelper.info = info;
+  }
 }

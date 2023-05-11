@@ -19,43 +19,46 @@ import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends PlayerEntity {
-    public ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
-        super(world, pos, yaw, gameProfile);
-    }
+  public ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(World world, BlockPos pos, float yaw,
+                                                            GameProfile gameProfile) {
+    super(world, pos, yaw, gameProfile);
+  }
 
-    @Shadow
-    public abstract boolean isSpectator();
+  @Shadow
+  public abstract boolean isSpectator();
 
-    /*
-        Calls original move() function then performs additional action
-        this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
-        if it was in survival game-mode at the same coordinates with default pose.
-     */
-    @Override
-    public void move(MovementType type, Vec3d movement) {
-        super.move(type, movement);
-        if (!GillyCarpetAddonsSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() || this.hasPassengers() || !this.canUsePortals()) {
-            return;
-        }
-        //shift one up makes it seem like bounding box is closer to camera.
-        BlockPos pos = this.getBlockPos().add(0, 1, 0);
-        BlockState state = world.getBlockState(pos);
-        Block block = state.getBlock();
-        //from EndPortalBlock.onEntityCollision()
-        if (block == Blocks.END_PORTAL) {
-            RegistryKey<World> registryKey = world.getRegistryKey() == World.END ? World.OVERWORLD : World.END;
-            ServerWorld serverWorld = ((ServerWorld) world).getServer().getWorld(registryKey);
-            if (serverWorld == null) {
-                return;
-            }
-            this.moveToWorld(serverWorld);
-        }
-        if (block == Blocks.END_GATEWAY) {
-            EndGatewayBlockEntity.tryTeleportingEntity(world, pos, state, this, (EndGatewayBlockEntity) world.getBlockEntity(pos));
-        }
-        //from NetherPortalBlock.onEntityCollision()
-        if (block == Blocks.NETHER_PORTAL) {
-            this.setInNetherPortal(pos);
-        }
+  /*
+      Calls original move() function then performs additional action
+      this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
+      if it was in survival game-mode at the same coordinates with default pose.
+   */
+  @Override
+  public void move(MovementType type, Vec3d movement) {
+    super.move(type, movement);
+    if (!GillyCarpetAddonsSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() ||
+        this.hasPassengers() || !this.canUsePortals()) {
+      return;
     }
+    //shift one up makes it seem like bounding box is closer to camera.
+    BlockPos pos = this.getBlockPos().add(0, 1, 0);
+    BlockState state = world.getBlockState(pos);
+    Block block = state.getBlock();
+    //from EndPortalBlock.onEntityCollision()
+    if (block == Blocks.END_PORTAL) {
+      RegistryKey<World> registryKey = world.getRegistryKey() == World.END ? World.OVERWORLD : World.END;
+      ServerWorld serverWorld = ((ServerWorld) world).getServer().getWorld(registryKey);
+      if (serverWorld == null) {
+        return;
+      }
+      this.moveToWorld(serverWorld);
+    }
+    if (block == Blocks.END_GATEWAY) {
+      EndGatewayBlockEntity.tryTeleportingEntity(world, pos, state, this,
+                                                 (EndGatewayBlockEntity) world.getBlockEntity(pos));
+    }
+    //from NetherPortalBlock.onEntityCollision()
+    if (block == Blocks.NETHER_PORTAL) {
+      this.setInNetherPortal(pos);
+    }
+  }
 }

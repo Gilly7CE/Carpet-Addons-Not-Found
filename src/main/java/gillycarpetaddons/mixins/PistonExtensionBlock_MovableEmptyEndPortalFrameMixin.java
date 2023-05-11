@@ -20,25 +20,27 @@ import java.util.List;
 
 @Mixin(PistonExtensionBlock.class)
 public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
-    @Inject(
-            method = "getDroppedStacks",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/block/entity/PistonBlockEntity;getPushedBlock()Lnet/minecraft/block/BlockState;"
-            ),
-            locals = LocalCapture.CAPTURE_FAILHARD,
-            cancellable = true)
-    private void getDroppedStacksForMovableBlock(BlockState state,
-                                                 LootContext.Builder builder,
-                                                 CallbackInfoReturnable<List<ItemStack>> cir,
-                                                 PistonBlockEntity pistonBlockEntity) {
-        Block pushedBlock = pistonBlockEntity.getPushedBlock().getBlock();
-        if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames != GillyCarpetAddonsSettings.MovableBlockOptions.DROP_AS_ITEM_ON_EXPLOSION
-                || pushedBlock != Blocks.END_PORTAL_FRAME) {
-            return;
-        }
-
-        List<ItemStack> droppedStacks = Collections.singletonList(new ItemStack(Items.END_PORTAL_FRAME));
-        cir.setReturnValue(droppedStacks);
+  @Inject(
+          method = "getDroppedStacks",
+          at = @At(
+                  value = "INVOKE",
+                  target = "Lnet/minecraft/block/entity/PistonBlockEntity;getPushedBlock()" +
+                           "Lnet/minecraft/block/BlockState;"
+          ),
+          locals = LocalCapture.CAPTURE_FAILHARD,
+          cancellable = true)
+  private void getDroppedStacksForMovableBlock(BlockState state,
+                                               LootContext.Builder builder,
+                                               CallbackInfoReturnable<List<ItemStack>> cir,
+                                               PistonBlockEntity pistonBlockEntity) {
+    Block pushedBlock = pistonBlockEntity.getPushedBlock().getBlock();
+    if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames !=
+        GillyCarpetAddonsSettings.MovableBlockOptions.DROP_AS_ITEM_ON_EXPLOSION
+        || pushedBlock != Blocks.END_PORTAL_FRAME) {
+      return;
     }
+
+    List<ItemStack> droppedStacks = Collections.singletonList(new ItemStack(Items.END_PORTAL_FRAME));
+    cir.setReturnValue(droppedStacks);
+  }
 }
