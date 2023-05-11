@@ -215,6 +215,7 @@ To contribute a code change to the repository, please do the following:
       "Optimize imports". Click "Run". The code will now be formatted to the project's rules.
     - Run the tests under the "Test" directory. Ensure they all pass.
     - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
+    - Ensure any Mixin classes are declared `abstract`.
 
 If you have any issues doing any of these, please contact the following:
 
