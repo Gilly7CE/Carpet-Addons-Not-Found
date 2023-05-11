@@ -11,6 +11,7 @@ import net.minecraft.world.World;
 public final class EndPortalFrameHelper {
     /**
      * Checks if the block state has an eye of ender
+     *
      * @param blockState the block state to check
      * @author Gilly7CE
      */
@@ -20,7 +21,8 @@ public final class EndPortalFrameHelper {
 
     /**
      * Sets an end portal frame blocks state to full
-     * @param item the ender eye item
+     *
+     * @param item    the ender eye item
      * @param context the item usage context
      * @author Gilly7CE
      */
@@ -31,9 +33,10 @@ public final class EndPortalFrameHelper {
 
     /**
      * Sets an end portal frame blocks state to empty and breaks any connecting portals
-     * @param world the current world
+     *
+     * @param world      the current world
      * @param blockState the current block state
-     * @param pos the current block position
+     * @param pos        the current block position
      * @author serz
      */
     public static void setEmptyEndPortalFrameState(World world, BlockState blockState, BlockPos pos) {
@@ -47,12 +50,13 @@ public final class EndPortalFrameHelper {
     /**
      * Recursive method to remove connecting portal blocks, if current block is
      * an end portal.
+     *
      * @param world the current world
-     * @param pos the current block position
+     * @param pos   the current block position
      * @author serz
      */
-    private static void removePortal(World world, BlockPos pos){
-        if(world.getBlockState(pos).getBlock() != Blocks.END_PORTAL) {
+    private static void removePortal(World world, BlockPos pos) {
+        if (world.getBlockState(pos).getBlock() != Blocks.END_PORTAL) {
             return;
         }
 

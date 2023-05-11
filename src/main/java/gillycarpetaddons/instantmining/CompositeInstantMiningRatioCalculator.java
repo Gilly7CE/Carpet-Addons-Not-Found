@@ -13,7 +13,7 @@ public class CompositeInstantMiningRatioCalculator implements InstantMiningRatio
 
     @Override
     public float getInstantMiningRatio(BlockState blockState, Item mainHand) {
-        for (ToolInstantMiningRatioCalculator calculator: calculators) {
+        for (ToolInstantMiningRatioCalculator calculator : calculators) {
             if (!calculator.canInstantMine(blockState, mainHand)) {
                 continue;
             }

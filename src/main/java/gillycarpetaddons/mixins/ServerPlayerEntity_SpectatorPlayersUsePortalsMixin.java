@@ -6,7 +6,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.EndGatewayBlockEntity;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.RegistryKey;
@@ -23,7 +22,9 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
     public ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
         super(world, pos, yaw, gameProfile);
     }
-    @Shadow public abstract boolean isSpectator();
+
+    @Shadow
+    public abstract boolean isSpectator();
 
     /*
         Calls original move() function then performs additional action
@@ -32,28 +33,28 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
      */
     @Override
     public void move(MovementType type, Vec3d movement) {
-        super.move(type,movement);
+        super.move(type, movement);
         if (!GillyCarpetAddonsSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() || this.hasPassengers() || !this.canUsePortals()) {
             return;
         }
         //shift one up makes it seem like bounding box is closer to camera.
-        BlockPos pos = this.getBlockPos().add(0,1,0);
+        BlockPos pos = this.getBlockPos().add(0, 1, 0);
         BlockState state = world.getBlockState(pos);
         Block block = state.getBlock();
         //from EndPortalBlock.onEntityCollision()
-        if(block==Blocks.END_PORTAL){
+        if (block == Blocks.END_PORTAL) {
             RegistryKey<World> registryKey = world.getRegistryKey() == World.END ? World.OVERWORLD : World.END;
-            ServerWorld serverWorld = ((ServerWorld)world).getServer().getWorld(registryKey);
+            ServerWorld serverWorld = ((ServerWorld) world).getServer().getWorld(registryKey);
             if (serverWorld == null) {
                 return;
             }
             this.moveToWorld(serverWorld);
         }
-        if(block==Blocks.END_GATEWAY){
-            EndGatewayBlockEntity.tryTeleportingEntity(world,pos,state,this,(EndGatewayBlockEntity)world.getBlockEntity(pos));
+        if (block == Blocks.END_GATEWAY) {
+            EndGatewayBlockEntity.tryTeleportingEntity(world, pos, state, this, (EndGatewayBlockEntity) world.getBlockEntity(pos));
         }
         //from NetherPortalBlock.onEntityCollision()
-        if(block==Blocks.NETHER_PORTAL){
+        if (block == Blocks.NETHER_PORTAL) {
             this.setInNetherPortal(pos);
         }
     }

@@ -30,7 +30,7 @@ public final class movableSpawnerRuleObserver implements SettingsManager.RuleObs
             source.sendError(Text.of("The carpet rule 'movableBlockEntities' must be enabled to use this rule!"));
             changedRule.set(source, String.valueOf(false));
         } catch (InvalidRuleValueException e) {
-           e.notifySource(changedRule.name(), source);
+            e.notifySource(changedRule.name(), source);
         }
     }
 }

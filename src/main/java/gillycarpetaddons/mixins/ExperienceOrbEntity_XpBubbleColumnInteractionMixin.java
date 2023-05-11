@@ -13,8 +13,8 @@ public abstract class ExperienceOrbEntity_XpBubbleColumnInteractionMixin {
     @Redirect(
             method = "tick",
             at = @At(
-                value = "INVOKE",
-                target = "Lnet/minecraft/entity/ExperienceOrbEntity;applyWaterMovement()V"
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/entity/ExperienceOrbEntity;applyWaterMovement()V"
             )
     )
     private void applyWaterMovementRedirect(ExperienceOrbEntity instance) {

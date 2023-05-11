@@ -22,8 +22,7 @@ public class GillyCarpetAddonsServer implements CarpetExtension, ModInitializer 
     }
 
     @Override
-    public String version()
-    {
+    public String version() {
         return "gilly7ce-carpet-addons";
     }
 

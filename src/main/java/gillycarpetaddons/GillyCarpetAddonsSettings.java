@@ -10,7 +10,7 @@ public class GillyCarpetAddonsSettings {
     @Rule(categories = {FEATURE, CREATIVE, GILLY})
     public static boolean creativePlayerOneHitKill = false;
 
-    @Rule(categories = {CREATIVE,FEATURE,GILLY})
+    @Rule(categories = {CREATIVE, FEATURE, GILLY})
     public static boolean disablePhantomSpawningForCreativePlayers = false;
 
     @Rule(categories = {FEATURE, GILLY})
@@ -30,7 +30,7 @@ public class GillyCarpetAddonsSettings {
 
     @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean movableSpawners = false;
-  
+
     @Rule(categories = {SURVIVAL, GILLY})
     public static boolean netheriteAxeInstantMineWood = false;
 
@@ -52,12 +52,12 @@ public class GillyCarpetAddonsSettings {
     @Rule(categories = {FEATURE, GILLY})
     public static boolean phantomsObeyHostileMobCap = false;
 
-    @Rule(categories = {FEATURE,EXPERIMENTAL,GILLY})
+    @Rule(categories = {FEATURE, EXPERIMENTAL, GILLY})
     public static boolean spectatorPlayersUsePortals = false;
 
     @Rule(categories = {FEATURE, GILLY})
     public static boolean xpBubbleColumnInteraction = false;
-  
+
     public enum MovableBlockOptions {
         TRUE(),
         FALSE(),

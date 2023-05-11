@@ -27,7 +27,7 @@ import static gillycarpetaddons.GillyCarpetAddonsSettings.phantomsObeyHostileMob
  * At time of writing this code, the lunaar mod is still in version 1.17 and 1.18 experimental snapshots and I really
  * wanted this functionality for 1.19+. If this mod will support versions below 1.19, then only 1.18 will include this
  * carpet rule out of respect for the lunaar mod.
- *
+ * <p>
  * Most of the code here is different to lunaar now, as the mob cap is per player and not global anymore.
  */
 @Mixin(PhantomSpawner.class)
@@ -39,6 +39,7 @@ public abstract class PhantomSpawnerMixin {
      * whose hostile mob cap is below the required values. This allows us to
      * apply additional checks instead of just whether the player is in spectator.
      * I did not know any other way of implementing this additional conditional!
+     *
      * @param instance the player instance to check
      * @return true if the player is in spectator mode or the player hostile mob cap is reached.
      */
@@ -52,10 +53,10 @@ public abstract class PhantomSpawnerMixin {
     private boolean isSpectatorCreativeOrAtMobCap(PlayerEntity instance) {
         boolean isSpectator = instance.isSpectator();
         boolean isCreative = disablePhantomSpawningForCreativePlayers && instance.isCreative();
-        if(isSpectator || isCreative){
+        if (isSpectator || isCreative) {
             return true;
         }
-        if(!phantomsObeyHostileMobCap){
+        if (!phantomsObeyHostileMobCap) {
             return false;
         }
         ChunkPos playerChunkPos = instance.getChunkPos();
@@ -72,9 +73,9 @@ public abstract class PhantomSpawnerMixin {
             )
     )
     private void isInMooshromBiome(ServerWorld instance, Entity entity) {
-        BlockPos pos=new BlockPos(entity.getPos());
+        BlockPos pos = new BlockPos(entity.getPos());
         RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
-        if(!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields || registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS){
+        if (!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields || registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS) {
             instance.spawnNewEntityAndPassengers(entity);
         }
     }

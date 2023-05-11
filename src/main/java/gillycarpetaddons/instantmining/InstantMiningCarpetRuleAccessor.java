@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 
 public class InstantMiningCarpetRuleAccessor {
     public static final HashMap<String, Supplier<Boolean>> carpetRules;
+
     static {
         carpetRules = new HashMap<>();
         carpetRules.put(InstantMiningCarpetRuleKeys.netheriteAxeWood, () -> GillyCarpetAddonsSettings.netheriteAxeInstantMineWood);

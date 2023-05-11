@@ -22,13 +22,12 @@ public abstract class PistonBlock_MovableSpawnersMixin {
             )
     )
     private static void movableSpawners(BlockState blockState_1,
-                                              World world_1,
-                                              BlockPos blockPos_1,
-                                              Direction direction_1,
-                                              boolean boolean_1,
-                                              Direction direction_2,
-                                              CallbackInfoReturnable<Boolean> cir)
-    {
+                                        World world_1,
+                                        BlockPos blockPos_1,
+                                        Direction direction_1,
+                                        boolean boolean_1,
+                                        Direction direction_2,
+                                        CallbackInfoReturnable<Boolean> cir) {
         Block block_1 = blockState_1.getBlock();
         // Make spawners movable if rules enabled
         if (CarpetSettings.movableBlockEntities

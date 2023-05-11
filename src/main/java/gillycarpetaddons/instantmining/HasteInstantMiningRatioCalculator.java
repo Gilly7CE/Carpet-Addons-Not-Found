@@ -11,7 +11,7 @@ public class HasteInstantMiningRatioCalculator {
         float miningToolMaterialRatio =
                 newMiningToolMaterial.getMiningSpeedMultiplier() / originalMiningToolMaterial.getMiningSpeedMultiplier();
         // Formula for the ratio using the original and new haste levels
-        float hasteRatio = (float)(5 + newHasteLevel) / (float)(5 + originalHasteLevel);
+        float hasteRatio = (float) (5 + newHasteLevel) / (float) (5 + originalHasteLevel);
         return miningToolMaterialRatio * hasteRatio;
     }
 }
