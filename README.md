@@ -210,6 +210,11 @@ To contribute a code change to the repository, please do the following:
 - When writing commits, please follow
   these [guidelines](https://initialcommit.com/blog/git-commit-messages-best-practices).
 - Once code changes have been made to the branch, push it and create a PR.
+- Additional checks before creating a PR:
+    - Right-click the project in IntelliJ IDEA and select "Reformat Code". Under "Options" select "Cleanup code" and
+      "Optimize imports". Click "Run". The code will now be formatted to the project's rules.
+    - Run the tests under the "Test" directory. Ensure they all pass.
+    - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
 
 If you have any issues doing any of these, please contact the following:
 
