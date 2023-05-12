@@ -3,17 +3,17 @@ package gillycarpetaddons.instantmining;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectUtil;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
 public class BlockBreakingSpeedRatioCalculator {
-  public static float getBlockBreakingSpeedRatio(PlayerEntity playerEntity, BlockState blockState) {
-    int efficiencyLevel = EnchantmentHelper.getEfficiency(playerEntity);
-    int hasteAmplifier = StatusEffectUtil.getHasteAmplifier(playerEntity);
-    ItemStack mainHand = playerEntity.getEquippedStack(EquipmentSlot.MAINHAND);
+  public static float getBlockBreakingSpeedRatio(LivingEntity livingEntity, BlockState blockState) {
+    int efficiencyLevel = EnchantmentHelper.getEfficiency(livingEntity);
+    int hasteAmplifier = StatusEffectUtil.getHasteAmplifier(livingEntity);
+    ItemStack mainHand = livingEntity.getEquippedStack(EquipmentSlot.MAINHAND);
 
-    if (!StatusEffectUtil.hasHaste(playerEntity)
+    if (!StatusEffectUtil.hasHaste(livingEntity)
         || mainHand.isEmpty()
         || efficiencyLevel < 5
         || hasteAmplifier < 1) {
