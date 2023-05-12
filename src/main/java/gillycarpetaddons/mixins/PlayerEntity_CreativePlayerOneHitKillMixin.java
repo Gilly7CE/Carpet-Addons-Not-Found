@@ -23,65 +23,65 @@ import java.util.Arrays;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements EntityAccessorMixin, EntityInvokerMixin {
-    @Shadow
-    @Final
-    private PlayerAbilities abilities;
+  @Shadow
+  @Final
+  private PlayerAbilities abilities;
 
-    @Shadow
-    public abstract SoundCategory getSoundCategory();
+  @Shadow
+  public abstract SoundCategory getSoundCategory();
 
-    /**
-     * This is adapted from the
-     * <a href="https://github.com/Lunaar-SMP/lunaar-carpet-addons">lunaar carpet extensions mod</a>.
-     * At time of writing this code, the lunaar mod is still in version 1.17 and 1.18 experimental snapshots and I really
-     * wanted this functionality for 1.19+. If this mod will support versions below 1.19, then only 1.18 will include this
-     * carpet rule out of respect for the lunaar mod.
-     */
-    @Inject(
-            method = "attack",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/entity/Entity;handleAttack(Lnet/minecraft/entity/Entity;)Z",
-                    shift = At.Shift.BY,
-                    by = -2
-            ),
-            cancellable = true
-    )
-    public void creativeKill(Entity target, CallbackInfo ci) {
-        World world = this.getWorld();
-        if (!GillyCarpetAddonsSettings.creativePlayerOneHitKill
-                || world.isClient
-                || !this.abilities.creativeMode
-                || !EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
-                || target instanceof PlayerEntity) {
-            return;
-        }
-
-        instantKillTarget(target);
-        world.playSound(
-                null,
-                this.invokeGetX(),
-                this.invokeGetY(),
-                this.invokeGetZ(),
-                SoundEvents.ENTITY_PLAYER_ATTACK_CRIT,
-                this.getSoundCategory(),
-                1.0f,
-                1.0f);
-        ci.cancel();
+  /**
+   * This is adapted from the
+   * <a href="https://github.com/Lunaar-SMP/lunaar-carpet-addons">lunaar carpet extensions mod</a>.
+   * At time of writing this code, the lunaar mod is still in version 1.17 and 1.18 experimental snapshots and I really
+   * wanted this functionality for 1.19+. If this mod will support versions below 1.19, then only 1.18 will include this
+   * carpet rule out of respect for the lunaar mod.
+   */
+  @Inject(
+          method = "attack",
+          at = @At(
+                  value = "INVOKE",
+                  target = "Lnet/minecraft/entity/Entity;handleAttack(Lnet/minecraft/entity/Entity;)Z",
+                  shift = At.Shift.BY,
+                  by = -2
+          ),
+          cancellable = true
+  )
+  public void creativeKill(Entity target, CallbackInfo ci) {
+    World world = this.getWorld();
+    if (!GillyCarpetAddonsSettings.creativePlayerOneHitKill
+        || world.isClient
+        || !this.abilities.creativeMode
+        || !EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
+        || target instanceof PlayerEntity) {
+      return;
     }
 
-    private void instantKillTarget(Entity target) {
-        if (target instanceof EnderDragonPart enderDragonPart) {
-            instantKillEnderDragon(enderDragonPart);
-            return;
-        }
+    instantKillTarget(target);
+    world.playSound(
+            null,
+            this.invokeGetX(),
+            this.invokeGetY(),
+            this.invokeGetZ(),
+            SoundEvents.ENTITY_PLAYER_ATTACK_CRIT,
+            this.getSoundCategory(),
+            1.0f,
+            1.0f);
+    ci.cancel();
+  }
 
-        target.kill();
+  private void instantKillTarget(Entity target) {
+    if (target instanceof EnderDragonPart enderDragonPart) {
+      instantKillEnderDragon(enderDragonPart);
+      return;
     }
 
-    private void instantKillEnderDragon(EnderDragonPart enderDragonPart) {
-        EnderDragonEntity enderDragonEntity = enderDragonPart.owner;
-        Arrays.stream(enderDragonEntity.getBodyParts()).forEach(Entity::kill);
-        enderDragonEntity.kill();
-    }
+    target.kill();
+  }
+
+  private void instantKillEnderDragon(EnderDragonPart enderDragonPart) {
+    EnderDragonEntity enderDragonEntity = enderDragonPart.owner;
+    Arrays.stream(enderDragonEntity.getBodyParts()).forEach(Entity::kill);
+    enderDragonEntity.kill();
+  }
 }

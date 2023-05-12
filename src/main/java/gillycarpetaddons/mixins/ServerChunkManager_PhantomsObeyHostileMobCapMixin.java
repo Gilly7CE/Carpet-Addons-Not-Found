@@ -3,9 +3,9 @@ package gillycarpetaddons.mixins;
 import gillycarpetaddons.GillyCarpetAddonsSettings;
 import gillycarpetaddons.helpers.ChunkManagerHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.server.world.ServerChunkManager;
 import net.minecraft.world.SpawnDensityCapper;
 import net.minecraft.world.SpawnHelper;
-import net.minecraft.server.world.ServerChunkManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -19,22 +19,24 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  */
 @Mixin(ServerChunkManager.class)
 public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
-    @Redirect(
-            method = "tickChunks",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/world/SpawnHelper;setupSpawn(ILjava/lang/Iterable;Lnet/minecraft/world/SpawnHelper$ChunkSource;Lnet/minecraft/world/SpawnDensityCapper;)Lnet/minecraft/world/SpawnHelper$Info;"
-            )
-    )
-    public SpawnHelper.Info infoSetter(
-            int spawningChunkCount,
-            Iterable<Entity> entities,
-            SpawnHelper.ChunkSource chunkSource,
-            SpawnDensityCapper densityCapper) {
-        SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
-        if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
-            ChunkManagerHelper.setInfo(info);
-        }
-        return info;
+  @Redirect(
+          method = "tickChunks",
+          at = @At(
+                  value = "INVOKE",
+                  target = "Lnet/minecraft/world/SpawnHelper;setupSpawn(ILjava/lang/Iterable;" +
+                           "Lnet/minecraft/world/SpawnHelper$ChunkSource;Lnet/minecraft/world/SpawnDensityCapper;)" +
+                           "Lnet/minecraft/world/SpawnHelper$Info;"
+          )
+  )
+  public SpawnHelper.Info infoSetter(
+          int spawningChunkCount,
+          Iterable<Entity> entities,
+          SpawnHelper.ChunkSource chunkSource,
+          SpawnDensityCapper densityCapper) {
+    SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
+    if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
+      ChunkManagerHelper.setInfo(info);
     }
+    return info;
+  }
 }

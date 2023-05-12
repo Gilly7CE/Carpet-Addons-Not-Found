@@ -8,6 +8,6 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(SpawnHelper.Info.class)
 public interface SpawnHelperInfoInvokerMixin {
-    @Invoker("isBelowCap")
-    boolean invokeIsBelowCap(SpawnGroup group, ChunkPos chunkPos);
+  @Invoker("isBelowCap")
+  boolean invokeIsBelowCap(SpawnGroup group, ChunkPos chunkPos);
 }

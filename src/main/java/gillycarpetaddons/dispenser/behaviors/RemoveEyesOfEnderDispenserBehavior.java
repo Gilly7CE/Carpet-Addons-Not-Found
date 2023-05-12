@@ -15,68 +15,68 @@ import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 
 public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispenserBehavior {
-    @Override
-    protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
-        this.setSuccess(true);
-        ServerWorld world = pointer.getWorld();
-        BlockPos frontBlockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
-        BlockState frontBlockState = world.getBlockState(frontBlockPos);
-        Block frontBlock = frontBlockState.getBlock();
+  @Override
+  protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
+    this.setSuccess(true);
+    ServerWorld world = pointer.getWorld();
+    BlockPos frontBlockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
+    BlockState frontBlockState = world.getBlockState(frontBlockPos);
+    Block frontBlock = frontBlockState.getBlock();
 
-        if (frontBlock != Blocks.END_PORTAL_FRAME
-                || !EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)
-                || (!stack.isEmpty() && stack.getItem() != Items.ENDER_EYE)) {
-            this.setSuccess(false);
-            return stack;
-        }
-
-        ItemStack newStack = this.addEyeOfEnderToInventory(stack, pointer);
-        if (newStack != null) {
-            EndPortalFrameHelper.setEmptyEndPortalFrameState(world, frontBlockState, frontBlockPos);
-            return newStack;
-        }
-
-        this.setSuccess(false);
-        return stack;
+    if (frontBlock != Blocks.END_PORTAL_FRAME
+        || !EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)
+        || (!stack.isEmpty() && stack.getItem() != Items.ENDER_EYE)) {
+      this.setSuccess(false);
+      return stack;
     }
 
-    private ItemStack addEyeOfEnderToInventory(ItemStack originalStack,
-                                               BlockPointer blockPointer) {
-        Item itemToAdd = Items.ENDER_EYE;
-        ItemStack newStack = addItemToStack(originalStack, itemToAdd);
-        if (newStack != null) {
-            return newStack;
-        }
-
-        DispenserBlockEntity dispenserBlockEntity = blockPointer.getBlockEntity();
-        return addToFirstAvailableSlot(dispenserBlockEntity, itemToAdd)
-                ? originalStack
-                : null;
+    ItemStack newStack = this.addEyeOfEnderToInventory(stack, pointer);
+    if (newStack != null) {
+      EndPortalFrameHelper.setEmptyEndPortalFrameState(world, frontBlockState, frontBlockPos);
+      return newStack;
     }
 
-    private ItemStack addItemToStack(ItemStack itemStack, Item itemToAdd) {
-        if (itemStack.isEmpty()) {
-            return new ItemStack(itemToAdd);
-        }
+    this.setSuccess(false);
+    return stack;
+  }
 
-        int combinedCount = itemStack.getCount() + 1;
-        if (itemStack.getItem() != itemToAdd || combinedCount > itemStack.getMaxCount()) {
-            return null;
-        }
-
-        return new ItemStack(itemToAdd, combinedCount);
+  private ItemStack addEyeOfEnderToInventory(ItemStack originalStack,
+                                             BlockPointer blockPointer) {
+    Item itemToAdd = Items.ENDER_EYE;
+    ItemStack newStack = addItemToStack(originalStack, itemToAdd);
+    if (newStack != null) {
+      return newStack;
     }
 
-    private boolean addToFirstAvailableSlot(DispenserBlockEntity dispenserBlockEntity, Item itemToAdd) {
-        for (int slot = 0; slot < DispenserBlockEntity.INVENTORY_SIZE; slot++) {
-            ItemStack currentSlotStack = dispenserBlockEntity.getStack(slot);
-            ItemStack newStack = addItemToStack(currentSlotStack, itemToAdd);
-            if (newStack != null) {
-                dispenserBlockEntity.setStack(slot, newStack);
-                return true;
-            }
-        }
+    DispenserBlockEntity dispenserBlockEntity = blockPointer.getBlockEntity();
+    return addToFirstAvailableSlot(dispenserBlockEntity, itemToAdd)
+           ? originalStack
+           : null;
+  }
 
-        return false;
+  private ItemStack addItemToStack(ItemStack itemStack, Item itemToAdd) {
+    if (itemStack.isEmpty()) {
+      return new ItemStack(itemToAdd);
     }
+
+    int combinedCount = itemStack.getCount() + 1;
+    if (itemStack.getItem() != itemToAdd || combinedCount > itemStack.getMaxCount()) {
+      return null;
+    }
+
+    return new ItemStack(itemToAdd, combinedCount);
+  }
+
+  private boolean addToFirstAvailableSlot(DispenserBlockEntity dispenserBlockEntity, Item itemToAdd) {
+    for (int slot = 0; slot < DispenserBlockEntity.INVENTORY_SIZE; slot++) {
+      ItemStack currentSlotStack = dispenserBlockEntity.getStack(slot);
+      ItemStack newStack = addItemToStack(currentSlotStack, itemToAdd);
+      if (newStack != null) {
+        dispenserBlockEntity.setStack(slot, newStack);
+        return true;
+      }
+    }
+
+    return false;
+  }
 }

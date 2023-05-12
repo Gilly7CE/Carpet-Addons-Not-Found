@@ -31,10 +31,13 @@ classes/
 
 # idea
 
-.idea/
+.idea/*
 *.iml
 *.ipr
 *.iws
+
+# Keep the code styles!
+!.idea/codeStyles/
 
 # vscode
 

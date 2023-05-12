@@ -6,12 +6,12 @@ import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(Entity.class)
 public interface EntityInvokerMixin {
-    @Invoker("getX")
-    double invokeGetX();
+  @Invoker("getX")
+  double invokeGetX();
 
-    @Invoker("getY")
-    double invokeGetY();
+  @Invoker("getY")
+  double invokeGetY();
 
-    @Invoker("getZ")
-    double invokeGetZ();
+  @Invoker("getZ")
+  double invokeGetZ();
 }

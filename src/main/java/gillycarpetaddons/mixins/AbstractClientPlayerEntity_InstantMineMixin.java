@@ -11,14 +11,14 @@ import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(AbstractClientPlayerEntity.class)
 public abstract class AbstractClientPlayerEntity_InstantMineMixin extends PlayerEntity {
-    public AbstractClientPlayerEntity_InstantMineMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
-        super(world, pos, yaw, gameProfile);
-    }
+  public AbstractClientPlayerEntity_InstantMineMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
+    super(world, pos, yaw, gameProfile);
+  }
 
-    @Override
-    public float getBlockBreakingSpeed(BlockState block) {
-        float vanillaBlockBreakingSpeed = super.getBlockBreakingSpeed(block);
-        float blockBreakingSpeedRatio = BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
-        return vanillaBlockBreakingSpeed * blockBreakingSpeedRatio;
-    }
+  @Override
+  public float getBlockBreakingSpeed(BlockState block) {
+    float vanillaBlockBreakingSpeed = super.getBlockBreakingSpeed(block);
+    float blockBreakingSpeedRatio = BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
+    return vanillaBlockBreakingSpeed * blockBreakingSpeedRatio;
+  }
 }
