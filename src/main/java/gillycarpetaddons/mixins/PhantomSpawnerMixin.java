@@ -73,8 +73,8 @@ public abstract class PhantomSpawnerMixin {
                            "(Lnet/minecraft/entity/Entity;)V"
           )
   )
-  private void isInMooshromBiome(ServerWorld instance, Entity entity) {
-    BlockPos pos = new BlockPos(entity.getPos());
+  private void isInMushroomFieldsBiome(ServerWorld instance, Entity entity) {
+    BlockPos pos = entity.getBlockPos();
     RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
     if (!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields ||
         registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS) {
