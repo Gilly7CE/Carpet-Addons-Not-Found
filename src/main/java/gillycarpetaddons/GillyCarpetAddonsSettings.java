@@ -68,10 +68,6 @@ public class GillyCarpetAddonsSettings {
         category = { SURVIVAL, GILLY })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
-  @Rule(desc = "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
-        category = { FEATURE, GILLY })
-  public static boolean phantomsObeyHostileMobCap = false;
-
   @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
         category = { FEATURE, EXPERIMENTAL, GILLY })
   public static boolean spectatorPlayersUsePortals = false;
@@ -83,6 +79,6 @@ public class GillyCarpetAddonsSettings {
   public enum MovableBlockOptions {
     TRUE(),
     FALSE(),
-    DROP_AS_ITEM_ON_EXPLOSION();
+    DROP_AS_ITEM_ON_EXPLOSION()
   }
 }

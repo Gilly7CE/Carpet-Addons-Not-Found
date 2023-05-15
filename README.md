@@ -150,15 +150,6 @@ blocks.
 - Required options: `true`, `false`
 - Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
 
-### phantomsObeyHostileMobCap
-
-Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
-
-- Type: `boolean`
-- Default value: `false`
-- Required options: `true`, `false`
-- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
-
 ### spectatorPlayersUsePortals
 
 Spectator players can go through nether portals, end portals and end gateways.
