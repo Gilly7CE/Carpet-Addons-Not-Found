@@ -110,7 +110,7 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
     }
 
     // Assign a random empty slot the result ItemStack
-    int slot = serverWorld.random.nextBetween(0, dispenserBlockEntity.size() - 1);
+    int slot = serverWorld.random.nextInt(0, dispenserBlockEntity.size());
     ItemStack resultStack = customBehavior.dispense(blockPointer, itemStack);
     dispenserBlockEntity.setStack(slot, resultStack);
     ci.cancel();

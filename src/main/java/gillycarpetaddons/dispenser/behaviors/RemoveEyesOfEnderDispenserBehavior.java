@@ -68,7 +68,7 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
   }
 
   private boolean addToFirstAvailableSlot(DispenserBlockEntity dispenserBlockEntity, Item itemToAdd) {
-    for (int slot = 0; slot < DispenserBlockEntity.INVENTORY_SIZE; slot++) {
+    for (int slot = 0; slot < dispenserBlockEntity.size(); slot++) {
       ItemStack currentSlotStack = dispenserBlockEntity.getStack(slot);
       ItemStack newStack = addItemToStack(currentSlotStack, itemToAdd);
       if (newStack != null) {

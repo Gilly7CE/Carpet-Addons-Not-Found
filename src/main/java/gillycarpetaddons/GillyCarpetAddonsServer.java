@@ -2,7 +2,7 @@ package gillycarpetaddons;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpet.api.settings.SettingsManager;
+import carpet.settings.SettingsManager;
 import carpet.utils.Translations;
 import gillycarpetaddons.ruleobservers.movableSpawnerRuleObserver;
 import net.fabricmc.api.ModInitializer;
@@ -17,7 +17,7 @@ public class GillyCarpetAddonsServer implements CarpetExtension, ModInitializer 
 
   @Override
   public void onGameStarted() {
-    SettingsManager.registerGlobalRuleObserver(new movableSpawnerRuleObserver());
+    SettingsManager.addGlobalRuleObserver(new movableSpawnerRuleObserver());
     CarpetServer.settingsManager.parseSettingsClass(GillyCarpetAddonsSettings.class);
   }
 
