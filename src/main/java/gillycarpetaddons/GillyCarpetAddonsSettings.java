@@ -7,9 +7,6 @@ import static carpet.settings.RuleCategory.*;
 public class GillyCarpetAddonsSettings {
   private static final String GILLY = "gilly7ce-carpet-addons";
 
-  @Rule(desc = "Allows players in Creative mode to kill entities in one hit.", category = { FEATURE, CREATIVE, GILLY })
-  public static boolean creativePlayerOneHitKill = false;
-
   @Rule(desc = "Phantoms will no longer spawn for creative players.", category = { CREATIVE, FEATURE, GILLY })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 

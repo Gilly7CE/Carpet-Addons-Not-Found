@@ -10,11 +10,8 @@
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
-    "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
-    "accessors.EntityAccessorMixin",
-    "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin"
   ],
   "injectors": {
