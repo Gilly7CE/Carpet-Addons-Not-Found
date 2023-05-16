@@ -25,8 +25,18 @@ jobs:
       - name: Publish mod
         uses: Kir-Antipov/mc-publish@v3.2
         with:
-          version-type: alpha
+          version-type: release
           version-resolver: releases
           dependencies: |
             carpet | depends
+
+          # Publish to modrinth
+          modrinth-id: iIPoKpIW
+          modrinth-token: "${{ secrets.MODRINTH_TOKEN }}"
+
+          # Publish to curseforge
+          curseforge-id: 862771
+          curseforge-token: "${{ secrets.CURSEFORGE_TOKEN }}"
+
+          # Publish to github
           github-token: ${{ secrets.GITHUB_TOKEN }}
