@@ -7,9 +7,6 @@ import static carpet.settings.RuleCategory.*;
 public class GillyCarpetAddonsSettings {
   private static final String GILLY = "gilly7ce-carpet-addons";
 
-  @Rule(desc = "Allows players in Creative mode to kill entities in one hit.", category = { FEATURE, CREATIVE, GILLY })
-  public static boolean creativePlayerOneHitKill = false;
-
   @Rule(desc = "Phantoms will no longer spawn for creative players.", category = { CREATIVE, FEATURE, GILLY })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
@@ -68,10 +65,6 @@ public class GillyCarpetAddonsSettings {
         category = { SURVIVAL, GILLY })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
-  @Rule(desc = "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
-        category = { FEATURE, GILLY })
-  public static boolean phantomsObeyHostileMobCap = false;
-
   @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
         category = { FEATURE, EXPERIMENTAL, GILLY })
   public static boolean spectatorPlayersUsePortals = false;
@@ -83,6 +76,6 @@ public class GillyCarpetAddonsSettings {
   public enum MovableBlockOptions {
     TRUE(),
     FALSE(),
-    DROP_AS_ITEM_ON_EXPLOSION();
+    DROP_AS_ITEM_ON_EXPLOSION()
   }
 }

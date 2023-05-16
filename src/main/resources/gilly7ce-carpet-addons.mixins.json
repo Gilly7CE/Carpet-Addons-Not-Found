@@ -10,14 +10,9 @@
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
-    "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
-    "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
-    "accessors.EntityAccessorMixin",
-    "invokers.EntityInvokerMixin",
-    "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin"
+    "invokers.ExperienceOrbEntityInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
