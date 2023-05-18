@@ -17,7 +17,8 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin"
+    "invokers.SpawnHelperInfoInvokerMixin",
+    "replaceFlowerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
