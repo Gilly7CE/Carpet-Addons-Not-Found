@@ -4,9 +4,7 @@
   "version": "${version}",
   "name": "Gilly7CE's Carpet Addons",
   "description": "Addons for the Fabric Carpet mod",
-  "authors": [
-    "Gilly7CE"
-  ],
+  "authors": ["Gilly7CE", "Serzbiedry"],
   "contact": {
     "homepage": "https://github.com/Gilly7CE",
     "sources": "https://github.com/Gilly7CE/Gilly7CE-Carpet-Addons"
@@ -15,13 +13,9 @@
   "icon": "assets/gilly7ce-carpet-addons/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "gillycarpetaddons.GillyCarpetAddonsServer"
-    ]
+    "main": ["gillycarpetaddons.GillyCarpetAddonsServer"]
   },
-  "mixins": [
-    "gilly7ce-carpet-addons.mixins.json"
-  ],
+  "mixins": ["gilly7ce-carpet-addons.mixins.json"],
   "depends": {
     "fabricloader": ">=0.14.19",
     "minecraft": "1.17.1",
