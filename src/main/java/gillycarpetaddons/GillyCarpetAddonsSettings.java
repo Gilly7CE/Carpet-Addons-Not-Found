@@ -7,9 +7,6 @@ import static carpet.api.settings.RuleCategory.*;
 public class GillyCarpetAddonsSettings {
   private static final String GILLY = "gilly7ce-carpet-addons";
 
-  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
-  public static boolean replaceableFlowers = false;
-
   @Rule(categories = { FEATURE, CREATIVE, GILLY })
   public static boolean creativePlayerOneHitKill = false;
 
@@ -57,6 +54,9 @@ public class GillyCarpetAddonsSettings {
 
   @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
   public static boolean spectatorPlayersUsePortals = false;
+
+  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
+  public static boolean replaceableFlowers = false;
 
   @Rule(categories = { FEATURE, GILLY })
   public static boolean xpBubbleColumnInteraction = false;
