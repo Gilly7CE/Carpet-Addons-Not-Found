@@ -7,8 +7,8 @@ import static carpet.api.settings.RuleCategory.*;
 public class GillyCarpetAddonsSettings {
   private static final String GILLY = "gilly7ce-carpet-addons";
 
-  @Rule(categories = {FEATURE, SURVIVAL, GILLY})
-  public static boolean replaceFlowers = false;
+  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
+  public static boolean replaceableFlowers = false;
 
   @Rule(categories = { FEATURE, CREATIVE, GILLY })
   public static boolean creativePlayerOneHitKill = false;
@@ -64,6 +64,6 @@ public class GillyCarpetAddonsSettings {
   public enum MovableBlockOptions {
     TRUE(),
     FALSE(),
-    DROP_AS_ITEM_ON_EXPLOSION();
+    DROP_AS_ITEM_ON_EXPLOSION()
   }
 }
