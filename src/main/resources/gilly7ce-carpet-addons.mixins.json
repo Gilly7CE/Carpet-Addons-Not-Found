@@ -6,6 +6,7 @@
     "DispenserBlock_GetCustomBehaviorMixin",
     "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
+    "FlowerBlock_replaceFlowersMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
@@ -17,8 +18,7 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin",
-    "replaceFlowerMixin"
+    "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
