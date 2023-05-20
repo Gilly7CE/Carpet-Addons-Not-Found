@@ -6,13 +6,14 @@
     "DispenserBlock_GetCustomBehaviorMixin",
     "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
-    "FlowerBlock_replaceFlowersMixin",
+    "FlowerBlock_ReplaceFlowersMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
+    "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin"
   ],
   "injectors": {
