@@ -10,27 +10,27 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
+import static gillycarpetaddons.GillyCarpetAddonsSettings.ReplaceableFlowersOptions;
 import static gillycarpetaddons.GillyCarpetAddonsSettings.replaceableFlowers;
 
 @Mixin(FlowerBlock.class)
-public abstract class FlowerBlock_replaceFlowersMixin extends Block {
-
-  //makes ide happy
-  FlowerBlock_replaceFlowersMixin() {
+public abstract class FlowerBlock_ReplaceFlowersMixin extends Block {
+  FlowerBlock_ReplaceFlowersMixin() {
     super(Settings.of(Material.PLANT));
   }
 
-  //overrides canReplace
+  @Override
   public boolean canReplace(BlockState state, ItemPlacementContext context) {
-    if (!replaceableFlowers) {
+    if (replaceableFlowers == ReplaceableFlowersOptions.FALSE) {
       return super.canReplace(state, context);
     }
+    //From AbstrackBlock.canReplace but without Material.isReplacable check.
     return context.getStack().isEmpty() || !context.getStack().isOf(this.asItem());
   }
 
-  //to make replace flowers drop their item
+  @Override
   public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-    if (replaceableFlowers && newState.getMaterial() != Material.AIR && !moved) {
+    if (replaceableFlowers != ReplaceableFlowersOptions.FALSE && newState.getMaterial() != Material.AIR && !moved) {
       dropStack(world, pos, new ItemStack(this.asItem(), 1));
     }
     super.onStateReplaced(state, world, pos, newState, moved);
