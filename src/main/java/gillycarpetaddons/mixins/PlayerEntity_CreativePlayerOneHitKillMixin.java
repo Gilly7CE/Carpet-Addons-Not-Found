@@ -4,6 +4,7 @@ import gillycarpetaddons.GillyCarpetAddonsSettings;
 import gillycarpetaddons.mixins.accessors.EntityAccessorMixin;
 import gillycarpetaddons.mixins.invokers.EntityInvokerMixin;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.entity.player.PlayerAbilities;
@@ -20,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Arrays;
+import java.util.List;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements EntityAccessorMixin, EntityInvokerMixin {
@@ -29,6 +31,11 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
 
   @Shadow
   public abstract SoundCategory getSoundCategory();
+
+  private final List<EntityType<?>> excludedEntities = Arrays.asList(
+          EntityType.PLAYER,
+          EntityType.ITEM_FRAME,
+          EntityType.GLOW_ITEM_FRAME);
 
   /**
    * This is adapted from the
@@ -49,11 +56,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
   )
   public void creativeKill(Entity target, CallbackInfo ci) {
     World world = this.getWorld();
-    if (!GillyCarpetAddonsSettings.creativePlayerOneHitKill
-        || world.isClient
-        || !this.abilities.creativeMode
-        || !EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
-        || target instanceof PlayerEntity) {
+    if (!canCreativeKill(target, world)) {
       return;
     }
 
@@ -68,6 +71,14 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
             1.0f,
             1.0f);
     ci.cancel();
+  }
+
+  private boolean canCreativeKill(Entity target, World world) {
+    return GillyCarpetAddonsSettings.creativePlayerOneHitKill
+           && !world.isClient
+           && this.abilities.creativeMode
+           && EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
+           && !(excludedEntities.contains(target.getType()));
   }
 
   private void instantKillTarget(Entity target) {
