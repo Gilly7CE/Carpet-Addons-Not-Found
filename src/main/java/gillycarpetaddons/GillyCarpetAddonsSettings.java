@@ -52,11 +52,11 @@ public class GillyCarpetAddonsSettings {
   @Rule(categories = { FEATURE, GILLY })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
+  public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
+
   @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
   public static boolean spectatorPlayersUsePortals = false;
-
-  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
-  public static boolean replaceableFlowers = false;
 
   @Rule(categories = { FEATURE, GILLY })
   public static boolean xpBubbleColumnInteraction = false;
@@ -65,5 +65,11 @@ public class GillyCarpetAddonsSettings {
     TRUE(),
     FALSE(),
     DROP_AS_ITEM_ON_EXPLOSION()
+  }
+
+  public enum ReplaceableFlowersOptions {
+    FALSE,
+    ONE_TALL_FLOWERS(),
+    ALL_FLOWERS()
   }
 }
