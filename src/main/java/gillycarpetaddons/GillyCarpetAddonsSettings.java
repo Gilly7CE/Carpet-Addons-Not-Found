@@ -65,6 +65,9 @@ public class GillyCarpetAddonsSettings {
         category = { SURVIVAL, GILLY })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @Rule(desc = "Placing blocks on flowers will replace them like grass.", category = { FEATURE, SURVIVAL, GILLY })
+  public static boolean replaceableFlowers = false;
+
   @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
         category = { FEATURE, EXPERIMENTAL, GILLY })
   public static boolean spectatorPlayersUsePortals = false;
