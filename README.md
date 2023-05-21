@@ -173,6 +173,14 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
+### replaceableFlowers
+
+Placing blocks on flowers will replace them like grass.
+
+- Type: `ReplaceableFlowersOptions`
+- Default value: `false`
+- Required options: `false`, `one_tall_flowers`, `all_flowers`
+
 ### spectatorPlayersUsePortals
 
 Spectator players can go through nether portals, end portals and end gateways.
