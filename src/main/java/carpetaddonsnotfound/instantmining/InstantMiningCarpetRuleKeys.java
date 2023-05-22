@@ -1,4 +1,4 @@
-package gillycarpetaddons.instantmining;
+package carpetaddonsnotfound.instantmining;
 
 public class InstantMiningCarpetRuleKeys {
   public static final String netheriteAxeWood = "netheriteAxeWood";

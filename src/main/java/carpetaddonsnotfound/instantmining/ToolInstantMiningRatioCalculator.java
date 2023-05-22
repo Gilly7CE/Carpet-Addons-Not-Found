@@ -1,6 +1,6 @@
-package gillycarpetaddons.instantmining;
+package carpetaddonsnotfound.instantmining;
 
-import gillycarpetaddons.lists.BlockList;
+import carpetaddonsnotfound.lists.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.*;

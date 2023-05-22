@@ -9,21 +9,21 @@ import net.fabricmc.api.ModInitializer;
 
 import java.util.Map;
 
-public class GillyCarpetAddonsServer implements CarpetExtension, ModInitializer {
+public class CarpetAddonsNotFoundServer implements CarpetExtension, ModInitializer {
   @Override
   public void onInitialize() {
-    CarpetServer.manageExtension(new GillyCarpetAddonsServer());
+    CarpetServer.manageExtension(new CarpetAddonsNotFoundServer());
   }
 
   @Override
   public void onGameStarted() {
     SettingsManager.addGlobalRuleObserver(new movableSpawnerRuleObserver());
-    CarpetServer.settingsManager.parseSettingsClass(GillyCarpetAddonsSettings.class);
+    CarpetServer.settingsManager.parseSettingsClass(CarpetAddonsNotFoundSettings.class);
   }
 
   @Override
   public String version() {
-    return "gilly7ce-carpet-addons";
+    return "carpet-addons-not-found";
   }
 
   @Override

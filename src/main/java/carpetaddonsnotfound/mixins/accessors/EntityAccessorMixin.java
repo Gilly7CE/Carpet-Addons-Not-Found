@@ -1,4 +1,4 @@
-package gillycarpetaddons.mixins.accessors;
+package carpetaddonsnotfound.mixins.accessors;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.world.World;

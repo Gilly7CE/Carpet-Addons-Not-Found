@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.mixins.invokers.ExperienceOrbEntityInvokerMixin;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.mixins.invokers.ExperienceOrbEntityInvokerMixin;
 import net.minecraft.entity.ExperienceOrbEntity;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
@@ -18,7 +18,7 @@ public abstract class ExperienceOrbEntity_XpBubbleColumnInteractionMixin {
           )
   )
   private void applyWaterMovementRedirect(ExperienceOrbEntity instance) {
-    if (!GillyCarpetAddonsSettings.xpBubbleColumnInteraction) {
+    if (!CarpetAddonsNotFoundSettings.xpBubbleColumnInteraction) {
       // Do vanilla behavior
       ((ExperienceOrbEntityInvokerMixin) instance).invokeApplyWaterMovement();
       return;

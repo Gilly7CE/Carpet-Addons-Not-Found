@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.helpers.ChunkManagerHelper;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.ChunkManagerHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerChunkManager;
 import net.minecraft.world.SpawnDensityCapper;
@@ -34,7 +34,7 @@ public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
           SpawnHelper.ChunkSource chunkSource,
           SpawnDensityCapper densityCapper) {
     SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
-    if (GillyCarpetAddonsSettings.phantomsObeyHostileMobCap) {
+    if (CarpetAddonsNotFoundSettings.phantomsObeyHostileMobCap) {
       ChunkManagerHelper.setInfo(info);
     }
     return info;

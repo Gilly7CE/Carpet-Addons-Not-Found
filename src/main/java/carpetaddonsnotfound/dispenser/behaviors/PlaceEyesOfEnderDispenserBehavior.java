@@ -1,7 +1,7 @@
-package gillycarpetaddons.dispenser.behaviors;
+package carpetaddonsnotfound.dispenser.behaviors;
 
-import gillycarpetaddons.dispenser.DispenserItemUsageContext;
-import gillycarpetaddons.helpers.EndPortalFrameHelper;
+import carpetaddonsnotfound.dispenser.DispenserItemUsageContext;
+import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

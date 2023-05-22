@@ -1,8 +1,8 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.helpers.ChunkManagerHelper;
-import gillycarpetaddons.mixins.invokers.SpawnHelperInfoInvokerMixin;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.ChunkManagerHelper;
+import carpetaddonsnotfound.mixins.invokers.SpawnHelperInfoInvokerMixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,8 +18,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static gillycarpetaddons.GillyCarpetAddonsSettings.disablePhantomSpawningForCreativePlayers;
-import static gillycarpetaddons.GillyCarpetAddonsSettings.phantomsObeyHostileMobCap;
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.disablePhantomSpawningForCreativePlayers;
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.phantomsObeyHostileMobCap;
 
 /**
  * This is originally adapted from the
@@ -76,7 +76,7 @@ public abstract class PhantomSpawnerMixin {
   private void isInMushroomFieldsBiome(ServerWorld instance, Entity entity) {
     BlockPos pos = entity.getBlockPos();
     RegistryEntry<Biome> registryEntry = instance.getBiome(pos);
-    if (!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields ||
+    if (!CarpetAddonsNotFoundSettings.disablePhantomSpawningInMushroomFields ||
         registryEntry.getKey().get() != BiomeKeys.MUSHROOM_FIELDS) {
       instance.spawnNewEntityAndPassengers(entity);
     }

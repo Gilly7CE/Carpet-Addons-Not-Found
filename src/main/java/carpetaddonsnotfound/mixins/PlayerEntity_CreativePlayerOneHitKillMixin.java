@@ -1,8 +1,8 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.mixins.accessors.EntityAccessorMixin;
-import gillycarpetaddons.mixins.invokers.EntityInvokerMixin;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.mixins.accessors.EntityAccessorMixin;
+import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
@@ -74,7 +74,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
   }
 
   private boolean canCreativeKill(Entity target, World world) {
-    return GillyCarpetAddonsSettings.creativePlayerOneHitKill
+    return CarpetAddonsNotFoundSettings.creativePlayerOneHitKill
            && !world.isClient
            && this.abilities.creativeMode
            && EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
