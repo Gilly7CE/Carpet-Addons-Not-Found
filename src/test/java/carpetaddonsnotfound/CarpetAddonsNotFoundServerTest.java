@@ -1,4 +1,4 @@
-package gillycarpetaddons;
+package carpetaddonsnotfound;
 
 import carpet.CarpetServer;
 import net.minecraft.Bootstrap;

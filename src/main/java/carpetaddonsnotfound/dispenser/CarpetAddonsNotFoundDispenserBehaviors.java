@@ -1,9 +1,9 @@
-package gillycarpetaddons.dispenser;
+package carpetaddonsnotfound.dispenser;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.dispenser.behaviors.PlaceEyesOfEnderDispenserBehavior;
-import gillycarpetaddons.dispenser.behaviors.RemoveEyesOfEnderDispenserBehavior;
-import gillycarpetaddons.helpers.EndPortalFrameHelper;
+import carpetaddonsnotfound.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.dispenser.behaviors.PlaceEyesOfEnderDispenserBehavior;
+import carpetaddonsnotfound.dispenser.behaviors.RemoveEyesOfEnderDispenserBehavior;
+import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
