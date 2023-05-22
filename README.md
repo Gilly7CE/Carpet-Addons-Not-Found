@@ -17,7 +17,9 @@
 
 This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and adds useful features to the game which would be cool to have in the Vanilla game.
 
-Not all additions here are my own, or were my own idea to start with. This mod is a collaborative effort.
+This is the work of the [404 Not Found Technical Server](https://discord.gg/eBJbuNcGkH).
+
+The mod was formely called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this will be "Carpet Addons Not Found".
 
 ## Installation
 
