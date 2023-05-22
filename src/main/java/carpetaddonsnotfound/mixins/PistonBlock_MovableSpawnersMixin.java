@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
 import carpet.CarpetSettings;
-import gillycarpetaddons.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PistonBlock;
@@ -34,7 +34,7 @@ public abstract class PistonBlock_MovableSpawnersMixin {
     Block block_1 = blockState_1.getBlock();
     // Make spawners movable if rules enabled
     if (CarpetSettings.movableBlockEntities
-        && GillyCarpetAddonsSettings.movableSpawners
+        && CarpetAddonsNotFoundSettings.movableSpawners
         && block_1 instanceof SpawnerBlock) {
       cir.setReturnValue(true);
     }

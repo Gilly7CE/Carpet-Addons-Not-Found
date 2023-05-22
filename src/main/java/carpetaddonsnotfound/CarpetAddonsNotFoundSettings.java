@@ -4,61 +4,61 @@ import carpet.api.settings.Rule;
 
 import static carpet.api.settings.RuleCategory.*;
 
-public class GillyCarpetAddonsSettings {
-  private static final String GILLY = "gilly7ce-carpet-addons";
+public class CarpetAddonsNotFoundSettings {
+  private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
 
-  @Rule(categories = { FEATURE, CREATIVE, GILLY })
+  @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
 
-  @Rule(categories = { CREATIVE, FEATURE, GILLY })
+  @Rule(categories = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
-  @Rule(categories = { FEATURE, GILLY })
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningInMushroomFields = false;
 
-  @Rule(categories = { FEATURE, DISPENSER, GILLY })
+  @Rule(categories = { FEATURE, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersPlaceEyesOfEnder = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, DISPENSER, GILLY })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersRemoveEyesOfEnder = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean movableSpawners = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheriteAxeInstantMineWood = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineBlueIce = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineCobblestone = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineDeepslate = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineEndStone = false;
 
-  @Rule(categories = { SURVIVAL, GILLY })
+  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
-  @Rule(categories = { FEATURE, GILLY })
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
-  @Rule(categories = { FEATURE, SURVIVAL, GILLY })
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, GILLY })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
-  @Rule(categories = { FEATURE, GILLY })
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean xpBubbleColumnInteraction = false;
 
   public enum MovableBlockOptions {

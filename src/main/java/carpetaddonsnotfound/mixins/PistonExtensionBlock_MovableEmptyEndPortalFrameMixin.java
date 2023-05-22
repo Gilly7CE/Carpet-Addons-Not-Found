@@ -1,6 +1,6 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -34,8 +34,8 @@ public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
                                                CallbackInfoReturnable<List<ItemStack>> cir,
                                                PistonBlockEntity pistonBlockEntity) {
     Block pushedBlock = pistonBlockEntity.getPushedBlock().getBlock();
-    if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames !=
-        GillyCarpetAddonsSettings.MovableBlockOptions.DROP_AS_ITEM_ON_EXPLOSION
+    if (CarpetAddonsNotFoundSettings.movableEmptyEndPortalFrames !=
+        CarpetAddonsNotFoundSettings.MovableBlockOptions.DROP_AS_ITEM_ON_EXPLOSION
         || pushedBlock != Blocks.END_PORTAL_FRAME) {
       return;
     }

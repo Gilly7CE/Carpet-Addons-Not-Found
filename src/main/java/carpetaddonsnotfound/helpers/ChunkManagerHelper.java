@@ -1,4 +1,4 @@
-package gillycarpetaddons.helpers;
+package carpetaddonsnotfound.helpers;
 
 import net.minecraft.world.SpawnHelper;
 

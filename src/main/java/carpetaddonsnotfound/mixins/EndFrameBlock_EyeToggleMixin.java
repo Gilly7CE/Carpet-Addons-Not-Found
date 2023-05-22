@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.helpers.EndPortalFrameHelper;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,7 +31,7 @@ public abstract class EndFrameBlock_EyeToggleMixin {
                             PlayerEntity player,
                             Hand hand,
                             BlockHitResult hit) {
-    if (GillyCarpetAddonsSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)) {
+    if (CarpetAddonsNotFoundSettings.dropEyesOfEnderFromEndPortalFrame && state.get(EYE)) {
       EndPortalFrameHelper.setEmptyEndPortalFrameState(world, state, pos);
       dropStack(world, pos.up(), new ItemStack(Items.ENDER_EYE, 1));
       return ActionResult.success(world.isClient);

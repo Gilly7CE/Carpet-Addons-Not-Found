@@ -1,6 +1,6 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.dispenser.GillyCarpetAddonDispenserBehaviors;
+import carpetaddonsnotfound.dispenser.CarpetAddonsNotFoundDispenserBehaviors;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.entity.DispenserBlockEntity;
@@ -52,7 +52,7 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
                                                        int i,
                                                        ItemStack itemStack) {
     DispenserBehavior customBehavior =
-            GillyCarpetAddonDispenserBehaviors.getCustomDispenserBehavior(
+            CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(
                     serverWorld,
                     pos,
                     blockPointer,
@@ -99,7 +99,7 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
                                                     DispenserBlockEntity dispenserBlockEntity) {
     ItemStack itemStack = ItemStack.EMPTY;
     DispenserBehavior customBehavior =
-            GillyCarpetAddonDispenserBehaviors.getCustomDispenserBehavior(
+            CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(
                     serverWorld,
                     pos,
                     blockPointer,

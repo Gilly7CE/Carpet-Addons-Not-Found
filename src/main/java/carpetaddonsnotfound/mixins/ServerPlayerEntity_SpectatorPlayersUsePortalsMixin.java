@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
 import com.mojang.authlib.GameProfile;
-import gillycarpetaddons.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -35,7 +35,7 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
   @Override
   public void move(MovementType type, Vec3d movement) {
     super.move(type, movement);
-    if (!GillyCarpetAddonsSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() ||
+    if (!CarpetAddonsNotFoundSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() ||
         this.hasPassengers() || !this.canUsePortals()) {
       return;
     }

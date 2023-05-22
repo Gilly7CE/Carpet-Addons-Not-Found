@@ -1,4 +1,4 @@
-package gillycarpetaddons.instantmining;
+package carpetaddonsnotfound.instantmining;
 
 import net.minecraft.item.ToolMaterial;
 
