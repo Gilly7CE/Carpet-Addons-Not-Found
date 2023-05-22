@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "package": "carpetaddonsnotfound.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "DispenserBlock_GetCustomBehaviorMixin",
+    "EndFrameBlock_EyeToggleMixin",
+    "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
+    "FlowerBlock_ReplaceFlowersMixin",
+    "PhantomSpawnerMixin",
+    "PistonBlock_MovableEmptyEndPortalFrameMixin",
+    "PistonBlock_MovableSpawnersMixin",
+    "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
+    "PlayerEntity_CreativePlayerOneHitKillMixin",
+    "PlayerEntity_InstantMineMixin",
+    "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
+    "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
+    "TallFlowerBlock_ReplaceFlowersMixin",
+    "accessors.EntityAccessorMixin",
+    "invokers.EntityInvokerMixin",
+    "invokers.ExperienceOrbEntityInvokerMixin",
+    "invokers.SpawnHelperInfoInvokerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,23 +1,25 @@
-<img src="./src/main/resources/assets/gilly7ce-carpet-addons/icon.png" align="right" width="128px"/>
+<img src="./src/main/resources/assets/carpet-addons-not-found/icon.png" align="right" width="128px"/>
 
-# Gilly7CE-Carpet-Addons
+# Carpet-Addons-Not-Found
 
 ![Curseforge downloads](https://cf.way2muchnoise.eu/full_862771_downloads.svg)
 ![Modrinth Downloads](https://img.shields.io/modrinth/dt/iIPoKpIW?style=social&logo=modrinth)
-![GitHub all releases](https://img.shields.io/github/downloads/Gilly7CE/Gilly7CE-Carpet-Addons/total?style=social)
+![GitHub all releases](https://img.shields.io/github/downloads/Gilly7CE/Carpet-Addons-Not-Found/total?style=social)
 
-![GitHub](https://img.shields.io/github/license/Gilly7CE/Gilly7CE-Carpet-Addons)
+![GitHub](https://img.shields.io/github/license/Gilly7CE/Carpet-Addons-Not-Found)
 
 ![Curseforge available for](https://cf.way2muchnoise.eu/versions/862771.svg)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Gilly7CE/gilly7ce-carpet-addons?label=latest%20release)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Gilly7CE/Carpet-Addons-Not-Found?label=latest%20release)
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/mainbuild.yml?label=production%20build)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/prbuild.yml?label=dev%20build)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Gilly7CE-Carpet-Addons/publish.yml?label=publish%20build)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/mainbuild.yml?label=production%20build)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/prbuild.yml?label=dev%20build)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/publish.yml?label=publish%20build)
 
 This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and adds useful features to the game which would be cool to have in the Vanilla game.
 
-Not all additions here are my own, or were my own idea to start with. This mod is a collaborative effort.
+This is the work of the [404 Not Found Technical Server](https://discord.gg/eBJbuNcGkH).
+
+The mod was formerly called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this will be "Carpet Addons Not Found".
 
 ## Installation
 
@@ -36,7 +38,7 @@ Allows players in Creative mode to kill entities in one hit.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `CREATIVE`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
 - Additional notes:
   - This only works on non-player entities.
 
@@ -47,7 +49,7 @@ Phantoms will no longer spawn for creative players.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `CREATIVE`, `FEATURE`, `GILLY7CE-CARPET-ADDON`
+- Categories: `CREATIVE`, `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
 
 ### disablePhantomSpawningInMushroomFields
 
@@ -56,7 +58,7 @@ Phantoms will no longer spawn in a mushroom fields biome.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
 
 ### dispensersPlaceEyesOfEnder
 
@@ -65,7 +67,7 @@ Dispensers can place eyes of ender into end portal frames.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `DISPENSER`, `CARPET-ADDONS-NOT-FOUND`
 
 ### dispensersRemoveEyesOfEnder
 
@@ -74,7 +76,7 @@ Dispensers can remove eyes of ender from full end portal frames. Any connecting 
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `DISPENSER`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `DISPENSER`, `CARPET-ADDONS-NOT-FOUND`
 
 ### dropEyesOfEnderFromEndPortalFrame
 
@@ -84,7 +86,7 @@ in the process. Any connecting end portals will break.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### movableEmptyEndPortalFrames
 
@@ -95,7 +97,7 @@ being pushed by a piston.
 - Type: `MovableBlockOptions`
 - Default value: `false`
 - Required options: `true`, `false`, `drop_as_items_on_explosion`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### movableSpawners
 
@@ -105,7 +107,7 @@ This requires the carpet `movableBlockEntities` rule to be enabled.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheriteAxeInstantMineWood
 
@@ -115,7 +117,7 @@ blocks.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheritePickaxeInstantMineBlueIce
 
@@ -124,7 +126,7 @@ A netherite pickaxe with efficiency V combined with the haste II status effect w
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheritePickaxeInstantMineCobblestone
 
@@ -134,7 +136,7 @@ blocks.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheritePickaxeInstantMineDeepslate
 
@@ -143,7 +145,7 @@ A netherite pickaxe with efficiency V combined with the haste II status effect w
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheritePickaxeInstantMineEndStone
 
@@ -152,7 +154,7 @@ A netherite pickaxe with efficiency V combined with the haste II status effect w
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### netheritePickaxeInstantMineNetherBricks
 
@@ -162,7 +164,7 @@ blocks.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `SURVIVAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### phantomsObeyHostileMobCap
 
@@ -171,7 +173,7 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
 
 ### replaceableFlowers
 
@@ -180,6 +182,7 @@ Placing blocks on flowers will replace them like grass.
 - Type: `ReplaceableFlowersOptions`
 - Default value: `false`
 - Required options: `false`, `one_tall_flowers`, `all_flowers`
+- Categories: `FEATURE`, `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### spectatorPlayersUsePortals
 
@@ -188,7 +191,7 @@ Spectator players can go through nether portals, end portals and end gateways.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `EXPERIMENTAL`, `CARPET-ADDONS-NOT-FOUND`
 
 ### xpBubbleColumnInteraction
 
@@ -197,7 +200,7 @@ Bubble columns will push or pull XP orb entities like with other entities and it
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
 
 ## Contributing
 
