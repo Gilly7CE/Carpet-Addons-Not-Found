@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 /**
  * Tests for the GillyCarpetAddonsSetting class
  */
-public final class GillyCarpetAddonsServerTest {
+public final class CarpetAddonsNotFoundServerTest {
   @BeforeAll
   public static void setup() {
     SharedConstants.createGameVersion();
@@ -23,7 +23,7 @@ public final class GillyCarpetAddonsServerTest {
    */
   @Test
   public void onGameStartedTest() {
-    CarpetServer.manageExtension(new GillyCarpetAddonsServer());
+    CarpetServer.manageExtension(new CarpetAddonsNotFoundServer());
     Assertions.assertDoesNotThrow(CarpetServer::onGameStarted);
   }
 }

@@ -1,4 +1,4 @@
-package gillycarpetaddons.instantmining;
+package carpetaddonsnotfound.instantmining;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;

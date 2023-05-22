@@ -1,7 +1,7 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
-import gillycarpetaddons.helpers.EndPortalFrameHelper;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -38,7 +38,7 @@ public abstract class PistonBlock_MovableEmptyEndPortalFrameMixin {
                                                    CallbackInfoReturnable<Boolean> cir) {
     Block currentBlock = state.getBlock();
     // Only allow empty end portal frames to be moved
-    if (GillyCarpetAddonsSettings.movableEmptyEndPortalFrames != GillyCarpetAddonsSettings.MovableBlockOptions.FALSE
+    if (CarpetAddonsNotFoundSettings.movableEmptyEndPortalFrames != CarpetAddonsNotFoundSettings.MovableBlockOptions.FALSE
         && currentBlock == Blocks.END_PORTAL_FRAME
         && !EndPortalFrameHelper.hasEyeOfEnder(state)) {
       cir.setReturnValue(true);

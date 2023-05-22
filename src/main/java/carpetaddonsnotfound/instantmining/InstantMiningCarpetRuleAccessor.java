@@ -1,6 +1,6 @@
-package gillycarpetaddons.instantmining;
+package carpetaddonsnotfound.instantmining;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 
 import java.util.HashMap;
 import java.util.function.Supplier;
@@ -11,16 +11,16 @@ public class InstantMiningCarpetRuleAccessor {
   static {
     carpetRules = new HashMap<>();
     carpetRules.put(InstantMiningCarpetRuleKeys.netheriteAxeWood,
-                    () -> GillyCarpetAddonsSettings.netheriteAxeInstantMineWood);
+                    () -> CarpetAddonsNotFoundSettings.netheriteAxeInstantMineWood);
     carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeBlueIce,
-                    () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineBlueIce);
+                    () -> CarpetAddonsNotFoundSettings.netheritePickaxeInstantMineBlueIce);
     carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeCobblestone,
-                    () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineCobblestone);
+                    () -> CarpetAddonsNotFoundSettings.netheritePickaxeInstantMineCobblestone);
     carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeDeepslate,
-                    () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineDeepslate);
+                    () -> CarpetAddonsNotFoundSettings.netheritePickaxeInstantMineDeepslate);
     carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeEndStone,
-                    () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineEndStone);
+                    () -> CarpetAddonsNotFoundSettings.netheritePickaxeInstantMineEndStone);
     carpetRules.put(InstantMiningCarpetRuleKeys.netheritePickaxeNetherBricks,
-                    () -> GillyCarpetAddonsSettings.netheritePickaxeInstantMineNetherBricks);
+                    () -> CarpetAddonsNotFoundSettings.netheritePickaxeInstantMineNetherBricks);
   }
 }

@@ -1,4 +1,4 @@
-package gillycarpetaddons.dispenser;
+package carpetaddonsnotfound.dispenser;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;

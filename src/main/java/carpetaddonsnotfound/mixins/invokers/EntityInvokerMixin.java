@@ -1,4 +1,4 @@
-package gillycarpetaddons.mixins.invokers;
+package carpetaddonsnotfound.mixins.invokers;
 
 import net.minecraft.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;

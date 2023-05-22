@@ -1,5 +1,5 @@
 {
-  "carpet.category.gilly7ce_carpet_addons": "gilly7ce-carpet-addons",
+  "carpet.category.carpet_addons_not_found": "carpet-addons-not-found",
   "carpet.rule.creativePlayerOneHitKill.desc": "Allows players in Creative mode to kill entities in one hit.",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",

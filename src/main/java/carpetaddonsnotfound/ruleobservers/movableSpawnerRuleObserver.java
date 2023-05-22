@@ -1,4 +1,4 @@
-package gillycarpetaddons.ruleobservers;
+package carpetaddonsnotfound.ruleobservers;
 
 import carpet.CarpetSettings;
 import carpet.api.settings.CarpetRule;
