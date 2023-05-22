@@ -1,6 +1,6 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.instantmining.BlockBreakingSpeedRatioCalculator;
+import carpetaddonsnotfound.instantmining.BlockBreakingSpeedRatioCalculator;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

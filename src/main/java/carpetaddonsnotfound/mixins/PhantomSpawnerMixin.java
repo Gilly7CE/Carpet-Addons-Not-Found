@@ -1,6 +1,6 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
-import gillycarpetaddons.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static gillycarpetaddons.GillyCarpetAddonsSettings.disablePhantomSpawningForCreativePlayers;
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.disablePhantomSpawningForCreativePlayers;
 
 @Mixin(PhantomSpawner.class)
 public abstract class PhantomSpawnerMixin {
@@ -50,7 +50,7 @@ public abstract class PhantomSpawnerMixin {
   private void isInMushroomFieldsBiome(ServerWorld instance, Entity entity) {
     BlockPos pos = entity.getBlockPos();
     Biome biome = instance.getBiome(pos);
-    if (!GillyCarpetAddonsSettings.disablePhantomSpawningInMushroomFields ||
+    if (!CarpetAddonsNotFoundSettings.disablePhantomSpawningInMushroomFields ||
         biome.getCategory() != Biome.Category.MUSHROOM) {
       instance.spawnEntityAndPassengers(entity);
     }

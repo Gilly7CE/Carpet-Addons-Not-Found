@@ -1,4 +1,4 @@
-package gillycarpetaddons.mixins;
+package carpetaddonsnotfound.mixins;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,8 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
-import static gillycarpetaddons.GillyCarpetAddonsSettings.ReplaceableFlowersOptions;
-import static gillycarpetaddons.GillyCarpetAddonsSettings.replaceableFlowers;
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.ReplaceableFlowersOptions;
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.replaceableFlowers;
 
 @Mixin(TallFlowerBlock.class)
 public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {

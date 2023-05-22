@@ -1,6 +1,6 @@
 package carpetaddonsnotfound.dispenser;
 
-import carpetaddonsnotfound.GillyCarpetAddonsSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.dispenser.behaviors.PlaceEyesOfEnderDispenserBehavior;
 import carpetaddonsnotfound.dispenser.behaviors.RemoveEyesOfEnderDispenserBehavior;
 import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
-public class GillyCarpetAddonDispenserBehaviors {
+public class CarpetAddonsNotFoundDispenserBehaviors {
   private static final DispenserBehavior PLACE_EYE_OF_ENDER = new PlaceEyesOfEnderDispenserBehavior();
   private static final DispenserBehavior REMOVE_EYE_OF_ENDER = new RemoveEyesOfEnderDispenserBehavior();
 
@@ -42,12 +42,12 @@ public class GillyCarpetAddonDispenserBehaviors {
   private static DispenserBehavior getEndPortalFrameDispenserBehavior(BlockState frontBlockState, Item item) {
     if (!EndPortalFrameHelper.hasEyeOfEnder(frontBlockState)
         && item == Items.ENDER_EYE
-        && GillyCarpetAddonsSettings.dispensersPlaceEyesOfEnder) {
+        && CarpetAddonsNotFoundSettings.dispensersPlaceEyesOfEnder) {
       return PLACE_EYE_OF_ENDER;
     }
 
     // If item is air, i.e. a free slot, then we can allow removal. An eye of ender will also be acceptable.
-    if (GillyCarpetAddonsSettings.dispensersRemoveEyesOfEnder
+    if (CarpetAddonsNotFoundSettings.dispensersRemoveEyesOfEnder
         && (item == Items.AIR || item == Items.ENDER_EYE)) {
       return REMOVE_EYE_OF_ENDER;
     }
