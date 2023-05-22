@@ -1,10 +1,10 @@
-package gillycarpetaddons;
+package carpetaddonsnotfound;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.api.settings.SettingsManager;
 import carpet.utils.Translations;
-import gillycarpetaddons.ruleobservers.movableSpawnerRuleObserver;
+import carpetaddonsnotfound.ruleobservers.movableSpawnerRuleObserver;
 import net.fabricmc.api.ModInitializer;
 
 import java.util.Map;
@@ -29,6 +29,6 @@ public class GillyCarpetAddonsServer implements CarpetExtension, ModInitializer 
   @Override
   public Map<String, String> canHasTranslations(String lang) {
     return Translations.getTranslationFromResourcePath(
-            String.format("assets/gilly7ce-carpet-addons/lang/%s.json", lang));
+            String.format("assets/carpet-addons-not-found/lang/%s.json", lang));
   }
 }
