@@ -19,7 +19,7 @@ This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and 
 
 This is the work of the [404 Not Found Technical Server](https://discord.gg/eBJbuNcGkH).
 
-The mod was formely called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this will be "Carpet Addons Not Found".
+The mod was formerly called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this will be "Carpet Addons Not Found".
 
 ## Installation
 
