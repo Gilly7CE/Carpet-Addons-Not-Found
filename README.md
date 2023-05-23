@@ -203,6 +203,10 @@ the running minecraft instance along with this mod.
 
 ### Workflow for PRs
 
+The workflow will depend on whether you're a contributor with write access or not. If you're not a contributor please
+follow this [general guidance](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/), however
+please still follow the branching and commit guidance below.
+
 To contribute a code change to the repository, please do the following:
 
 - Create a branch with a name that matches the following format: \<type of issue>-\<author name>-\<issue number>
@@ -222,7 +226,7 @@ To contribute a code change to the repository, please do the following:
   - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
   - Ensure any Mixin classes are declared `abstract`.
 
-If you have any issues doing any of these, please contact the following:
+If you have any issues doing any of these, or would like to request becoming a contributor, please contact the following:
 
 - Gilly7CE
   - Discord: Gilly7CE#7462
