@@ -246,7 +246,7 @@ To contribute a code change to the repository, please do the following:
   - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
   - Ensure any Mixin classes are declared `abstract`.
 
-If you have any issues doing any of these, or would like to request becoming a contributor, please contact the following:
+If you have any issues doing any of these, please contact the following:
 
 - Gilly7CE
   - Discord: Gilly7CE#7462
