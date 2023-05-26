@@ -13,6 +13,7 @@
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_InstantMineMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
+    "SpawnHelper_disableMobSpawningInMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin"
   ],
