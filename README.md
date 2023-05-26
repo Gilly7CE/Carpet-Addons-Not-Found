@@ -51,7 +51,6 @@ Disables mobs from spawning in the End.
 - Required options: `true`, `false`
 - Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
 
-
 ### disableMobSpawningInNether
 
 Disables mobs from spawning in the Nether.
@@ -218,7 +217,7 @@ A spawn egg will spawn a mob with no AI.
 
 - Type: `boolean`
 - Default value: `false`
-- Required optionsL `true`, `false`
+- Required options: `true`, `false`
 - Categories: `FEATURE`, `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
 
 ### spectatorPlayersUsePortals
