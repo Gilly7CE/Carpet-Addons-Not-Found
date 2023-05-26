@@ -31,6 +31,34 @@ and [fabric loader](https://fabricmc.net/).
 
 ## Features
 
+### disableMobSpawningInNether
+
+Disables mobs from spawning in the Nether.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
+### disableMobSpawningInOverworld
+
+Disables mobs from spawning in the Overworld.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+-
+
+### disableMobSpawningInEnd
+
+Disables mobs from spawning in the End.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### disablePhantomSpawningForCreativePlayers
 
 Phantoms will no longer spawn for creative players.

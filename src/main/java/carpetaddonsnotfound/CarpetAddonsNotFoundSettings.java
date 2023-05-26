@@ -7,6 +7,15 @@ import static carpet.settings.RuleCategory.*;
 public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
 
+  @Rule(desc = "Disables mobs from spawning in the End.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInEnd= false;
+
+  @Rule(desc = "Disables mobs from spawning in the Nether.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInNether= false;
+
+  @Rule(desc = "Disables mobs from spawning in the Overworld.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInOverworld= false;
+
   @Rule(desc = "Phantoms will no longer spawn for creative players.", category = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
@@ -20,15 +29,6 @@ public class CarpetAddonsNotFoundSettings {
                "break.",
         category = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersRemoveEyesOfEnder = false;
-
-  @Rule(desc = "Disables mobs from spawning in the End.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInEnd= false;
-
-  @Rule(desc = "Disables mobs from spawning in the Nether.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInNether= false;
-
-  @Rule(desc = "Disables mobs from spawning in the Overworld.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInOverworld= false;
 
   @Rule(desc = "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an " +
                "empty end portal frame in the process. Any connecting end portals will break.",
