@@ -8,21 +8,24 @@ public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
 
   @Rule(desc = "Disables mobs from spawning in the End.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInEnd= false;
+  public static boolean disableMobSpawningInEnd = false;
 
   @Rule(desc = "Disables mobs from spawning in the Nether.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInNether= false;
+  public static boolean disableMobSpawningInNether = false;
 
   @Rule(desc = "Disables mobs from spawning in the Overworld.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInOverworld= false;
+  public static boolean disableMobSpawningInOverworld = false;
 
-  @Rule(desc = "Phantoms will no longer spawn for creative players.", category = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @Rule(desc = "Phantoms will no longer spawn for creative players.",
+        category = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
-  @Rule(desc = "Phantoms will no longer spawn in a mushroom fields biome.", category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @Rule(desc = "Phantoms will no longer spawn in a mushroom fields biome.",
+        category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningInMushroomFields = false;
 
-  @Rule(desc = "Dispensers can place eyes of ender into end portal frames.", category = { FEATURE, DISPENSER, CARPET_ADDONS_NOT_FOUND })
+  @Rule(desc = "Dispensers can place eyes of ender into end portal frames.",
+        category = { FEATURE, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersPlaceEyesOfEnder = false;
 
   @Rule(desc = "Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will " +
