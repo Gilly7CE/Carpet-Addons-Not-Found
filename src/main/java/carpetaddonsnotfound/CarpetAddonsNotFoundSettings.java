@@ -10,6 +10,15 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
 
+  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInNether = false;
+
+  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInOverworld = false;
+
+  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean disableMobSpawningInEnd = false;
+
   @Rule(categories = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
@@ -21,15 +30,6 @@ public class CarpetAddonsNotFoundSettings {
 
   @Rule(categories = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersRemoveEyesOfEnder = false;
-
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInOverworld= false;
-
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInNether= false;
-
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
-  public static boolean disableMobSpawningInEnd= false;
 
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
