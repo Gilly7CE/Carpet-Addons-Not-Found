@@ -19,6 +19,7 @@
   "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks.",
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
+  "carpet.rule.spawnEggsSpawnMobsWithNoAI.desc" : "A spawn egg will spawn a mob with no AI.",
   "carpet.rule.spectatorPlayersUsePortals.desc": "Spectator players can go through nether portals, end portals and end gateways.",
   "carpet.rule.xpBubbleColumnInteraction.desc": "Bubble columns will push or pull XP orb entities like with other entities and items."
 }

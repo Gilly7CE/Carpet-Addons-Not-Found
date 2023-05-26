@@ -64,6 +64,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
+  @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean spawnEggsSpawnMobsWithNoAI = false;
+
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
