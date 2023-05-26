@@ -31,6 +31,15 @@ and [fabric loader](https://fabricmc.net/).
 
 ## Features
 
+### disableMobSpawningInEnd
+
+Disables mobs from spawning in the End.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### disableMobSpawningInNether
 
 Disables mobs from spawning in the Nether.
@@ -43,16 +52,6 @@ Disables mobs from spawning in the Nether.
 ### disableMobSpawningInOverworld
 
 Disables mobs from spawning in the Overworld.
-
-- Type: `boolean`
-- Default value: `false`
-- Required options: `true`, `false`
-- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
--
-
-### disableMobSpawningInEnd
-
-Disables mobs from spawning in the End.
 
 - Type: `boolean`
 - Default value: `false`

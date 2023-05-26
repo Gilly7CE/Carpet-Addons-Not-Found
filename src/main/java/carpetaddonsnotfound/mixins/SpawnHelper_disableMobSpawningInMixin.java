@@ -14,9 +14,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(SpawnHelper.class)
 public abstract class SpawnHelper_disableMobSpawningInMixin {
   @Inject(method = "isAcceptableSpawnPosition", at = @At("HEAD"), cancellable = true)
-  private static void isAcceptableSpawnPosition(final ServerWorld world, final Chunk chunk, final BlockPos.Mutable pos,
-                                                final double squaredDistance,
-                                                final CallbackInfoReturnable<Boolean> cir) {
+  private static void isAcceptableSpawnPosition(ServerWorld world, Chunk chunk, BlockPos.Mutable pos,
+                                                double squaredDistance, CallbackInfoReturnable<Boolean> cir) {
     var dimensionId = world.getRegistryKey().getValue();
     if ((CarpetAddonsNotFoundSettings.disableMobSpawningInOverworld && dimensionId == World.OVERWORLD.getValue()) ||
         (CarpetAddonsNotFoundSettings.disableMobSpawningInNether && dimensionId == World.NETHER.getValue()) ||
