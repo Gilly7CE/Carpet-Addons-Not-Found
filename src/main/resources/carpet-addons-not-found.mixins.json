@@ -15,6 +15,7 @@
     "PlayerEntity_InstantMineMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
+    "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_disableMobSpawningInMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "accessors.EntityAccessorMixin",
