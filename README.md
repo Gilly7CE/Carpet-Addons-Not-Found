@@ -191,6 +191,15 @@ Placing blocks on flowers will replace them like grass.
 - Required options: `false`, `one_tall_flowers`, `all_flowers`
 - Categories: `FEATURE`, `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
+### spawnEggsSpawnMobsWithNoAI
+
+A spawn egg will spawn a mob with no AI.
+
+- Type: `boolean`
+- Default value: `false`
+- Required optionsL `true`, `false`
+- Categories: `FEATURE`, `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### spectatorPlayersUsePortals
 
 Spectator players can go through nether portals, end portals and end gateways.

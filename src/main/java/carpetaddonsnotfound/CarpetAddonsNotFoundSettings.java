@@ -80,6 +80,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(desc = "Placing blocks on flowers will replace them like grass.", category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
+  @Rule(desc = "A spawn egg will spawn a mob with no AI.", category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean spawnEggsSpawnMobsWithNoAI = false;
+
   @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
