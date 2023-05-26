@@ -1,6 +1,9 @@
 {
   "carpet.category.carpet_addons_not_found": "carpet-addons-not-found",
   "carpet.rule.creativePlayerOneHitKill.desc": "Allows players in Creative mode to kill entities in one hit.",
+  "carpet.rule.disableMobSpawningInEnd.desc": "Disables mobs from spawning in the End",
+  "carpet.rule.disableMobSpawningInNether.desc": "Disables mobs from spawning in the Nether",
+  "carpet.rule.disableMobSpawningInOverworld.desc": "Disables mobs from spawning in the Overworld",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
