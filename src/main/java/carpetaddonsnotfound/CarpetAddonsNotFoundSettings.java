@@ -1,6 +1,9 @@
 package carpetaddonsnotfound;
 
+import carpet.api.settings.CarpetRule;
 import carpet.api.settings.Rule;
+import carpet.api.settings.Validator;
+import net.minecraft.server.command.ServerCommandSource;
 
 import static carpet.api.settings.RuleCategory.*;
 
@@ -52,6 +55,14 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(
+          options = { "1", "40", "80", "72000" },
+          categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND },
+          strict = false,
+          validators = OneHourMaxDelayLimit.class
+  )
+  public static int portalSpectatorDelay = 1;
+
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
@@ -71,5 +82,19 @@ public class CarpetAddonsNotFoundSettings {
     FALSE,
     ONE_TALL_FLOWERS(),
     ALL_FLOWERS()
+  }
+
+
+  private static class OneHourMaxDelayLimit extends Validator<Integer> {
+    @Override
+    public Integer validate(ServerCommandSource source, CarpetRule<Integer> currentRule, Integer newValue,
+                            String string) {
+      return (newValue > 0 && newValue <= 72000) ? newValue : null;
+    }
+
+    @Override
+    public String description() {
+      return "You must choose a value from 1 to 72000";
+    }
   }
 }

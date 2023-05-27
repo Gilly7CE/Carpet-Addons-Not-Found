@@ -13,6 +13,7 @@
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
+    "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
