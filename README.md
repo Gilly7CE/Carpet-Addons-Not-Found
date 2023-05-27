@@ -15,11 +15,13 @@
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/prbuild.yml?label=dev%20build)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/publish.yml?label=publish%20build)
 
-This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and adds useful features to the game which would be cool to have in the Vanilla game.
+This mod extends the [carpet mod](https://github.com/gnembon/fabric-carpet) and adds useful features to the game which
+would be cool to have in the Vanilla game.
 
 This is the work of the [404 Not Found Technical Server](https://discord.gg/eBJbuNcGkH).
 
-The mod was formerly called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this will be "Carpet Addons Not Found".
+The mod was formerly called "Gilly7CE Carpet Addons", which releases 1.1.0 and prior were called. Versions after this
+will be "Carpet Addons Not Found".
 
 ## Installation
 
@@ -181,6 +183,17 @@ blocks.
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
+
+### portalCreativeDelay
+
+Amount of delay ticks to use a nether portal in creative
+
+- Type: `Integer`
+- Default value: `1`
+- Suggested options: `1`, `40`, `80`, `72000`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+- Additional notes:
+  - You must choose a value from 1 to 72000
 
 ### replaceableFlowers
 
