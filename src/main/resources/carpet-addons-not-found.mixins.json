@@ -12,6 +12,7 @@
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_InstantMineMixin",
+    "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_disableMobSpawningInMixin",
