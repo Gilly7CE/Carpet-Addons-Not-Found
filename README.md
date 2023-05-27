@@ -208,12 +208,12 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 
 Amount of delay ticks to use a nether portal in creative
 
-* Type: `Integer`
-* Default value: `1`
-* Suggested options: `1`, `40`, `80`, `72000`
-* Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
-* Additional notes:
-    * You must choose a value from 1 to 72000
+- Type: `Integer`
+- Default value: `1`
+- Suggested options: `1`, `40`, `80`, `72000`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+- Additional notes:
+    - You must choose a value from 1 to 72000
 
 ### replaceableFlowers
 
