@@ -44,6 +44,33 @@ Allows players in Creative mode to kill entities in one hit.
 - Additional notes:
     - This only works on non-player entities.
 
+### disableMobSpawningInEnd
+
+Disables mobs from spawning in the End.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
+### disableMobSpawningInNether
+
+Disables mobs from spawning in the Nether.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
+### disableMobSpawningInOverworld
+
+Disables mobs from spawning in the Overworld.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### disablePhantomSpawningForCreativePlayers
 
 Phantoms will no longer spawn for creative players.
@@ -196,6 +223,15 @@ Placing blocks on flowers will replace them like grass.
 - Default value: `false`
 - Required options: `false`, `one_tall_flowers`, `all_flowers`
 - Categories: `FEATURE`, `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
+
+### spawnEggsSpawnMobsWithNoAI
+
+A spawn egg will spawn a mob with no AI.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
 
 ### spectatorPlayersUsePortals
 
