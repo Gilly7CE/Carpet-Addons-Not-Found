@@ -15,7 +15,7 @@ public abstract class PlayerEntity_PortalSpectatorDelayMixin {
   public abstract boolean isSpectator();
 
   @Inject(method = "getMaxNetherPortalTime", at = @At("HEAD"), cancellable = true)
-  void getMaxNetherPortalTime(CallbackInfoReturnable<Integer> cir) {
+  private void getMaxNetherPortalTime(CallbackInfoReturnable<Integer> cir) {
     if (this.isSpectator()) {
       cir.setReturnValue(CarpetAddonsNotFoundSettings.portalSpectatorDelay);
     }

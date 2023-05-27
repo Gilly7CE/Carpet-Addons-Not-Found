@@ -184,14 +184,15 @@ blocks.
 - Required options: `true`, `false`
 - Categories: `SURVIVAL`, `CARPET-ADDONS-NOT-FOUND`
 
-### portalCreativeDelay
+### portalSpectatorDelay
 
-Amount of delay ticks to use a nether portal in creative
+Amount of delay ticks to use a nether portal in spectator mode.
+This requires the `spectatorPlayersUsePortals` rule to be enabled.
 
 - Type: `Integer`
 - Default value: `1`
 - Suggested options: `1`, `40`, `80`, `72000`
-- Categories: `CREATIVE`, `CARPET-ADDONS-NOT-FOUND`
+- Categories: `SPECTATOR`, `CARPET-ADDONS-NOT-FOUND`
 - Additional notes:
   - You must choose a value from 1 to 72000
 
@@ -220,7 +221,7 @@ Spectator players can go through nether portals, end portals and end gateways.
 - Type: `boolean`
 - Default value: `false`
 - Required options: `true`, `false`
-- Categories: `FEATURE`, `EXPERIMENTAL`, `CARPET-ADDONS-NOT-FOUND`
+- Categories: `SPECTATOR`, `CARPET-ADDONS-NOT-FOUND`
 
 ### xpBubbleColumnInteraction
 
