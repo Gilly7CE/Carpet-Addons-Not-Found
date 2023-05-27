@@ -1,6 +1,9 @@
 package carpetaddonsnotfound;
 
+import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
+import carpet.settings.Validator;
+import net.minecraft.server.command.ServerCommandSource;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -85,6 +88,15 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(
+          desc = "Amount of delay ticks to use a nether portal in spectator mode.",
+          options = { "1", "40", "80", "72000" },
+          category = { CREATIVE, CARPET_ADDONS_NOT_FOUND },
+          strict = false,
+          validate = OneHourMaxDelayLimit.class
+  )
+  public static int portalSpectatorDelay = 1;
+
   @Rule(desc = "Placing blocks on flowers will replace them like grass.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
@@ -110,5 +122,19 @@ public class CarpetAddonsNotFoundSettings {
     FALSE,
     ONE_TALL_FLOWERS(),
     ALL_FLOWERS()
+  }
+
+
+  private static class OneHourMaxDelayLimit extends Validator<Integer> {
+    @Override
+    public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue,
+                            String string) {
+      return (newValue > 0 && newValue <= 72000) ? newValue : null;
+    }
+
+    @Override
+    public String description() {
+      return "You must choose a value from 1 to 72000";
+    }
   }
 }
