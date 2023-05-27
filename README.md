@@ -173,6 +173,15 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
+### pickFlowersFromPots
+
+Right-clicking on a flowerpot with a flower in it will put the flower into your invantory.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
+
 ### spectatorPlayersUsePortals
 
 Spectator players can go through nether portals, end portals and end gateways.

@@ -6,6 +6,7 @@
     "DispenserBlock_GetCustomBehaviorMixin",
     "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
+    "FlowerPotBlock_pickFlowersFromPots",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
