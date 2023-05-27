@@ -1,6 +1,9 @@
 {
   "carpet.category.carpet_addons_not_found": "carpet-addons-not-found",
   "carpet.rule.creativePlayerOneHitKill.desc": "Allows players in Creative mode to kill entities in one hit.",
+  "carpet.rule.disableMobSpawningInEnd.desc": "Disables mobs from spawning in the End",
+  "carpet.rule.disableMobSpawningInNether.desc": "Disables mobs from spawning in the Nether",
+  "carpet.rule.disableMobSpawningInOverworld.desc": "Disables mobs from spawning in the Overworld",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
@@ -17,6 +20,7 @@
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
   "carpet.rule.portalSpectatorDelay.desc": "Amount of delay ticks to use a nether portal in spectator mode.",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
+  "carpet.rule.spawnEggsSpawnMobsWithNoAI.desc" : "A spawn egg will spawn a mob with no AI.",
   "carpet.rule.spectatorPlayersUsePortals.desc": "Spectator players can go through nether portals, end portals and end gateways.",
   "carpet.rule.xpBubbleColumnInteraction.desc": "Bubble columns will push or pull XP orb entities like with other entities and items."
 }
