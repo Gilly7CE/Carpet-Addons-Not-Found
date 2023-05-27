@@ -1,14 +1,13 @@
 package carpetaddonsnotfound;
 
-import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
-import carpet.settings.Validator;
-import net.minecraft.server.command.ServerCommandSource;
+import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
 
 import static carpet.settings.RuleCategory.*;
 
 public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
+  private static final String SPECTATOR = "spectator";
 
   @Rule(desc = "Allows players in Creative mode to kill entities in one hit.",
         category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
@@ -89,9 +88,9 @@ public class CarpetAddonsNotFoundSettings {
   public static boolean phantomsObeyHostileMobCap = false;
 
   @Rule(
-          desc = "Amount of delay ticks to use a nether portal in spectator mode.",
+          desc = "Amount of delay ticks to use a nether portal in spectator mode. Requires the `spectatorPlayersUsePortals` rule to be enabled.",
           options = { "1", "40", "80", "72000" },
-          category = { CREATIVE, CARPET_ADDONS_NOT_FOUND },
+          category = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
           strict = false,
           validate = OneHourMaxDelayLimit.class
   )
@@ -122,19 +121,5 @@ public class CarpetAddonsNotFoundSettings {
     FALSE,
     ONE_TALL_FLOWERS(),
     ALL_FLOWERS()
-  }
-
-
-  private static class OneHourMaxDelayLimit extends Validator<Integer> {
-    @Override
-    public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue,
-                            String string) {
-      return (newValue > 0 && newValue <= 72000) ? newValue : null;
-    }
-
-    @Override
-    public String description() {
-      return "You must choose a value from 1 to 72000";
-    }
   }
 }
