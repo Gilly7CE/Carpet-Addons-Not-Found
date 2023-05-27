@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+// A priority less than 1000 is required for this mixin to be loaded before base carpet.
 @Mixin(value = PlayerEntity.class, priority = 999)
 public abstract class PlayerEntity_PortalSpectatorDelayMixin {
   @Shadow
