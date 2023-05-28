@@ -15,7 +15,7 @@
     "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
-    "SpawnHelper_disableMobSpawningInMixin",
+    "SpawnHelper_DisableMobSpawningInMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin"
   ],
