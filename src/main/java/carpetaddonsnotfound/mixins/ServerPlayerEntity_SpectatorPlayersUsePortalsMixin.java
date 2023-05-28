@@ -1,7 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
-import com.mojang.authlib.GameProfile;
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
