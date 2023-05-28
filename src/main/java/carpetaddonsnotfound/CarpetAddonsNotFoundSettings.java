@@ -104,7 +104,7 @@ public class CarpetAddonsNotFoundSettings {
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
 
   @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
-        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+        category = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
   @Rule(desc = "Bubble columns will push or pull XP orb entities like with other entities and items.",
