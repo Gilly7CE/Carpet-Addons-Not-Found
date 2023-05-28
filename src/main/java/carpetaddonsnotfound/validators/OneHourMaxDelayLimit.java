@@ -1,12 +1,12 @@
 package carpetaddonsnotfound.validators;
 
-import carpet.api.settings.CarpetRule;
-import carpet.api.settings.Validator;
+import carpet.settings.ParsedRule;
+import carpet.settings.Validator;
 import net.minecraft.server.command.ServerCommandSource;
 
 public class OneHourMaxDelayLimit extends Validator<Integer> {
   @Override
-  public Integer validate(ServerCommandSource source, CarpetRule<Integer> currentRule, Integer newValue,
+  public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue,
                           String string) {
     return (newValue > 0 && newValue <= 72000) ? newValue : null;
   }
