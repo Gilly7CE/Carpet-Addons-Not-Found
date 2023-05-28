@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(SpawnHelper.class)
-public abstract class SpawnHelper_disableMobSpawningInMixin {
+public abstract class SpawnHelper_DisableMobSpawningInMixin {
   @Inject(method = "isAcceptableSpawnPosition", at = @At("HEAD"), cancellable = true)
   private static void isAcceptableSpawnPosition(ServerWorld world, Chunk chunk, BlockPos.Mutable pos,
                                                 double squaredDistance, CallbackInfoReturnable<Boolean> cir) {
