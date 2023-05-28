@@ -1,11 +1,13 @@
 package carpetaddonsnotfound;
 
 import carpet.api.settings.Rule;
+import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
 
 import static carpet.api.settings.RuleCategory.*;
 
 public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
+  private static final String SPECTATOR = "spectator";
 
   @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
@@ -61,13 +63,21 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(
+          options = { "1", "40", "80", "72000" },
+          categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
+          strict = false,
+          validators = OneHourMaxDelayLimit.class
+  )
+  public static int portalSpectatorDelay = 1;
+
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
   @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  @Rule(categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
