@@ -64,23 +64,23 @@ To contribute a code change to the repository, please do the following:
 
 - Create a branch with a name that matches the following format: \<type of issue>-\<author name>-\<issue number>
   -\<description>
-    - The issue can be omitted until one is created, however the branch should be renamed to include the issue. You can
-      do this before creating a PR. You can also create the issue in advance and assign yourself to indicate you're
-      working on it.
-    - The branch base should be targeting `main`, unless the issue is specific to a particular minecraft version of the
-      mod.
+  - The issue can be omitted until one is created, however the branch should be renamed to include the issue. You can
+    do this before creating a PR. You can also create the issue in advance and assign yourself to indicate you're
+    working on it.
+  - The branch base should be targeting `main`, unless the issue is specific to a particular minecraft version of the
+    mod.
 - When writing commits, please follow
   these [guidelines](https://initialcommit.com/blog/git-commit-messages-best-practices).
 - Once code changes have been made to the branch, push it and create a PR.
 - Additional checks before creating a PR:
-    - Right-click the project in IntelliJ IDEA and select "Reformat Code". Under "Options" select "Cleanup code" and
-      "Optimize imports". Click "Run". The code will now be formatted to the project's rules.
-    - Run the tests under the "Test" directory. Ensure they all pass.
-    - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
-    - Ensure any Mixin classes are declared `abstract`.
+  - Right-click the project in IntelliJ IDEA and select "Reformat Code". Under "Options" select "Cleanup code" and
+    "Optimize imports". Click "Run". The code will now be formatted to the project's rules.
+  - Run the tests under the "Test" directory. Ensure they all pass.
+  - Run "Minecraft Client" in release and/or debug mode. If Minecraft loads then you know the configuration is okay.
+  - Ensure any Mixin classes are declared `abstract`.
 
 If you have any issues doing any of these, please contact the following:
 
 - Gilly7CE
-    - Discord: Gilly7CE#7462
-    - Email: gilly7ce@gmail.com
+  - Discord: Gilly7CE#7462
+  - Email: gilly7ce@gmail.com
