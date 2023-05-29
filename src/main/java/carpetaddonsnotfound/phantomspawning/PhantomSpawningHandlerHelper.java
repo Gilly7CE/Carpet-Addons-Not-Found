@@ -20,9 +20,9 @@ public class PhantomSpawningHandlerHelper {
   }
 
   private static PhantomSpawningHandler createPhantomSpawningHandler() {
-    var disableForCreativePlayersHandler = new DisableForCreativePlayersHandler();
-    var disableInMushroomFieldsHandler = new DisableInMushroomFieldsHandler();
-    var obeyHostileMobCapHandler = new ObeyHostileMobCapHandler();
+    DisableForCreativePlayersHandler disableForCreativePlayersHandler = new DisableForCreativePlayersHandler();
+    DisableInMushroomFieldsHandler disableInMushroomFieldsHandler = new DisableInMushroomFieldsHandler();
+    ObeyHostileMobCapHandler obeyHostileMobCapHandler = new ObeyHostileMobCapHandler();
 
     disableForCreativePlayersHandler.setNextHandler(disableInMushroomFieldsHandler)
                                     .setNextHandler(obeyHostileMobCapHandler);
