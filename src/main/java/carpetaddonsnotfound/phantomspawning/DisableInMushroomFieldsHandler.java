@@ -2,12 +2,9 @@ package carpetaddonsnotfound.phantomspawning;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
 
 /**
  * The phantom spawning handler for the
@@ -43,10 +40,9 @@ public final class DisableInMushroomFieldsHandler implements PhantomSpawningHand
   @Override
   public boolean canSpawnPhantom(PlayerEntity playerEntity, ServerWorld world) {
     BlockPos pos = playerEntity.getBlockPos();
-    RegistryEntry<Biome> registryEntry = world.getBiome(pos);
-    RegistryKey<Biome> biomePlayerIsIn = registryEntry.getKey().orElse(null);
+    Biome biome = world.getBiome(pos);
     if (CarpetAddonsNotFoundSettings.disablePhantomSpawningInMushroomFields &&
-        biomePlayerIsIn == BiomeKeys.MUSHROOM_FIELDS) {
+        biome.getCategory() == Biome.Category.MUSHROOM) {
       return false;
     }
 
