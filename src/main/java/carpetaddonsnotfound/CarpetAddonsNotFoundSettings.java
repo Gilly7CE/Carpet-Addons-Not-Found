@@ -93,6 +93,10 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(desc = "Right-clicking on a flowerpot with a flower in it will put the flower into your inventory",
+        category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean pickFlowersFromPots = false;
+
   @Rule(
           desc = "Amount of delay ticks to use a nether portal in spectator mode. Requires the `spectatorPlayersUsePortals` rule to be enabled.",
           options = { "1", "40", "80", "72000" },
