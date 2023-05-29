@@ -1,6 +1,5 @@
 package carpetaddonsnotfound.mixins;
 
-import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.helpers.ChunkManagerHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.world.ServerChunkManager;
@@ -34,9 +33,9 @@ public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
           SpawnHelper.ChunkSource chunkSource,
           SpawnDensityCapper densityCapper) {
     SpawnHelper.Info info = SpawnHelper.setupSpawn(spawningChunkCount, entities, chunkSource, densityCapper);
-    if (CarpetAddonsNotFoundSettings.phantomsObeyHostileMobCap) {
-      ChunkManagerHelper.setInfo(info);
-    }
+    // Need to set the info to allow it to be accessed by the ObeyHostileMobCap phantom spawning handler.
+    // If we don't set this on all invocations of this method, then a null pointer exception is thrown.
+    ChunkManagerHelper.setInfo(info);
     return info;
   }
 }
