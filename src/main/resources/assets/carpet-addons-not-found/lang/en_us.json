@@ -5,7 +5,7 @@
   "carpet.rule.disableMobSpawningInNether.desc": "Disables mobs from spawning in the Nether",
   "carpet.rule.disableMobSpawningInOverworld.desc": "Disables mobs from spawning in the Overworld",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
-  "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn in a mushroom fields biome.",
+  "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn around a player that is in a mushroom fields biome.",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
   "carpet.rule.dispensersRemoveEyesOfEnder.desc": "Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.",
   "carpet.rule.dropEyesOfEnderFromEndPortalFrame.desc": "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an empty end portal frame in the process. Any connecting end portals will break.",
