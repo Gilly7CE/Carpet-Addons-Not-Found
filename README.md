@@ -71,7 +71,7 @@ Phantoms will no longer spawn for creative players.
 
 ### disablePhantomSpawningInMushroomFields
 
-Phantoms will no longer spawn in a mushroom fields biome.
+Phantoms will no longer spawn around a player that is in a mushroom fields biome.
 
 - Type: `boolean`
 - Default value: `false`

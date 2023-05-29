@@ -22,7 +22,7 @@ public class CarpetAddonsNotFoundSettings {
         category = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
-  @Rule(desc = "Phantoms will no longer spawn in a mushroom fields biome.",
+  @Rule(desc = "Phantoms will no longer spawn around a player that is in a mushroom fields biome.",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disablePhantomSpawningInMushroomFields = false;
 
