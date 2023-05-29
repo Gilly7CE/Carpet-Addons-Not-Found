@@ -22,10 +22,8 @@ public class PhantomSpawningHandlerHelper {
   private static PhantomSpawningHandler createPhantomSpawningHandler() {
     DisableForCreativePlayersHandler disableForCreativePlayersHandler = new DisableForCreativePlayersHandler();
     DisableInMushroomFieldsHandler disableInMushroomFieldsHandler = new DisableInMushroomFieldsHandler();
-    ObeyHostileMobCapHandler obeyHostileMobCapHandler = new ObeyHostileMobCapHandler();
 
-    disableForCreativePlayersHandler.setNextHandler(disableInMushroomFieldsHandler)
-                                    .setNextHandler(obeyHostileMobCapHandler);
+    disableForCreativePlayersHandler.setNextHandler(disableInMushroomFieldsHandler);
 
     return disableForCreativePlayersHandler;
   }
