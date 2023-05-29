@@ -18,6 +18,7 @@
   "carpet.rule.netheritePickaxeInstantMineEndStone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine end stone type blocks.",
   "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks.",
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
+  "carpet.rule.pickFlowersFromPots.desc": "Right-clicking on a flowerpot with a flower in it will put the flower into your invantory",
   "carpet.rule.portalSpectatorDelay.desc": "Amount of delay ticks to use a nether portal in spectator mode. Requires the `spectatorPlayersUsePortals` rule to be enabled.",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
   "carpet.rule.spawnEggsSpawnMobsWithNoAI.desc": "A spawn egg will spawn a mob with no AI.",

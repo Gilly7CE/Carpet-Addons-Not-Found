@@ -63,6 +63,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean pickFlowersFromPots = false;
+
   @Rule(
           options = { "1", "40", "80", "72000" },
           categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
