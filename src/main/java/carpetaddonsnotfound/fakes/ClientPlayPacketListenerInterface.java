@@ -7,7 +7,7 @@ import carpetaddonsnotfound.network.packets.SpectatorPlayerInPortalBlockS2CPacke
  */
 public interface ClientPlayPacketListenerInterface {
   /**
-   * Called when the server side spectator player entity is inside the
+   * Called when the server side spectator player entity is inside a nether portal block.
    *
    * @param spectatorPlayerInPortalBlockS2CPacket
    *         the packet to send to the client
