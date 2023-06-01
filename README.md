@@ -33,6 +33,15 @@ and [fabric loader](https://fabricmc.net/).
 
 ## Features
 
+### alwaysPickFlowersFromPots
+
+Right-clicking on a flowerpot containing a flower will always put the flower into your inventory.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### creativePlayerOneHitKill
 
 Allows players in Creative mode to kill entities in one hit.
@@ -203,15 +212,6 @@ Phantoms will no longer spawn if the hostile mobcap is full. This is per player.
 - Default value: `false`
 - Required options: `true`, `false`
 - Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
-
-### pickFlowersFromPots
-
-Right-clicking on a flowerpot with a flower in it will put the flower into your invantory.
-
-- Type: `boolean`
-- Default value: `false`
-- Required options: `true`, `false`
-- Categories: `FEATURE`, `GILLY7CE-CARPET-ADDON`
 
 ### portalSpectatorDelay
 
