@@ -80,9 +80,6 @@ public class CarpetAddonsNotFoundSettings {
   )
   public static int portalSpectatorDelay = 1;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
-  public static boolean replaceContentInFlowerPots = false;
-
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
