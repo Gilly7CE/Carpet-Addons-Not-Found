@@ -14,6 +14,10 @@ public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
   private static final String SPECTATOR = "spectator";
 
+  @Rule(desc = "Right-clicking on a flowerpot containing a flower will always put the flower into your inventory.",
+        category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean alwaysPickFlowersFromPots = false;
+
   @Rule(desc = "Allows players in Creative mode to kill entities in one hit. This only works on non-player entities.",
         category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
@@ -105,6 +109,10 @@ public class CarpetAddonsNotFoundSettings {
           validate = OneHourMaxDelayLimit.class
   )
   public static int portalSpectatorDelay = 1;
+
+  @Rule(desc= "When right clicking a flower pot with a pottable item, it will replace the item that already was in the pot.",
+        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean replaceContentInFlowerPots = false;
 
   @Rule(desc = "Placing blocks on flowers will replace them like grass.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
