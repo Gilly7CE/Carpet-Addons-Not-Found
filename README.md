@@ -33,6 +33,15 @@ and [fabric loader](https://fabricmc.net/).
 
 ## Features
 
+### alwaysPickFlowersFromPots
+
+Right-clicking on a flowerpot containing a flower will always put the flower into your inventory.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
+
 The list of carpet rules can be found on the [wiki](https://github.com/Gilly7CE/Carpet-Addons-Not-Found/wiki).
 
 ## Contributing
