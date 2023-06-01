@@ -12,13 +12,14 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.event.GameEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FlowerPotBlock.class)
-abstract class FlowerPotBlock_PickFlowersFromPots {
+public abstract class FlowerPotBlock_PickFlowersFromPotsMixin {
   @Inject(
           method = "onUse",
           at = @At(
@@ -35,13 +36,13 @@ abstract class FlowerPotBlock_PickFlowersFromPots {
                      CallbackInfoReturnable<ActionResult> cir) {
     Block potBlock = state.getBlock();
     Block content;
-    if (!CarpetAddonsNotFoundSettings.pickFlowersFromPots || !(potBlock instanceof FlowerPotBlock) ||
+    if (!CarpetAddonsNotFoundSettings.alwaysPickFlowersFromPots || !(potBlock instanceof FlowerPotBlock) ||
         (content = ((FlowerPotBlock) potBlock).getContent()) == Blocks.AIR) {
       cir.cancel();
-      cir.setReturnValue(ActionResult.CONSUME);
       return;
     }
     world.setBlockState(pos, Blocks.FLOWER_POT.getDefaultState(), Block.NOTIFY_ALL);
+    world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
     cir.setReturnValue(ActionResult.SUCCESS);
     if (player.isCreative()) {
       return;
