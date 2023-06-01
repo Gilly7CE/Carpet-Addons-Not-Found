@@ -2,7 +2,7 @@ package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.network.packets.SpectatorPlayerInPortalBlockS2CPacket;
 import net.minecraft.network.NetworkState;
-import net.minecraft.network.packet.Packet;
+import net.minecraft.network.Packet;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
