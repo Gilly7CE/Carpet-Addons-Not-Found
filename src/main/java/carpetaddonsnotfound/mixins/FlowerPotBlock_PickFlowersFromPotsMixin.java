@@ -37,8 +37,7 @@ public abstract class FlowerPotBlock_PickFlowersFromPotsMixin {
     Block potBlock = state.getBlock();
     Block content;
     if (!CarpetAddonsNotFoundSettings.alwaysPickFlowersFromPots ||
-        !(potBlock instanceof FlowerPotBlock flowerPotBlock) ||
-        (content = flowerPotBlock.getContent()) == Blocks.AIR) {
+        !(potBlock instanceof FlowerPotBlock flowerPotBlock) || (content = flowerPotBlock.getContent()) == Blocks.AIR) {
       return;
     }
     world.setBlockState(pos, Blocks.FLOWER_POT.getDefaultState(), Block.NOTIFY_ALL);
