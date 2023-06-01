@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.network.packets.SpectatorPlayerInPortalBlockS2CPacket;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -9,6 +10,7 @@ import net.minecraft.block.entity.EndGatewayBlockEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.registry.RegistryKey;
+import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -27,11 +29,14 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
   @Shadow
   public abstract boolean isSpectator();
 
+  @Shadow
+  public ServerPlayNetworkHandler networkHandler;
+
   /*
-      Calls original move() function then performs additional action
-      this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
-      if it was in survival game-mode at the same coordinates with default pose.
-   */
+        Calls original move() function then performs additional action
+        this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
+        if it was in survival game-mode at the same coordinates with default pose.
+     */
   @Override
   public void move(MovementType type, Vec3d movement) {
     super.move(type, movement);
@@ -59,6 +64,15 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
     //from NetherPortalBlock.onEntityCollision()
     if (block == Blocks.NETHER_PORTAL) {
       this.setInNetherPortal(pos);
+      SyncSetInNetherPortalWithClient(pos);
     }
+  }
+
+  private void SyncSetInNetherPortalWithClient(BlockPos pos) {
+    if (world.isClient()) {
+      return;
+    }
+
+    this.networkHandler.sendPacket(new SpectatorPlayerInPortalBlockS2CPacket(pos));
   }
 }
