@@ -8,6 +8,7 @@
     "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
+    "FlowerPotBlock_PickFlowersFromPotsMixin",
     "NetworkState_SpectatorPlayersUsePortalsMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",

@@ -9,6 +9,9 @@ public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
   private static final String SPECTATOR = "spectator";
 
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean alwaysPickFlowersFromPots = false;
+
   @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
 

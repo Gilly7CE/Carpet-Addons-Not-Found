@@ -33,6 +33,15 @@ and [fabric loader](https://fabricmc.net/).
 
 ## Features
 
+### alwaysPickFlowersFromPots
+
+Right-clicking on a flowerpot containing a flower will always put the flower into your inventory.
+
+- Type: `boolean`
+- Default value: `false`
+- Required options: `true`, `false`
+- Categories: `FEATURE`, `CARPET-ADDONS-NOT-FOUND`
+
 ### creativePlayerOneHitKill
 
 Allows players in Creative mode to kill entities in one hit.

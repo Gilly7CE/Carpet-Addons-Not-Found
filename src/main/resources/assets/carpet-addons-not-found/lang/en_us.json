@@ -1,5 +1,6 @@
 {
   "carpet.category.carpet_addons_not_found": "carpet-addons-not-found",
+  "carpet.rule.alwaysPickFlowersFromPots.desc": "Right-clicking on a flowerpot containing a flower will always put the flower into your inventory.",
   "carpet.rule.creativePlayerOneHitKill.desc": "Allows players in Creative mode to kill entities in one hit.",
   "carpet.rule.disableMobSpawningInEnd.desc": "Disables mobs from spawning in the End",
   "carpet.rule.disableMobSpawningInNether.desc": "Disables mobs from spawning in the Nether",
