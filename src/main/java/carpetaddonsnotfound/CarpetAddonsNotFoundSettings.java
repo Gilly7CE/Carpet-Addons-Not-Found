@@ -2,6 +2,7 @@ package carpetaddonsnotfound;
 
 import carpet.settings.Rule;
 import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
+import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -45,8 +46,9 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
-  @Rule(desc = "Allows spawners to be moved.\nThis requires the carpet movableBlockEntities rule to be enabled",
-        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  @Rule(desc = "Allows spawners to be moved.",
+        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND },
+        validate = RequiresMovableBlockEntities.class)
   public static boolean movableSpawners = false;
 
   @Rule(desc = "A netherite axe with efficiency V combined with the haste II status effect will instant mine wood and" +
