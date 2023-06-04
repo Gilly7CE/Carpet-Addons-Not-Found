@@ -1,31 +1,29 @@
 package carpetaddonsnotfound.ruleobservers;
 
-import carpet.CarpetSettings;
 import carpet.settings.ParsedRule;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import org.apache.logging.log4j.util.TriConsumer;
 
 import java.util.Objects;
 
-public final class movableSpawnerRuleObserver implements TriConsumer<ServerCommandSource, ParsedRule<?>, String> {
+public final class MovableBlockEntitiesRuleObserver implements TriConsumer<ServerCommandSource, ParsedRule<?>, String> {
   @Override
   public void accept(ServerCommandSource source, ParsedRule<?> rule, String userTypedValue) {
     // Using a string here directly feels wrong but likelihood of renaming this rule is low
-    if (!Objects.equals(rule.name, "movableSpawners")) {
+    if (!Objects.equals(rule.name, "movableBlockEntities")) {
       return;
     }
 
     boolean ruleEnabled = rule.getBoolValue();
-    if (!ruleEnabled) {
+    if (ruleEnabled || !CarpetAddonsNotFoundSettings.movableSpawners) {
       return;
     }
 
-    if (CarpetSettings.movableBlockEntities) {
-      return;
-    }
-
-    source.sendError(Text.of("The carpet rule 'movableBlockEntities' must be enabled to use this rule!"));
-    rule.set(source, String.valueOf(false));
+    source.sendFeedback(
+            Text.of("Warning: disabling `movableSpawners` as it requires `movableBlockEntities` to be enabled"),
+            true);
+    CarpetAddonsNotFoundSettings.movableSpawners = false;
   }
 }
