@@ -2,6 +2,7 @@ package carpetaddonsnotfound;
 
 import carpet.api.settings.Rule;
 import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
+import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
 
 import static carpet.api.settings.RuleCategory.*;
 
@@ -42,7 +43,8 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND },
+        validators = RequiresMovableBlockEntities.class)
   public static boolean movableSpawners = false;
 
   @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })

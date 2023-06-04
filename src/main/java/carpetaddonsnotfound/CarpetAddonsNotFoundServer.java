@@ -4,7 +4,7 @@ import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.api.settings.SettingsManager;
 import carpet.utils.Translations;
-import carpetaddonsnotfound.ruleobservers.movableSpawnerRuleObserver;
+import carpetaddonsnotfound.ruleobservers.MovableBlockEntitiesRuleObserver;
 import net.fabricmc.api.ModInitializer;
 
 import java.util.Map;
@@ -17,7 +17,7 @@ public class CarpetAddonsNotFoundServer implements CarpetExtension, ModInitializ
 
   @Override
   public void onGameStarted() {
-    SettingsManager.registerGlobalRuleObserver(new movableSpawnerRuleObserver());
+    SettingsManager.registerGlobalRuleObserver(new MovableBlockEntitiesRuleObserver());
     CarpetServer.settingsManager.parseSettingsClass(CarpetAddonsNotFoundSettings.class);
   }
 
