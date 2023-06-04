@@ -1,4 +1,4 @@
-name: build
+name: publish
 on:
   release:
     types:
@@ -40,3 +40,10 @@ jobs:
 
           # Publish to github
           github-token: ${{ secrets.GITHUB_TOKEN }}
+  update-rules-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Update wiki
+        uses: ./.github/actions/update-wiki
