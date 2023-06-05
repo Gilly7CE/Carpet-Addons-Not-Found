@@ -1,0 +1,15 @@
+name: Update Wiki Job
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-rules-wiki:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Update wiki
+        uses: ./.github/actions/update-wiki
