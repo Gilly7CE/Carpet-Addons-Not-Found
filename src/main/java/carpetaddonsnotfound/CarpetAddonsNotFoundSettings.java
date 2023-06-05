@@ -10,7 +10,7 @@ public class CarpetAddonsNotFoundSettings {
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
   private static final String SPECTATOR = "spectator";
 
-  @Rule(desc = "Allows players in Creative mode to kill entities in one hit.",
+  @Rule(desc = "Allows players in Creative mode to kill entities in one hit. This only works on non-player entities.",
         category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean creativePlayerOneHitKill = false;
 
