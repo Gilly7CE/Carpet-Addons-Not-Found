@@ -2,7 +2,6 @@ package carpetaddonsnotfound.mixins;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Material;
 import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.item.ItemPlacementContext;
@@ -16,8 +15,8 @@ import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.replaceableFlowe
 
 @Mixin(TallFlowerBlock.class)
 public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {
-  TallFlowerBlock_ReplaceFlowersMixin() {
-    super(Settings.of(Material.PLANT));
+  public TallFlowerBlock_ReplaceFlowersMixin(Settings settings) {
+    super(settings);
   }
 
   @Override
@@ -32,7 +31,7 @@ public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {
 
   @Override
   public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-    if (state.get(TallFlowerBlock.HALF) == DoubleBlockHalf.LOWER && newState.getMaterial() != Material.AIR) {
+    if (state.get(TallFlowerBlock.HALF) == DoubleBlockHalf.LOWER && !newState.isAir()) {
       dropStack(world, pos, new ItemStack(this.asItem(), 1));
     }
     super.onStateReplaced(state, world, pos, newState, moved);

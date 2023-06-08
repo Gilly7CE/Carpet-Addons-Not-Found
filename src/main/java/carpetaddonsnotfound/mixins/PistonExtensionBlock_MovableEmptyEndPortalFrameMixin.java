@@ -9,6 +9,7 @@ import net.minecraft.block.entity.PistonBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.context.LootContextParameterSet;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -30,7 +31,7 @@ public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
           locals = LocalCapture.CAPTURE_FAILHARD,
           cancellable = true)
   private void getDroppedStacksForMovableBlock(BlockState state,
-                                               LootContext.Builder builder,
+                                               LootContextParameterSet.Builder builder,
                                                CallbackInfoReturnable<List<ItemStack>> cir,
                                                PistonBlockEntity pistonBlockEntity) {
     Block pushedBlock = pistonBlockEntity.getPushedBlock().getBlock();

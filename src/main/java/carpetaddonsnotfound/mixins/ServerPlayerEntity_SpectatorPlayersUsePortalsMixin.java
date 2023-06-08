@@ -39,6 +39,7 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
      */
   @Override
   public void move(MovementType type, Vec3d movement) {
+    World world = this.getWorld();
     super.move(type, movement);
     if (!CarpetAddonsNotFoundSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() ||
         this.hasPassengers() || !this.canUsePortals()) {
@@ -64,11 +65,11 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
     //from NetherPortalBlock.onEntityCollision()
     if (block == Blocks.NETHER_PORTAL) {
       this.setInNetherPortal(pos);
-      SyncSetInNetherPortalWithClient(pos);
+      SyncSetInNetherPortalWithClient(world, pos);
     }
   }
 
-  private void SyncSetInNetherPortalWithClient(BlockPos pos) {
+  private void SyncSetInNetherPortalWithClient(World world, BlockPos pos) {
     if (world.isClient()) {
       return;
     }

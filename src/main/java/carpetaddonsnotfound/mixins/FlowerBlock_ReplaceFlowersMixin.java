@@ -3,7 +3,6 @@ package carpetaddonsnotfound.mixins;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FlowerBlock;
-import net.minecraft.block.Material;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -15,8 +14,8 @@ import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.replaceableFlowe
 
 @Mixin(FlowerBlock.class)
 public abstract class FlowerBlock_ReplaceFlowersMixin extends Block {
-  FlowerBlock_ReplaceFlowersMixin() {
-    super(Settings.of(Material.PLANT));
+  public FlowerBlock_ReplaceFlowersMixin(Settings settings) {
+    super(settings);
   }
 
   @Override
@@ -24,13 +23,13 @@ public abstract class FlowerBlock_ReplaceFlowersMixin extends Block {
     if (replaceableFlowers == ReplaceableFlowersOptions.FALSE) {
       return super.canReplace(state, context);
     }
-    //From AbstrackBlock.canReplace but without Material.isReplacable check.
+    //From AbstrackBlock.canReplace but without BlockState.isReplacable check.
     return context.getStack().isEmpty() || !context.getStack().isOf(this.asItem());
   }
 
   @Override
   public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-    if (replaceableFlowers != ReplaceableFlowersOptions.FALSE && newState.getMaterial() != Material.AIR && !moved) {
+    if (replaceableFlowers != ReplaceableFlowersOptions.FALSE && !newState.isAir() && !moved) {
       dropStack(world, pos, new ItemStack(this.asItem(), 1));
     }
     super.onStateReplaced(state, world, pos, newState, moved);
