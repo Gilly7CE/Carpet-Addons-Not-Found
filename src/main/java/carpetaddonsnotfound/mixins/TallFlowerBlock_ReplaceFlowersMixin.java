@@ -25,7 +25,7 @@ public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {
       //from TallFlowerBlock.canReplace
       return false;
     }
-    //From AbstrackBlock.canReplace but without Material.isReplacable check.
+    //From AbstrackBlock.canReplace but without BlockState.isReplacable check.
     return context.getStack().isEmpty() || !context.getStack().isOf(this.asItem());
   }
 
