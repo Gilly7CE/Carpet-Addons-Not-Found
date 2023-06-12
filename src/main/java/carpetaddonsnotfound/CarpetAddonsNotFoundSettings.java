@@ -3,10 +3,14 @@ package carpetaddonsnotfound;
 import carpet.settings.Rule;
 import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
 import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import static carpet.settings.RuleCategory.*;
 
 public class CarpetAddonsNotFoundSettings {
+  public static final Logger LOG = LoggerFactory.getLogger("carpet-addons-not-found");
+
   private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
   private static final String SPECTATOR = "spectator";
 
