@@ -15,13 +15,11 @@ public final class CarpetAddonsNotFoundClient {
   private static ClientPlayerEntity clientPlayer = null;
   private static boolean isServerCarpet = false;
 
-  public static void gameJoined(ClientPlayerEntity player)
-  {
+  public static void gameJoined(ClientPlayerEntity player) {
     clientPlayer = player;
   }
 
-  public static void disconnect()
-  {
+  public static void disconnect() {
     if (!isServerCarpet) // multiplayer connection
     {
       return;
@@ -32,13 +30,11 @@ public final class CarpetAddonsNotFoundClient {
     clientPlayer = null;
   }
 
-  public static void setCarpet()
-  {
+  public static void setCarpet() {
     isServerCarpet = true;
   }
 
-  public static ClientPlayerEntity getPlayer()
-  {
+  public static ClientPlayerEntity getPlayer() {
     return clientPlayer;
   }
 }
