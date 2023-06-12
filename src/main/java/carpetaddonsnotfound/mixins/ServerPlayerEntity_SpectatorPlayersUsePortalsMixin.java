@@ -2,7 +2,6 @@ package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.network.ServerNetworkHandler;
-import carpetaddonsnotfound.network.packets.SpectatorPlayerInPortalBlockS2CPacket;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,7 +9,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.EndGatewayBlockEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
@@ -71,7 +69,7 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
       return;
     }
 
-    ServerPlayerEntity thisServerPlayerEntity = (ServerPlayerEntity)(Object) this;
+    ServerPlayerEntity thisServerPlayerEntity = (ServerPlayerEntity) (Object) this;
     ServerNetworkHandler.sendSpectatorPlayerIsInPortalData(thisServerPlayerEntity, pos);
   }
 }
