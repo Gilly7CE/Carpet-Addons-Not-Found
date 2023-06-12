@@ -101,7 +101,7 @@ public final class ServerNetworkHandler {
   }
 
   private static boolean isLocalPlayer(ServerPlayerEntity playerEntity) {
-    return ((ServerGamePacketListenerImplInterface) playerEntity.networkHandler).getConnection().isLocal();
+    return playerEntity.networkHandler.getConnection().isLocal();
   }
 
   private static boolean isValidPlayer(ServerPlayerEntity player) {
