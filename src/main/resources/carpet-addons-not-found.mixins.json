@@ -25,9 +25,13 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin"
+    "invokers.SpawnHelperInfoInvokerMixin",
+    "network.ServerPlayNetworkHandler_CustomPacketsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "network.ClientPlayNetworkHandler_CustomPacketsMixin"
+  ]
 }
