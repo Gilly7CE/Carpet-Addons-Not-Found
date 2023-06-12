@@ -10,7 +10,7 @@ import java.util.List;
 public class BlockList {
   public static List<Block> blueIce = Collections.singletonList(
           Blocks.BLUE_ICE
-                                                               );
+  );
   public static List<Block> cobbledDeepslate = Arrays.asList(
           Blocks.COBBLED_DEEPSLATE,
           Blocks.COBBLED_DEEPSLATE_STAIRS,
@@ -30,7 +30,11 @@ public class BlockList {
           Blocks.DEEPSLATE_BRICK_WALL,
           Blocks.CHISELED_DEEPSLATE,
           Blocks.CRACKED_DEEPSLATE_BRICKS,
-          Blocks.CRACKED_DEEPSLATE_TILES);
+          Blocks.CRACKED_DEEPSLATE_TILES
+  );
+  public static List<Block> deepslate = Collections.singletonList(
+          Blocks.DEEPSLATE
+  );
   public static List<Block> cobblestone = Arrays.asList(
           Blocks.COBBLESTONE,
           Blocks.COBBLESTONE_SLAB,
@@ -40,16 +44,14 @@ public class BlockList {
           Blocks.MOSSY_COBBLESTONE_SLAB,
           Blocks.MOSSY_COBBLESTONE_STAIRS,
           Blocks.MOSSY_COBBLESTONE_WALL
-                                                       );
-  public static List<Block> deepslate = Collections.singletonList(
-          Blocks.DEEPSLATE);
+  );
   public static List<Block> endStone = Arrays.asList(
           Blocks.END_STONE,
           Blocks.END_STONE_BRICKS,
           Blocks.END_STONE_BRICK_SLAB,
           Blocks.END_STONE_BRICK_STAIRS,
           Blocks.END_STONE_BRICK_WALL
-                                                    );
+  );
   public static List<Block> netherBricks = Arrays.asList(
           Blocks.NETHER_BRICKS,
           Blocks.NETHER_BRICK_FENCE,
@@ -62,7 +64,7 @@ public class BlockList {
           Blocks.RED_NETHER_BRICK_SLAB,
           Blocks.RED_NETHER_BRICK_STAIRS,
           Blocks.RED_NETHER_BRICK_WALL
-                                                        );
+  );
   public static List<Block> wood = Arrays.asList(
           Blocks.OAK_FENCE_GATE,
           Blocks.SPRUCE_FENCE_GATE,
@@ -144,5 +146,6 @@ public class BlockList {
           Blocks.DARK_OAK_STAIRS,
           Blocks.CRIMSON_STAIRS,
           Blocks.WARPED_STAIRS,
-          Blocks.MANGROVE_STAIRS);
+          Blocks.MANGROVE_STAIRS
+  );
 }
