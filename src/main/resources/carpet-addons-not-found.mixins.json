@@ -19,9 +19,11 @@
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
-    "invokers.ExperienceOrbEntityInvokerMixin"
+    "invokers.ExperienceOrbEntityInvokerMixin",
+    "network.ServerPlayNetworkHandler_CustomPacketsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": ["network.ClientPlayNetworkHandler_CustomPacketsMixin"]
 }
