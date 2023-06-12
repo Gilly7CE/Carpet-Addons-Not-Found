@@ -1,6 +1,5 @@
 package carpetaddonsnotfound.network;
 
-import carpet.fakes.ServerGamePacketListenerImplInterface;
 import io.netty.buffer.Unpooled;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
