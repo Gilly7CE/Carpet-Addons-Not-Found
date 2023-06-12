@@ -22,7 +22,7 @@ public class ClientNetworkHandler {
 
   static {
     dataHandlers.put(NbtCompoundKeys.SpectatorPlayerInPortal.TAG, ((clientPlayerEntity, nbtElement) -> {
-      NbtCompound serverPlayerData = (NbtCompound)nbtElement;
+      NbtCompound serverPlayerData = (NbtCompound) nbtElement;
       int serverPlayerBlockPosX = serverPlayerData.getInt(NbtCompoundKeys.SpectatorPlayerInPortal.BLOCK_POS_X);
       int serverPlayerBlockPosY = serverPlayerData.getInt(NbtCompoundKeys.SpectatorPlayerInPortal.BLOCK_POS_Y);
       int serverPlayerBlockPosZ = serverPlayerData.getInt(NbtCompoundKeys.SpectatorPlayerInPortal.BLOCK_POS_Z);
@@ -33,18 +33,20 @@ public class ClientNetworkHandler {
 
   /**
    * Taken from carpet base; handles incoming data, and it is executed on the main Minecraft Thread
-   * @param data the packet data
-   * @param player the client side player
+   *
+   * @param data
+   *         the packet data
+   * @param player
+   *         the client side player
    */
-  public static void handleData(PacketByteBuf data, ClientPlayerEntity player)
-  {
+  public static void handleData(PacketByteBuf data, ClientPlayerEntity player) {
     if (data == null) {
       return;
     }
 
     int id = data.readVarInt();
 
-    if(id == CarpetAddonsNotFoundClient.HI) {
+    if (id == CarpetAddonsNotFoundClient.HI) {
       onHi(data);
       return;
     }
@@ -56,10 +58,11 @@ public class ClientNetworkHandler {
 
   /**
    * Taken and tweaked from carpet base; executed during the "handshake" between client and server.
-   * @param data packet data
+   *
+   * @param data
+   *         packet data
    */
-  private static void onHi(PacketByteBuf data)
-  {
+  private static void onHi(PacketByteBuf data) {
     CarpetAddonsNotFoundClient.setCarpet();
     // We can ensure that this packet is
     // processed AFTER the player has joined
@@ -69,8 +72,7 @@ public class ClientNetworkHandler {
   /**
    * Taken and tweaked from carpet base.
    */
-  private static void respondHello()
-  {
+  private static void respondHello() {
     CarpetAddonsNotFoundClient.getPlayer().networkHandler.sendPacket(new CustomPayloadC2SPacket(
             CarpetAddonsNotFoundClient.CARPET_ADDONS_NOT_FOUND_CHANNEL,
             (new PacketByteBuf(Unpooled.buffer())).writeVarInt(CarpetAddonsNotFoundClient.HELLO)));
@@ -78,28 +80,28 @@ public class ClientNetworkHandler {
 
   /**
    * Taken and tweaked from carpet base; syncs data between server and client players
-   * @param data the packet data
-   * @param player the client side player
+   *
+   * @param data
+   *         the packet data
+   * @param player
+   *         the client side player
    */
-  private static void onSyncData(PacketByteBuf data, ClientPlayerEntity player)
-  {
+  private static void onSyncData(PacketByteBuf data, ClientPlayerEntity player) {
     NbtCompound compound = data.readNbt();
     if (compound == null) {
       return;
     }
 
-    for (String key: compound.getKeys())
-    {
+    for (String key : compound.getKeys()) {
       if (!dataHandlers.containsKey(key)) {
-        CarpetSettings.LOG.error("Unknown carpet data: "+key);
+        CarpetSettings.LOG.error("Unknown carpet data: " + key);
         continue;
       }
 
       try {
         dataHandlers.get(key).accept(player, compound.get(key));
       }
-      catch (Exception exc)
-      {
+      catch (Exception exc) {
         CarpetSettings.LOG.info("Corrupt carpet data for " + key);
       }
     }
