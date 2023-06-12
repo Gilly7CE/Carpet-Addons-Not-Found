@@ -22,8 +22,7 @@ public abstract class ServerPlayNetworkHandler_CustomPacketsMixin {
   public ServerPlayerEntity player;
 
   @Inject(method = "onCustomPayload", at = @At("HEAD"), cancellable = true)
-  private void onCustomCarpetAddonsNotFoundPayload(CustomPayloadC2SPacket packet, CallbackInfo ci)
-  {
+  private void onCustomCarpetAddonsNotFoundPayload(CustomPayloadC2SPacket packet, CallbackInfo ci) {
     if (!CarpetAddonsNotFoundClient.CARPET_ADDONS_NOT_FOUND_CHANNEL.equals(packet.getChannel())) {
       return;
     }
