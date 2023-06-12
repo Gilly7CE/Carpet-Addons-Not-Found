@@ -1,6 +1,6 @@
 package carpetaddonsnotfound.network;
 
-import carpet.CarpetSettings;
+import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.nbt.NbtCompound;
@@ -94,7 +94,7 @@ public class ClientNetworkHandler {
 
     for (String key : compound.getKeys()) {
       if (!dataHandlers.containsKey(key)) {
-        CarpetSettings.LOG.error("Unknown carpet data: " + key);
+        CarpetAddonsNotFoundSettings.LOG.error("Unknown carpet addons not found data: " + key);
         continue;
       }
 
@@ -102,7 +102,7 @@ public class ClientNetworkHandler {
         dataHandlers.get(key).accept(player, compound.get(key));
       }
       catch (Exception exc) {
-        CarpetSettings.LOG.info("Corrupt carpet data for " + key);
+        CarpetAddonsNotFoundSettings.LOG.info("Corrupt carpet addons not found data for " + key);
       }
     }
   }
