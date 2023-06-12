@@ -30,7 +30,7 @@ public abstract class ServerPlayNetworkHandler_CustomPacketsMixin {
     // We should force onto the main thread here
     // ServerNetworkHandler.handleData can possibly mutate data that isn't
     // thread safe, and also allows for client commands to be executed
-    NetworkThreadUtils.forceMainThread(packet, (ServerPlayPacketListener) this, player.getWorld());
+    NetworkThreadUtils.forceMainThread(packet, (ServerPlayPacketListener) this, player.getServerWorld());
     ServerNetworkHandler.handleData(packet.getData(), player);
     ci.cancel();
   }
