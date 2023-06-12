@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.network.ServerNetworkHandler;
 import carpetaddonsnotfound.network.packets.SpectatorPlayerInPortalBlockS2CPacket;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
@@ -28,9 +29,6 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
 
   @Shadow
   public abstract boolean isSpectator();
-
-  @Shadow
-  public ServerPlayNetworkHandler networkHandler;
 
   /*
         Calls original move() function then performs additional action
@@ -74,6 +72,7 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
       return;
     }
 
-    this.networkHandler.sendPacket(new SpectatorPlayerInPortalBlockS2CPacket(pos));
+    ServerPlayerEntity thisServerPlayerEntity = (ServerPlayerEntity)(Object) this;
+    ServerNetworkHandler.sendSpectatorPlayerIsInPortalData(thisServerPlayerEntity, pos);
   }
 }
