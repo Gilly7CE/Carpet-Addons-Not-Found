@@ -8,6 +8,7 @@
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlock_PickFlowersFromPotsMixin",
+    "FlowerPotBlock_ReplaceFlowersInPots",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
