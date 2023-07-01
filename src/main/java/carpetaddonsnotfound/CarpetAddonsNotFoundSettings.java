@@ -72,6 +72,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean passiveEndermen = false;
+
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
