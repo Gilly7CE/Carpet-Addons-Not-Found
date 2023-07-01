@@ -69,30 +69,33 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean passiveEndermen = false;
+
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
   @Rule(
-          options = {"1", "40", "80", "72000"},
-          categories = {SPECTATOR, CARPET_ADDONS_NOT_FOUND},
+          options = { "1", "40", "80", "72000" },
+          categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
           strict = false,
           validators = OneHourMaxDelayLimit.class
   )
   public static int portalSpectatorDelay = 1;
 
-  @Rule(categories = {FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND})
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
-  @Rule(categories = {FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND})
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean replaceFlowersInPots = false;
 
-  @Rule(categories = {FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND})
+  @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
 
-  @Rule(categories = {SPECTATOR, CARPET_ADDONS_NOT_FOUND})
+  @Rule(categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
-  @Rule(categories = {FEATURE, CARPET_ADDONS_NOT_FOUND})
+  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean xpBubbleColumnInteraction = false;
 
   public enum MovableBlockOptions {
