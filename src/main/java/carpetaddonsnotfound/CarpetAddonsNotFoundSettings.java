@@ -93,6 +93,10 @@ public class CarpetAddonsNotFoundSettings {
         category = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @Rule(desc = "Endermen will no longer be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
+        category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean passiveEndermen = false;
+
   @Rule(desc = "Right-clicking on a flowerpot with a flower in it will put the flower into your inventory",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean pickFlowersFromPots = false;
