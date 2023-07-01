@@ -18,7 +18,7 @@
   "carpet.rule.netheritePickaxeInstantMineDeepslate.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine deepslate type blocks.",
   "carpet.rule.netheritePickaxeInstantMineEndStone.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine end stone type blocks.",
   "carpet.rule.netheritePickaxeInstantMineNetherBricks.desc": "A netherite pickaxe with efficiency V combined with the haste II status effect will instant mine nether brick type blocks.",
-  "carpet.rule.passiveEndermen.desc": "Endermen will no longer be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
+  "carpet.rule.passiveEndermen.desc": "Endermen will not be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
   "carpet.rule.portalSpectatorDelay.desc": "Amount of delay ticks to use a nether portal in spectator mode. Requires the `spectatorPlayersUsePortals` rule to be enabled.",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
