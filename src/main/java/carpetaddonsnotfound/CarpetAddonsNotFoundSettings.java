@@ -53,6 +53,10 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
+  @Rule(desc= "Endermen will no longer spawn in the overworld or nether. This means that the warped forest biome in the nether will be completely free of hostile mobs.",
+        category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean endermenSpawnOnlyInTheEnd = false;
+
   @Rule(desc = "Allows empty end portal frames to be moved.\nThe `drop_as_items_on_explosion` option will allow end " +
                "portal frames to drop as items when an explosion occurs whilst being pushed by a piston.",
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
@@ -110,13 +114,13 @@ public class CarpetAddonsNotFoundSettings {
   )
   public static int portalSpectatorDelay = 1;
 
-  @Rule(desc= "When right clicking a flower pot with a pottable item, it will replace the item that already was in the pot.",
-        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
-  public static boolean replaceContentInFlowerPots = false;
-
   @Rule(desc = "Placing blocks on flowers will replace them like grass.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
+
+  @Rule(desc= "When right clicking a flower pot with a pottable item, it will replace the item that already was in the pot.",
+        category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean replaceFlowersInPots = false;
 
   @Rule(desc = "A spawn egg will spawn a mob with no AI.", category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
