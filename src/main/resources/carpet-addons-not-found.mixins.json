@@ -19,6 +19,7 @@
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
+    "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
