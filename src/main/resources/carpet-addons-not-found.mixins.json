@@ -18,6 +18,7 @@
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
+    "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
     "network.ServerPlayNetworkHandler_CustomPacketsMixin"
