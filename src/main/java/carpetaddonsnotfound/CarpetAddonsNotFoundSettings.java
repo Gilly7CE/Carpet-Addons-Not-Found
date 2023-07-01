@@ -97,6 +97,10 @@ public class CarpetAddonsNotFoundSettings {
         category = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @Rule(desc = "Endermen will no longer be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
+        category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean passiveEndermen = false;
+
   @Rule(desc = "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
