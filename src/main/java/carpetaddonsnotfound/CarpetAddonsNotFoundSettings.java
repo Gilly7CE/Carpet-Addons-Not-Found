@@ -49,7 +49,7 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
-  @Rule(desc= "Endermen will no longer spawn in the overworld or nether. This means that the warped forest biome in the nether will be completely free of hostile mobs.",
+  @Rule(desc= "Disables endermen from spawning in the Overworld and Nether, only allowing them to spawn in the End.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean endermenSpawnOnlyInTheEnd = false;
 
