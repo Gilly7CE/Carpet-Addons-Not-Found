@@ -44,6 +44,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  public static boolean endermenSpawnOnlyInTheEnd = false;
+
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
