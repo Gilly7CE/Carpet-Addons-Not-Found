@@ -70,6 +70,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
+  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND }, strict = false, options = { "-1", "0", "1", "2" })
+  public static float stonecuttersDoDamage = 0.0f;
+
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean xpBubbleColumnInteraction = false;
 
