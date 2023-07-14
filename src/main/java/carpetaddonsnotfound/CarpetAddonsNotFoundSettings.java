@@ -136,6 +136,12 @@ public class CarpetAddonsNotFoundSettings {
         category = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
   public static boolean spectatorPlayersUsePortals = false;
 
+  @Rule(desc = "When a stonecutter is powered by redstone, it will damage entities standing on top of it.",
+        category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND },
+        strict = false,
+        options = { "-1", "0", "1", "2" })
+  public static float stonecuttersDoDamage = 0.0f;
+
   @Rule(desc = "Bubble columns will push or pull XP orb entities like with other entities and items.",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean xpBubbleColumnInteraction = false;
