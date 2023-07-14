@@ -4,27 +4,36 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "DispenserBlock_GetCustomBehaviorMixin",
+    "EndermanEntity_PassiveEndermenMixin",
     "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
+    "FlowerPotBlock_PickFlowersFromPotsMixin",
+    "FlowerPotBlock_ReplaceFlowersInPots",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
+    "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_disableMobSpawningInMixin",
+    "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
     "StonecutterBlock_stonecuttersDoDamageMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin"
+    "invokers.SpawnHelperInfoInvokerMixin",
+    "network.ServerPlayNetworkHandler_CustomPacketsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "client": [
+    "network.ClientPlayNetworkHandler_CustomPacketsMixin"
+  ]
 }

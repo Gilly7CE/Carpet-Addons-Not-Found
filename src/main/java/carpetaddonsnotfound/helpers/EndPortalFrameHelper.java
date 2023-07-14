@@ -55,7 +55,6 @@ public final class EndPortalFrameHelper {
     removePortal(world, pos.offset(blockState.get(EndPortalFrameBlock.FACING), 1));
   }
 
-
   /**
    * Recursive method to remove connecting portal blocks, if current block is an end portal.
    *

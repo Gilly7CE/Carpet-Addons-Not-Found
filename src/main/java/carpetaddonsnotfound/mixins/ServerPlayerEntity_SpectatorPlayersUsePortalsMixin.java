@@ -1,7 +1,8 @@
 package carpetaddonsnotfound.mixins;
 
-import com.mojang.authlib.GameProfile;
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.network.ServerNetworkHandler;
+import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -28,12 +29,13 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
   public abstract boolean isSpectator();
 
   /*
-      Calls original move() function then performs additional action
-      this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
-      if it was in survival game-mode at the same coordinates with default pose.
-   */
+        Calls original move() function then performs additional action
+        this.getBlockPos() returns coordinates of the lowest block that spectator's bounding box would be touching
+        if it was in survival game-mode at the same coordinates with default pose.
+     */
   @Override
   public void move(MovementType type, Vec3d movement) {
+    World world = this.getWorld();
     super.move(type, movement);
     if (!CarpetAddonsNotFoundSettings.spectatorPlayersUsePortals || !this.isSpectator() || this.hasVehicle() ||
         this.hasPassengers() || !this.canUsePortals()) {
@@ -59,6 +61,16 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
     //from NetherPortalBlock.onEntityCollision()
     if (block == Blocks.NETHER_PORTAL) {
       this.setInNetherPortal(pos);
+      SyncSetInNetherPortalWithClient(world, pos);
     }
+  }
+
+  private void SyncSetInNetherPortalWithClient(World world, BlockPos pos) {
+    if (world.isClient()) {
+      return;
+    }
+
+    ServerPlayerEntity thisServerPlayerEntity = (ServerPlayerEntity) (Object) this;
+    ServerNetworkHandler.sendSpectatorPlayerIsInPortalData(thisServerPlayerEntity, pos);
   }
 }
