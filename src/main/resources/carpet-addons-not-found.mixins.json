@@ -21,6 +21,7 @@
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
     "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
+    "StonecutterBlock_stonecuttersDoDamageMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
     "network.ServerPlayNetworkHandler_CustomPacketsMixin"
