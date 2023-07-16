@@ -41,6 +41,9 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersRemoveEyesOfEnder = false;
 
+  @Rule(categories = { CARPET_ADDONS_NOT_FOUND, SURVIVAL })
+  public static boolean dropAllXpOnPlayerDeath = false;
+
   @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
