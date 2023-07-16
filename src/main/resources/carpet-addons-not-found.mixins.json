@@ -15,6 +15,7 @@
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_CreativePlayerOneHitKillMixin",
+    "PlayerEntity_DropAllXpOnPlayerDeathMixin",
     "PlayerEntity_InstantMineMixin",
     "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
