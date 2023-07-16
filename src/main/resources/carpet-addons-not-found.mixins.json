@@ -20,7 +20,7 @@
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
-    "SpawnHelper_disableMobSpawningInMixin",
+    "SpawnHelper_DisableMobSpawningInMixin",
     "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
     "StonecutterBlock_stonecuttersDoDamageMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
