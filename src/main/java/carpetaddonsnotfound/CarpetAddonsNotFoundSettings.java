@@ -48,6 +48,9 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
   public static boolean dispensersRemoveEyesOfEnder = false;
 
+  @Rule(desc = "When a player dies all of their XP will be dropped.", category = { CARPET_ADDONS_NOT_FOUND, SURVIVAL })
+  public static boolean dropAllXpOnPlayerDeath = false;
+
   @Rule(desc = "A full end portal frame will drop an eye of ender when right clicked by a player, turning into an " +
                "empty end portal frame in the process. Any connecting end portals will break.",
         category = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
