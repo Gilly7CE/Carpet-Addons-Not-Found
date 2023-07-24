@@ -19,12 +19,12 @@ import org.spongepowered.asm.mixin.Mixin;
 import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.stonecuttersDoDamage;
 
 @Mixin(StonecutterBlock.class)
-public abstract class StonecutterBlock_stonecuttersDoDamageMixin extends Block {
+public abstract class StonecutterBlock_StonecuttersDoDamageMixin extends Block {
   RegistryEntry<DamageType> damageType = new RegistryEntry.Direct<>(
           new DamageType("stonecutter", DamageScaling.NEVER, 0.1f, DamageEffects.HURT)
   );
 
-  StonecutterBlock_stonecuttersDoDamageMixin(AbstractBlock.Settings settings) {
+  StonecutterBlock_StonecuttersDoDamageMixin(AbstractBlock.Settings settings) {
     super(settings);
   }
 
