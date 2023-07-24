@@ -23,7 +23,7 @@
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
     "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
-    "StonecutterBlock_stonecuttersDoDamageMixin",
+    "StonecutterBlock_StonecuttersDoDamageMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
