@@ -10,6 +10,7 @@
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlock_PickFlowersFromPotsMixin",
     "FlowerPotBlock_ReplaceFlowersInPots",
+    "LivingEntity_DropAllXpOnPlayerDeathMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
