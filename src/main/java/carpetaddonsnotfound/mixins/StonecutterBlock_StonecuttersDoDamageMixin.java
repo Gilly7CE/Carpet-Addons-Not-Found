@@ -7,12 +7,7 @@ import net.minecraft.block.StonecutterBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.damage.DamageType;
-import net.minecraft.entity.damage.DamageTypes;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
@@ -35,8 +30,6 @@ public abstract class StonecutterBlock_StonecuttersDoDamageMixin extends Block {
       return;
     }
 
-    RegistryEntry<DamageType> type =
-            world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.GENERIC).orElseThrow();
-    entity.damage(new DamageSource(type, new Vec3d(pos.getX(), pos.getY(), pos.getZ())), stonecuttersDoDamage);
+    entity.damage(DamageSource.GENERIC, stonecuttersDoDamage);
   }
 }
