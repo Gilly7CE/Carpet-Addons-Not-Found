@@ -21,11 +21,11 @@ public abstract class StonecutterBlock_StonecuttersDoDamageMixin extends Block {
 
   @Override
   public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-    if (world.isClient() || !world.isReceivingRedstonePower(pos) || stonecuttersDoDamage == 0.0f) {
+    if (world.isClient() || !world.isReceivingRedstonePower(pos) || stonecuttersDoDamage == 0) {
       return;
     }
 
-    if (stonecuttersDoDamage < 0.0f && entity instanceof LivingEntity livingEntity) {
+    if (stonecuttersDoDamage < 0 && entity instanceof LivingEntity livingEntity) {
       livingEntity.heal(-stonecuttersDoDamage);
       return;
     }

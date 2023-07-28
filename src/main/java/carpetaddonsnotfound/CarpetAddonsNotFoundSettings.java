@@ -140,7 +140,7 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND },
         strict = false,
         options = { "-1", "0", "1", "2" })
-  public static float stonecuttersDoDamage = 0.0f;
+  public static int stonecuttersDoDamage = 0;
 
   @Rule(desc = "Bubble columns will push or pull XP orb entities like with other entities and items.",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
