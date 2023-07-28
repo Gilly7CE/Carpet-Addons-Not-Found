@@ -9,7 +9,6 @@
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlock_PickFlowersFromPotsMixin",
-    "FlowerPotBlock_ReplaceFlowersInPots",
     "LivingEntity_DropAllXpOnPlayerDeathMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
