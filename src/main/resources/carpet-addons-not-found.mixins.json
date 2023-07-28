@@ -9,6 +9,7 @@
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlock_PickFlowersFromPotsMixin",
+    "FlowerPotBlock_ReplaceFlowersInPots",
     "LivingEntity_DropAllXpOnPlayerDeathMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
@@ -33,5 +34,6 @@
   "injectors": {
     "defaultRequire": 1
   },
-  "client": ["network.ClientPlayNetworkHandler_CustomPacketsMixin"]
+  "client": [
+    "network.ClientPlayNetworkHandler_CustomPacketsMixin"]
 }
