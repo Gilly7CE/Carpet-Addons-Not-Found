@@ -24,11 +24,11 @@
     "StonecutterBlock_StonecuttersDoDamageMixin",
     "TallFlowerBlock_ReplaceFlowersMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
+    "invokers.LivingEntityInvokerMixin",
     "network.ServerPlayNetworkHandler_CustomPacketsMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "client": [
-    "network.ClientPlayNetworkHandler_CustomPacketsMixin"]
+  "client": ["network.ClientPlayNetworkHandler_CustomPacketsMixin"]
 }

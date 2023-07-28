@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.mixins.invokers.LivingEntityInvokerMixin;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -9,11 +10,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntity_DropAllXpOnPlayerDeathMixin {
-  @Redirect(method = "dropXp", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop()I"))
-  private int onDropXp(LivingEntity instance) {
+  @Redirect(method = "dropXp", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop(Lnet/minecraft/entity/player/PlayerEntity;)I"))
+  private int onDropXp(LivingEntity instance, PlayerEntity attackingPlayer) {
     if (!((LivingEntity) instance instanceof PlayerEntity player) ||
         !CarpetAddonsNotFoundSettings.dropAllXpOnPlayerDeath) {
-      return instance.getXpToDrop();
+      return ((LivingEntityInvokerMixin) instance).invokeGetXpToDrop(attackingPlayer);
     }
 
     var xp = player.experienceLevel + player.experienceProgress;
