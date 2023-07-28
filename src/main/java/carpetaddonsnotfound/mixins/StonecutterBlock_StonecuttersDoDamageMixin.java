@@ -6,10 +6,10 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.StonecutterBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.damage.DamageEffects;
-import net.minecraft.entity.damage.DamageScaling;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.damage.DamageType;
+import net.minecraft.entity.damage.DamageTypes;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -20,24 +20,23 @@ import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.stonecuttersDoDa
 
 @Mixin(StonecutterBlock.class)
 public abstract class StonecutterBlock_StonecuttersDoDamageMixin extends Block {
-  RegistryEntry<DamageType> damageType = new RegistryEntry.Direct<>(
-          new DamageType("stonecutter", DamageScaling.NEVER, 0.1f, DamageEffects.HURT)
-  );
-
   StonecutterBlock_StonecuttersDoDamageMixin(AbstractBlock.Settings settings) {
     super(settings);
   }
 
   @Override
   public void onSteppedOn(World world, BlockPos pos, BlockState state, Entity entity) {
-    if (world.isClient() || !world.isReceivingRedstonePower(pos)) {
+    if (world.isClient() || !world.isReceivingRedstonePower(pos) || stonecuttersDoDamage == 0.0f) {
       return;
     }
+
     if (stonecuttersDoDamage < 0.0f && entity instanceof LivingEntity livingEntity) {
       livingEntity.heal(-stonecuttersDoDamage);
+      return;
     }
-    else if (stonecuttersDoDamage > 0.0f) {
-      entity.damage(new DamageSource(damageType, new Vec3d(pos.getX(), pos.getY(), pos.getZ())), stonecuttersDoDamage);
-    }
+
+    RegistryEntry<DamageType> type =
+            world.getRegistryManager().get(RegistryKeys.DAMAGE_TYPE).getEntry(DamageTypes.GENERIC).orElseThrow();
+    entity.damage(new DamageSource(type, new Vec3d(pos.getX(), pos.getY(), pos.getZ())), stonecuttersDoDamage);
   }
 }
