@@ -28,6 +28,7 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
+    "invokers.LivingEntityInvokerMixin",
     "invokers.SpawnHelperInfoInvokerMixin",
     "network.ServerPlayNetworkHandler_CustomPacketsMixin"
   ],
