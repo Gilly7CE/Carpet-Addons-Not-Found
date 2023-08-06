@@ -2,6 +2,7 @@ package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.EndPortalFrameBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,15 +17,22 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 
 import static net.minecraft.block.Block.dropStack;
 
 @Mixin(EndPortalFrameBlock.class)
-public abstract class EndFrameBlock_EyeToggleMixin {
+public abstract class EndFrameBlock_EyeToggleMixin extends Block {
   @Shadow
   @Final
   public static BooleanProperty EYE;
 
+  public EndFrameBlock_EyeToggleMixin(Settings settings) {
+    super(settings);
+  }
+
+  @SuppressWarnings("deprecation") // It gets called by the new method anyway, so we can fix when they actually change it
+  @Override
   public ActionResult onUse(BlockState state,
                             World world,
                             BlockPos pos,
