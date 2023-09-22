@@ -26,7 +26,7 @@ public class CarpetAddonsNotFoundDispenserBehaviors {
                                                              BlockPointer pointer,
                                                              ItemStack itemStack) {
     Item item = itemStack.getItem();
-    Direction dispenserFacing = pointer.getBlockState().get(DispenserBlock.FACING);
+    Direction dispenserFacing = pointer.state().get(DispenserBlock.FACING);
     BlockPos frontBlockPos = pos.offset(dispenserFacing);
     BlockState frontBlockState = world.getBlockState(frontBlockPos);
     Block frontBlock = frontBlockState.getBlock();
