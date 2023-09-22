@@ -4,11 +4,7 @@
   "version": "${version}",
   "name": "Carpet Addons Not Found",
   "description": "Addons for the Fabric Carpet mod",
-  "authors": [
-    "Gilly7CE",
-    "Serzbiedry",
-    "Basicprogrammer10"
-  ],
+  "authors": ["Gilly7CE", "Serzbiedry", "Basicprogrammer10"],
   "contact": {
     "homepage": "https://github.com/Gilly7CE",
     "sources": "https://github.com/Gilly7CE/Carpet-Addons-Not-Found"
@@ -17,16 +13,12 @@
   "icon": "assets/carpet-addons-not-found/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "carpetaddonsnotfound.CarpetAddonsNotFoundServer"
-    ]
+    "main": ["carpetaddonsnotfound.CarpetAddonsNotFoundServer"]
   },
-  "mixins": [
-    "carpet-addons-not-found.mixins.json"
-  ],
+  "mixins": ["carpet-addons-not-found.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.14.21",
-    "minecraft": "1.20.1",
+    "fabricloader": ">=0.14.22",
+    "minecraft": "1.20.2",
     "java": ">=17",
     "carpet": ">=1.4.112"
   },
