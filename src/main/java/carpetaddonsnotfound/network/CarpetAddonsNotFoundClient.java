@@ -1,40 +1,29 @@
 package carpetaddonsnotfound.network;
 
-import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.network.packet.CustomPayload;
 import net.minecraft.util.Identifier;
 
 /**
  * Client for the mod. Most of this is taken from CarpetClient
  */
 public final class CarpetAddonsNotFoundClient {
-  public static final int DATA = 1;
-  public static final int HI = 2;
-  public static final int HELLO = 3;
   public static final Identifier CARPET_ADDONS_NOT_FOUND_CHANNEL = new Identifier("carpet-addons-not-found");
 
-  private static ClientPlayerEntity clientPlayer = null;
-  private static boolean isServerCarpet = false;
-
-  public static void gameJoined(ClientPlayerEntity player) {
-    clientPlayer = player;
-  }
-
-  public static void disconnect() {
-    if (!isServerCarpet) // multiplayer connection
-    {
-      return;
+  public record CarpetAddonsNotFoundPayload(NbtCompound data) implements CustomPayload {
+    public CarpetAddonsNotFoundPayload(PacketByteBuf input) {
+      this(input.readNbt());
     }
 
-    // singleplayer disconnect
-    isServerCarpet = false;
-    clientPlayer = null;
-  }
+    @Override
+    public void write(PacketByteBuf output) {
+      output.writeNbt(data);
+    }
 
-  public static void setCarpet() {
-    isServerCarpet = true;
-  }
-
-  public static ClientPlayerEntity getPlayer() {
-    return clientPlayer;
+    @Override
+    public Identifier id() {
+      return CARPET_ADDONS_NOT_FOUND_CHANNEL;
+    }
   }
 }
