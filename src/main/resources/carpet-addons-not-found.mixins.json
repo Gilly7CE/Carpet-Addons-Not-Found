@@ -28,7 +28,7 @@
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
     "invokers.SpawnHelperInfoInvokerMixin",
-    "network.ServerPlayNetworkHandler_CustomPacketsMixin"
+    "network.CustomPayloadS2CPacket_CustomPacketMixin"
   ],
   "injectors": {
     "defaultRequire": 1
