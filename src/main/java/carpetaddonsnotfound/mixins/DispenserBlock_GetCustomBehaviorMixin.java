@@ -1,12 +1,13 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.dispenser.CarpetAddonsNotFoundDispenserBehaviors;
+import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPointerImpl;
+import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -45,10 +46,11 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           cancellable = true
   )
   private void dispenseCustomBehaviorNonEmptyItemStack(ServerWorld serverWorld,
+                                                       BlockState state,
                                                        BlockPos pos,
                                                        CallbackInfo ci,
-                                                       BlockPointerImpl blockPointer,
                                                        DispenserBlockEntity dispenserBlockEntity,
+                                                       BlockPointer blockPointer,
                                                        int i,
                                                        ItemStack itemStack) {
     DispenserBehavior customBehavior =
@@ -93,10 +95,12 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           cancellable = true
   )
   private void dispenseCustomBehaviorEmptyItemStack(ServerWorld serverWorld,
+                                                    BlockState state,
                                                     BlockPos pos,
                                                     CallbackInfo ci,
-                                                    BlockPointerImpl blockPointer,
-                                                    DispenserBlockEntity dispenserBlockEntity) {
+                                                    DispenserBlockEntity dispenserBlockEntity,
+                                                    BlockPointer blockPointer,
+                                                    int i) {
     ItemStack itemStack = ItemStack.EMPTY;
     DispenserBehavior customBehavior =
             CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(

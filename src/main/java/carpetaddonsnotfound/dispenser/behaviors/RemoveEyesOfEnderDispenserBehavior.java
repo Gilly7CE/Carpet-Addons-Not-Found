@@ -18,8 +18,8 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
   @Override
   protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
     this.setSuccess(true);
-    ServerWorld world = pointer.getWorld();
-    BlockPos frontBlockPos = pointer.getPos().offset(pointer.getBlockState().get(DispenserBlock.FACING));
+    ServerWorld world = pointer.world();
+    BlockPos frontBlockPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
     BlockState frontBlockState = world.getBlockState(frontBlockPos);
     Block frontBlock = frontBlockState.getBlock();
 
@@ -48,7 +48,7 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
       return newStack;
     }
 
-    DispenserBlockEntity dispenserBlockEntity = blockPointer.getBlockEntity();
+    DispenserBlockEntity dispenserBlockEntity = blockPointer.blockEntity();
     return addToFirstAvailableSlot(dispenserBlockEntity, itemToAdd)
            ? originalStack
            : null;
