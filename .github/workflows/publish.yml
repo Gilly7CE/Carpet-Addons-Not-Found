@@ -23,12 +23,13 @@ jobs:
       - name: Build with Gradle
         run: ./gradlew build
       - name: Publish mod
-        uses: Kir-Antipov/mc-publish@v3.2
+        uses: Kir-Antipov/mc-publish@v3.3.0
         with:
+          loaders: fabric
           version-type: release
-          version-resolver: releases
-          dependencies: |
-            carpet | depends
+          game-version-filter: releases
+          dependencies: |-
+            carpet(required)
 
           # Publish to modrinth
           modrinth-id: iIPoKpIW
