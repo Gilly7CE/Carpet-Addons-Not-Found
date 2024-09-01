@@ -6,17 +6,15 @@ import com.mojang.authlib.GameProfile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.block.entity.EndGatewayBlockEntity;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends PlayerEntity {
@@ -41,32 +39,22 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
         this.hasPassengers() || !this.canUsePortals()) {
       return;
     }
+
     //shift one up makes it seem like bounding box is closer to camera.
     BlockPos pos = this.getBlockPos().add(0, 1, 0);
-    BlockState state = world.getBlockState(pos);
-    Block block = state.getBlock();
-    //from EndPortalBlock.onEntityCollision()
-    if (block == Blocks.END_PORTAL) {
-      RegistryKey<World> registryKey = world.getRegistryKey() == World.END ? World.OVERWORLD : World.END;
-      ServerWorld serverWorld = ((ServerWorld) world).getServer().getWorld(registryKey);
-      if (serverWorld == null) {
-        return;
-      }
-      this.moveToWorld(serverWorld);
+    BlockState blockState = world.getBlockState(pos);
+    Block block = blockState.getBlock();
+    if (block != Blocks.END_PORTAL && block != Blocks.END_GATEWAY && block != Blocks.NETHER_PORTAL) {
+      return;
     }
-    if (block == Blocks.END_GATEWAY) {
-      EndGatewayBlockEntity.tryTeleportingEntity(world, pos, state, this,
-                                                 (EndGatewayBlockEntity) world.getBlockEntity(pos));
-    }
-    //from NetherPortalBlock.onEntityCollision()
-    if (block == Blocks.NETHER_PORTAL) {
-      this.setInNetherPortal(pos);
-      SyncSetInNetherPortalWithClient(world, pos);
-    }
+
+    this.tryCheckBlockCollision();
+    syncSetInNetherPortalWithClient(world, pos, block);
   }
 
-  private void SyncSetInNetherPortalWithClient(World world, BlockPos pos) {
-    if (world.isClient()) {
+  @Unique
+  private void syncSetInNetherPortalWithClient(World world, BlockPos pos, Block block) {
+    if (world.isClient() || block != Blocks.NETHER_PORTAL) {
       return;
     }
 
