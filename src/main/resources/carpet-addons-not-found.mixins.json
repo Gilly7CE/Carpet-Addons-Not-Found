@@ -4,8 +4,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "DispenserBlock_GetCustomBehaviorMixin",
+    "EnderEyeItem_EyeToggleMixin",
     "EndermanEntity_PassiveEndermenMixin",
-    "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlock_PickFlowersFromPotsMixin",
