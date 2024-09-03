@@ -27,11 +27,10 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin",
-    "network.CustomPayloadS2CPacket_CustomPacketMixin"
+    "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "client": ["network.ClientPlayNetworkHandler_CustomPacketsMixin"]
+  "client": ["ClientPlayerEntity_SpectatorPlayersUsePortalsMixin"]
 }
