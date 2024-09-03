@@ -14,4 +14,7 @@ public interface EntityInvokerMixin {
 
   @Invoker("getZ")
   double invokeGetZ();
+
+  @Invoker("tryCheckBlockCollision")
+  void invokeTryCheckBlockCollision();
 }
