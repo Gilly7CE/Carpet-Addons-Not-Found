@@ -1,3 +1,5 @@
+import groovy.json.JsonSlurper
+
 pluginManagement {
     repositories {
         mavenCentral()
@@ -5,6 +7,29 @@ pluginManagement {
             name = 'Fabric'
             url = 'https://maven.fabricmc.net/'
         }
+        maven {
+            name = 'Jitpack'
+            url = 'https://jitpack.io'
+        }
         gradlePluginPortal()
     }
+    resolutionStrategy {
+        eachPlugin {
+            switch (requested.id.id) {
+                case "com.replaymod.preprocess": {
+                    useModule("com.github.replaymod:preprocessor:${requested.version}")
+                    break
+                }
+            }
+        }
+    }
+}
+
+def settings = new JsonSlurper().parseText(file('settings.json').text)
+for (String version : settings.versions) {
+    include(":$version")
+
+    def proj = project(":$version")
+    proj.projectDir = file("versions/$version")
+    proj.buildFileName = "../../common.gradle"
 }

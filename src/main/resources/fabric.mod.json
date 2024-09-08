@@ -7,6 +7,7 @@
   "authors": ["Gilly7CE", "Serzbiedry", "Basicprogrammer10"],
   "contact": {
     "homepage": "https://github.com/Gilly7CE",
+    "issues": "https://github.com/Gilly7CE/Carpet-Addons-Not-Found/issues",
     "sources": "https://github.com/Gilly7CE/Carpet-Addons-Not-Found"
   },
   "license": "MIT",
@@ -17,10 +18,10 @@
   },
   "mixins": ["carpet-addons-not-found.mixins.json"],
   "depends": {
-    "fabricloader": ">=0.16.3",
-    "minecraft": ">=1.21.1",
-    "java": ">=21",
-    "carpet": ">=1.4.147"
+    "fabricloader": "${loader_dependency}",
+    "java": "${java_dependency}",
+    "carpet": "${carpet_dependency}",
+    "minecraft": "${minecraft_dependency}"
   },
   "suggests": {},
   "custom": {
