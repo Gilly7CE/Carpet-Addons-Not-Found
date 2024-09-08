@@ -1,14 +1,14 @@
 {
   "required": true,
   "package": "carpetaddonsnotfound.mixins",
-  "compatibilityLevel": "JAVA_17",
+  "compatibilityLevel": "JAVA_21",
   "mixins": [
     "DispenserBlock_GetCustomBehaviorMixin",
+    "EnderEyeItem_EyeToggleMixin",
     "EndermanEntity_PassiveEndermenMixin",
-    "EndFrameBlock_EyeToggleMixin",
     "ExperienceOrbEntity_XpBubbleColumnInteractionMixin",
     "FlowerBlock_ReplaceFlowersMixin",
-    "FlowerPotBlock_PickFlowersFromPotsMixin",
+    "FlowerPotBlockMixin",
     "LivingEntity_DropAllXpOnPlayerDeathMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
@@ -27,11 +27,10 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
-    "invokers.SpawnHelperInfoInvokerMixin",
-    "network.CustomPayloadS2CPacket_CustomPacketMixin"
+    "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
-  "client": ["network.ClientPlayNetworkHandler_CustomPacketsMixin"]
+  "client": ["ClientPlayerEntity_SpectatorPlayersUsePortalsMixin"]
 }

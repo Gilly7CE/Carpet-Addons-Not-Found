@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.dispenser.CarpetAddonsNotFoundDispenserBehaviors;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
@@ -13,7 +14,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(DispenserBlock.class)
 public abstract class DispenserBlock_GetCustomBehaviorMixin {
@@ -39,20 +39,19 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           method = "dispense",
           at = @At(
                   value = "INVOKE",
-                  target = "Lnet/minecraft/block/DispenserBlock;getBehaviorForItem(Lnet/minecraft/item/ItemStack;)" +
-                           "Lnet/minecraft/block/dispenser/DispenserBehavior;"
+                  target = "Lnet/minecraft/block/DispenserBlock;getBehaviorForItem(Lnet/minecraft/world/World;" +
+                           "Lnet/minecraft/item/ItemStack;)Lnet/minecraft/block/dispenser/DispenserBehavior;"
           ),
-          locals = LocalCapture.CAPTURE_FAILHARD,
           cancellable = true
   )
   private void dispenseCustomBehaviorNonEmptyItemStack(ServerWorld serverWorld,
                                                        BlockState state,
                                                        BlockPos pos,
                                                        CallbackInfo ci,
-                                                       DispenserBlockEntity dispenserBlockEntity,
-                                                       BlockPointer blockPointer,
-                                                       int i,
-                                                       ItemStack itemStack) {
+                                                       @Local DispenserBlockEntity dispenserBlockEntity,
+                                                       @Local BlockPointer blockPointer,
+                                                       @Local int i,
+                                                       @Local ItemStack itemStack) {
     DispenserBehavior customBehavior =
             CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(
                     serverWorld,
@@ -91,16 +90,14 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
                   target = "Lnet/minecraft/server/world/ServerWorld;syncWorldEvent" +
                            "(ILnet/minecraft/util/math/BlockPos;I)V"
           ),
-          locals = LocalCapture.CAPTURE_FAILHARD,
           cancellable = true
   )
   private void dispenseCustomBehaviorEmptyItemStack(ServerWorld serverWorld,
                                                     BlockState state,
                                                     BlockPos pos,
                                                     CallbackInfo ci,
-                                                    DispenserBlockEntity dispenserBlockEntity,
-                                                    BlockPointer blockPointer,
-                                                    int i) {
+                                                    @Local DispenserBlockEntity dispenserBlockEntity,
+                                                    @Local BlockPointer blockPointer) {
     ItemStack itemStack = ItemStack.EMPTY;
     DispenserBehavior customBehavior =
             CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(
