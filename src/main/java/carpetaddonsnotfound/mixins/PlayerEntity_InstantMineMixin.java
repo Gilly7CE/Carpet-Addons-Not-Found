@@ -6,7 +6,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -37,9 +36,8 @@ public abstract class PlayerEntity_InstantMineMixin extends LivingEntity {
           ),
           cancellable = true)
   public void getInstantMiningBlockBreakingSpeed(BlockState block, CallbackInfoReturnable<Float> cir, @Local float f) {
-    DynamicRegistryManager registryManager = this.getWorld().getRegistryManager();
     float blockBreakingSpeedRatio =
-            BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(registryManager, this, block);
+            BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
     cir.setReturnValue(f * blockBreakingSpeedRatio);
   }
 }

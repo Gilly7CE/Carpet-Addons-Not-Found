@@ -12,10 +12,9 @@ import net.minecraft.world.World;
 
 public class SpectatorPlayersUsePortalsRule {
   public static void movePlayerInSpectator(PlayerEntity playerEntity) {
-    final boolean allowVehicles = false;
     World world = playerEntity.getWorld();
     if (!CarpetAddonsNotFoundSettings.spectatorPlayersUsePortals || !playerEntity.isSpectator() ||
-        !playerEntity.canUsePortals(allowVehicles)) {
+        !canPlayerUsePortals(playerEntity)) {
       return;
     }
 
@@ -33,5 +32,14 @@ public class SpectatorPlayersUsePortalsRule {
     playerEntity.setBoundingBox(new Box(shiftedPlayerPos));
     ((EntityInvokerMixin) playerEntity).invokeTryCheckBlockCollision();
     playerEntity.setBoundingBox(new Box(actualPlayerPos));
+  }
+
+  private static boolean canPlayerUsePortals(PlayerEntity playerEntity) {
+    //#if MC>12006
+    final boolean allowVehicles = false;
+    return playerEntity.canUsePortals(allowVehicles);
+    //#else
+    //$$ return !playerEntity.hasVehicle() && !playerEntity.hasPassengers() && playerEntity.canUsePortals();
+    //#endif
   }
 }
