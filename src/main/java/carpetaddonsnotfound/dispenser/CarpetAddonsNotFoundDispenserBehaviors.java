@@ -3,6 +3,7 @@ package carpetaddonsnotfound.dispenser;
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.dispenser.behaviors.PlaceEyesOfEnderDispenserBehavior;
 import carpetaddonsnotfound.dispenser.behaviors.RemoveEyesOfEnderDispenserBehavior;
+import carpetaddonsnotfound.helpers.BlockPointerHelper;
 import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -26,7 +27,7 @@ public class CarpetAddonsNotFoundDispenserBehaviors {
                                                              BlockPointer pointer,
                                                              ItemStack itemStack) {
     Item item = itemStack.getItem();
-    Direction dispenserFacing = pointer.state().get(DispenserBlock.FACING);
+    Direction dispenserFacing = BlockPointerHelper.getBlockState(pointer).get(DispenserBlock.FACING);
     BlockPos frontBlockPos = pos.offset(dispenserFacing);
     BlockState frontBlockState = world.getBlockState(frontBlockPos);
     Block frontBlock = frontBlockState.getBlock();

@@ -9,8 +9,10 @@ plugins {
 preprocess {
     strictExtraMappings.set(true)
 
+    def mc119  = createNode('1.19.4', 1_19_04, '')
     def mc120  = createNode('1.20.6', 1_20_06, '')
     def mc121  = createNode('1.21.1', 1_21_01, '')
 
     mc121.link(mc120, file("versions/mapping-1.21.1-1.20.6.txt"))
+    mc120.link(mc119, file("versions/mapping-1.20.6-1.19.4.txt"))
 }

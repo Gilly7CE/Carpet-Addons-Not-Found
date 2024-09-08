@@ -21,7 +21,10 @@ public final class MovableBlockEntitiesRuleObserver implements SettingsManager.R
       return;
     }
 
-    source.sendFeedback(() ->
+    source.sendFeedback(
+            //#if MC>11904
+            () ->
+            //#endif
             Text.of("Warning: disabling `movableSpawners` as it requires `movableBlockEntities` to be enabled"),
             true);
     CarpetAddonsNotFoundSettings.movableSpawners = false;
