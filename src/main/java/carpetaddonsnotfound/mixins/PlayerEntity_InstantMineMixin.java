@@ -1,16 +1,17 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.instantmining.BlockBreakingSpeedRatioCalculator;
+import com.llamalad7.mixinextras.sugar.Local;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 @Mixin(PlayerEntity.class)
 public abstract class PlayerEntity_InstantMineMixin extends LivingEntity {
@@ -34,10 +35,11 @@ public abstract class PlayerEntity_InstantMineMixin extends LivingEntity {
           at = @At(
                   value = "TAIL"
           ),
-          locals = LocalCapture.CAPTURE_FAILHARD,
           cancellable = true)
-  public void getInstantMiningBlockBreakingSpeed(BlockState block, CallbackInfoReturnable<Float> cir, float f) {
-    float blockBreakingSpeedRatio = BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
+  public void getInstantMiningBlockBreakingSpeed(BlockState block, CallbackInfoReturnable<Float> cir, @Local float f) {
+    DynamicRegistryManager registryManager = this.getWorld().getRegistryManager();
+    float blockBreakingSpeedRatio =
+            BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(registryManager, this, block);
     cir.setReturnValue(f * blockBreakingSpeedRatio);
   }
 }
