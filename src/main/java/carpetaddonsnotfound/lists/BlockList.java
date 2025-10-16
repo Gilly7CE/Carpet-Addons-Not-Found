@@ -72,9 +72,11 @@ public class BlockList {
           Blocks.DARK_OAK_FENCE_GATE,
           Blocks.CRIMSON_FENCE_GATE,
           Blocks.WARPED_FENCE_GATE,
+          //#if MC>11802
           Blocks.MANGROVE_FENCE_GATE,
           Blocks.CHERRY_FENCE_GATE,
           Blocks.BAMBOO_FENCE_GATE,
+          //#endif
           Blocks.OAK_FENCE,
           Blocks.SPRUCE_FENCE,
           Blocks.BIRCH_FENCE,
@@ -83,9 +85,11 @@ public class BlockList {
           Blocks.DARK_OAK_FENCE,
           Blocks.CRIMSON_FENCE,
           Blocks.WARPED_FENCE,
+          //#if MC>11802
           Blocks.MANGROVE_FENCE,
           Blocks.CHERRY_FENCE,
           Blocks.BAMBOO_FENCE,
+          //#endif
           Blocks.OAK_LOG,
           Blocks.SPRUCE_LOG,
           Blocks.BIRCH_LOG,
@@ -94,9 +98,11 @@ public class BlockList {
           Blocks.DARK_OAK_LOG,
           Blocks.CRIMSON_STEM,
           Blocks.WARPED_STEM,
+          //#if MC>11802
           Blocks.MANGROVE_LOG,
           Blocks.CHERRY_LOG,
           Blocks.BAMBOO_BLOCK,
+          //#endif
           Blocks.STRIPPED_OAK_LOG,
           Blocks.STRIPPED_SPRUCE_LOG,
           Blocks.STRIPPED_BIRCH_LOG,
@@ -105,9 +111,11 @@ public class BlockList {
           Blocks.STRIPPED_DARK_OAK_LOG,
           Blocks.STRIPPED_CRIMSON_STEM,
           Blocks.STRIPPED_WARPED_STEM,
+          //#if MC>11802
           Blocks.STRIPPED_MANGROVE_LOG,
           Blocks.STRIPPED_CHERRY_LOG,
           Blocks.STRIPPED_BAMBOO_BLOCK,
+          //#endif
           Blocks.OAK_PLANKS,
           Blocks.SPRUCE_PLANKS,
           Blocks.BIRCH_PLANKS,
@@ -116,9 +124,11 @@ public class BlockList {
           Blocks.DARK_OAK_PLANKS,
           Blocks.CRIMSON_PLANKS,
           Blocks.WARPED_PLANKS,
+          //#if MC>11802
           Blocks.MANGROVE_PLANKS,
           Blocks.CHERRY_PLANKS,
           Blocks.BAMBOO_PLANKS,
+          //#endif
           Blocks.OAK_WOOD,
           Blocks.SPRUCE_WOOD,
           Blocks.BIRCH_WOOD,
@@ -127,9 +137,11 @@ public class BlockList {
           Blocks.DARK_OAK_WOOD,
           Blocks.CRIMSON_HYPHAE,
           Blocks.WARPED_HYPHAE,
+          //#if MC>11802
           Blocks.MANGROVE_WOOD,
           Blocks.CHERRY_WOOD,
           Blocks.BAMBOO_MOSAIC,
+          //#endif
           Blocks.STRIPPED_OAK_WOOD,
           Blocks.STRIPPED_SPRUCE_WOOD,
           Blocks.STRIPPED_BIRCH_WOOD,
@@ -138,8 +150,10 @@ public class BlockList {
           Blocks.STRIPPED_DARK_OAK_WOOD,
           Blocks.STRIPPED_CRIMSON_HYPHAE,
           Blocks.STRIPPED_WARPED_HYPHAE,
+          //#if MC>11802
           Blocks.STRIPPED_MANGROVE_WOOD,
           Blocks.STRIPPED_CHERRY_WOOD,
+          //#endif
           Blocks.OAK_SLAB,
           Blocks.SPRUCE_SLAB,
           Blocks.BIRCH_SLAB,
@@ -148,10 +162,12 @@ public class BlockList {
           Blocks.DARK_OAK_SLAB,
           Blocks.CRIMSON_SLAB,
           Blocks.WARPED_SLAB,
+          //#if MC>11802
           Blocks.MANGROVE_SLAB,
           Blocks.CHERRY_SLAB,
           Blocks.BAMBOO_SLAB,
           Blocks.BAMBOO_MOSAIC_SLAB,
+          //#endif
           Blocks.OAK_STAIRS,
           Blocks.SPRUCE_STAIRS,
           Blocks.BIRCH_STAIRS,
@@ -159,9 +175,13 @@ public class BlockList {
           Blocks.ACACIA_STAIRS,
           Blocks.DARK_OAK_STAIRS,
           Blocks.CRIMSON_STAIRS,
-          Blocks.WARPED_STAIRS,
-          Blocks.MANGROVE_STAIRS,
+          Blocks.WARPED_STAIRS
+          //#if MC>11802
+          ,Blocks.MANGROVE_STAIRS,
           Blocks.CHERRY_STAIRS,
           Blocks.BAMBOO_STAIRS,
           Blocks.BAMBOO_MOSAIC_STAIRS);
+          //#else
+          //$$ );
+          //#endif
 }

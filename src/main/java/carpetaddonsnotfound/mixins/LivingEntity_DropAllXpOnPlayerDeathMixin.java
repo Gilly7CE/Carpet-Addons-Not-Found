@@ -1,6 +1,9 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+//#if MC<=11802
+//$$ import carpetaddonsnotfound.mixins.invokers.LivingEntityInvokerMixin;
+//#endif
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import org.spongepowered.asm.mixin.Mixin;
@@ -20,8 +23,10 @@ public abstract class LivingEntity_DropAllXpOnPlayerDeathMixin {
                                         target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop" +
                                                  "(Lnet/minecraft/server/world/ServerWorld;" +
                                                  "Lnet/minecraft/entity/Entity;)I"
-                                        //#else
+                                        //#elseif MC>11802
                                         //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop()I"
+                                        //#else
+                                        //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop(Lnet/minecraft/entity/player/PlayerEntity;)I"
                                         //#endif
   ))
   private int onDropXp(
@@ -29,16 +34,21 @@ public abstract class LivingEntity_DropAllXpOnPlayerDeathMixin {
           LivingEntity instance,
           ServerWorld world,
           Entity attacker
-          //#else
+          //#elseif MC>11802
           //$$ LivingEntity instance
+          //#else
+          //$$ LivingEntity instance,
+          //$$ PlayerEntity attackingPlayer
           //#endif
                       ) {
     if (!CarpetAddonsNotFoundSettings.dropAllXpOnPlayerDeath ||
         !((LivingEntity) instance instanceof PlayerEntity player)) {
       //#if MC>12006
       return instance.getXpToDrop(world, attacker);
-      //#else
+      //#elseif MC>11802
       //$$ return instance.getXpToDrop();
+      //#else
+      //$$ return ((LivingEntityInvokerMixin) instance).invokeGetXpToDrop(attackingPlayer);
       //#endif
     }
 
