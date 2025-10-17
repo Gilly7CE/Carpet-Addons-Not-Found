@@ -2,6 +2,8 @@ apply plugin: 'maven-publish'
 apply plugin: 'fabric-loom'
 apply plugin: 'com.replaymod.preprocess'
 
+int mcVersion = project.mcVersion
+
 repositories {
     maven {
         url 'https://masa.dy.fi/maven'
@@ -26,12 +28,14 @@ dependencies {
     // You may need to force-disable transitiveness on them.
 }
 
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "passed", "skipped", "failed", "standardOut", "standardError"
-        outputs.upToDateWhen {
-            false
+if (mcVersion > 11701) {
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed", "standardOut", "standardError"
+            outputs.upToDateWhen {
+                false
+            }
         }
     }
 }

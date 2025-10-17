@@ -11,8 +11,7 @@ import net.minecraft.util.math.Box;
 import net.minecraft.world.World;
 
 public class SpectatorPlayersUsePortalsRule {
-  public static void movePlayerInSpectator(PlayerEntity playerEntity) {
-    World world = playerEntity.getWorld();
+  public static void movePlayerInSpectator(PlayerEntity playerEntity, World world) {
     if (!CarpetAddonsNotFoundSettings.spectatorPlayersUsePortals || !playerEntity.isSpectator() ||
         !canPlayerUsePortals(playerEntity)) {
       return;
