@@ -30,4 +30,4 @@ runs:
     - uses: actions/upload-artifact@v4
       with:
         name: build-artifacts-${{inputs.artifact-name}}
-        path: version/*/build/libs
+        path: versions/*/build/libs
