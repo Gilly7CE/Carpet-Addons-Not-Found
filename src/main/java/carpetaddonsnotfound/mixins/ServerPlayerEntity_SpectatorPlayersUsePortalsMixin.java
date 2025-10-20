@@ -1,5 +1,6 @@
 package carpetaddonsnotfound.mixins;
 
+import carpetaddonsnotfound.mixins.accessors.EntityAccessorMixin;
 import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
 import carpetaddonsnotfound.spectatorplayersuseportals.SpectatorPlayersUsePortalsRule;
 import com.mojang.authlib.GameProfile;
@@ -12,8 +13,9 @@ import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(ServerPlayerEntity.class)
-public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends PlayerEntity implements
-                                                                                              EntityInvokerMixin {
+public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin
+        extends PlayerEntity
+        implements EntityAccessorMixin, EntityInvokerMixin {
   public ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(World world, BlockPos pos, float yaw,
                                                             GameProfile gameProfile) {
     super(world, pos, yaw, gameProfile);
@@ -22,6 +24,6 @@ public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin extends
   @Override
   public void move(MovementType type, Vec3d movement) {
     super.move(type, movement);
-    SpectatorPlayersUsePortalsRule.movePlayerInSpectator(this);
+    SpectatorPlayersUsePortalsRule.movePlayerInSpectator(this, this.getWorld());
   }
 }

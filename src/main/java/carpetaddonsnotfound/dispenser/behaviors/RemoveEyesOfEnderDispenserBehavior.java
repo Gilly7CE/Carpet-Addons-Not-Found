@@ -1,5 +1,6 @@
 package carpetaddonsnotfound.dispenser.behaviors;
 
+import carpetaddonsnotfound.helpers.BlockPointerHelper;
 import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,8 +19,9 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
   @Override
   protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
     this.setSuccess(true);
-    ServerWorld world = pointer.world();
-    BlockPos frontBlockPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
+    ServerWorld world = BlockPointerHelper.getServerWorld(pointer);
+    BlockPos frontBlockPos = BlockPointerHelper.getBlockPos(pointer).offset(BlockPointerHelper.getBlockState(pointer)
+                                                                                              .get(DispenserBlock.FACING));
     BlockState frontBlockState = world.getBlockState(frontBlockPos);
     Block frontBlock = frontBlockState.getBlock();
 
@@ -48,7 +50,7 @@ public final class RemoveEyesOfEnderDispenserBehavior extends FallibleItemDispen
       return newStack;
     }
 
-    DispenserBlockEntity dispenserBlockEntity = blockPointer.blockEntity();
+    DispenserBlockEntity dispenserBlockEntity = BlockPointerHelper.getDispenserBlockEntity(blockPointer);
     return addToFirstAvailableSlot(dispenserBlockEntity, itemToAdd)
            ? originalStack
            : null;

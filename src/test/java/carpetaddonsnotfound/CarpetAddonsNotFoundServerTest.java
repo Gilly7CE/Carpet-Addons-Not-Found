@@ -1,5 +1,7 @@
 package carpetaddonsnotfound;
 
+// NOTE: These tests only work for 1.18.2 and above. Changing 1.17.1 code will require a manual test to verify it works.
+
 import carpet.CarpetServer;
 import net.minecraft.Bootstrap;
 import net.minecraft.SharedConstants;

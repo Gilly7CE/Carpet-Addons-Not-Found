@@ -9,7 +9,9 @@ jobs:
   update-rules-wiki:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - name: Update wiki
         uses: ./.github/actions/update-wiki
+        with:
+          event-name: "manual-trigger"

@@ -17,6 +17,7 @@
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
+    "PlayerEntity_PortalSpectatorDelayMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
     "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
@@ -27,6 +28,7 @@
     "accessors.EntityAccessorMixin",
     "invokers.EntityInvokerMixin",
     "invokers.ExperienceOrbEntityInvokerMixin",
+    "invokers.LivingEntityInvokerMixin",
     "invokers.SpawnHelperInfoInvokerMixin"
   ],
   "injectors": {

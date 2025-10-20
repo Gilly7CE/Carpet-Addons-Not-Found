@@ -5,18 +5,22 @@ import net.minecraft.world.SpawnHelper;
 /**
  * This is adapted from the
  * <a href="https://github.com/Lunaar-SMP/lunaar-carpet-addons">lunaar carpet extensions mod</a>.
- * At time of writing this code, the lunaar mod is still in version 1.17 and 1.18 experimental snapshots and I really
- * wanted this functionality for 1.19+. If this mod will support versions below 1.19, then only 1.18 will include this
- * carpet rule out of respect for the lunaar mod.
+ * The mod has been archived.
  */
 public class ChunkManagerHelper {
   private static SpawnHelper.Info info;
+  private static int spawningChunkCount;
 
   public static SpawnHelper.Info getInfo() {
     return info;
   }
 
-  public static void setInfo(SpawnHelper.Info info) {
+  public static int getSpawningChunkCount() {
+    return spawningChunkCount;
+  }
+
+  public static void setInfo(SpawnHelper.Info info, int spawningChunkCount) {
     ChunkManagerHelper.info = info;
+    ChunkManagerHelper.spawningChunkCount = spawningChunkCount;
   }
 }

@@ -42,13 +42,21 @@ public final class ObeyHostileMobCapHandler implements PhantomSpawningHandler {
    */
   @Override
   public boolean canSpawnPhantom(PlayerEntity playerEntity, ServerWorld world) {
-    ChunkPos playerChunkPos = playerEntity.getChunkPos();
-    SpawnHelper.Info info = ChunkManagerHelper.getInfo();
-    boolean isMobCapFull = !((SpawnHelperInfoInvokerMixin) info).invokeIsBelowCap(SpawnGroup.MONSTER, playerChunkPos);
-    if (CarpetAddonsNotFoundSettings.phantomsObeyHostileMobCap && isMobCapFull) {
+    if (CarpetAddonsNotFoundSettings.phantomsObeyHostileMobCap && isMobCapFull(playerEntity)) {
       return false;
     }
 
     return this.nextHandler.canSpawnPhantom(playerEntity, world);
+  }
+
+  private boolean isMobCapFull(PlayerEntity playerEntity) {
+    SpawnHelper.Info info = ChunkManagerHelper.getInfo();
+    //#if MC>11701
+    ChunkPos playerChunkPos = playerEntity.getChunkPos();
+    return !((SpawnHelperInfoInvokerMixin) info).invokeIsBelowCap(SpawnGroup.MONSTER, playerChunkPos);
+    //#else
+    //$$ int numberOfHostileMobs = SpawnGroup.MONSTER.getCapacity() * ChunkManagerHelper.getSpawningChunkCount() / (int) Math.pow(17.0D, 2.0D);
+    //$$ return info.getGroupToCount().getInt(SpawnGroup.MONSTER) > numberOfHostileMobs;
+    //#endif
   }
 }

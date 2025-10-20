@@ -12,10 +12,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = NetherPortalBlock.class)
 public abstract class NetherPortalBlock_PortalSpectatorDelayMixin {
+  //#if MC>12006
   @Inject(method = "getPortalDelay", at = @At("HEAD"), cancellable = true)
   private void getSpectatorPortalDelay(ServerWorld world, Entity entity, CallbackInfoReturnable<Integer> cir) {
     if (entity instanceof PlayerEntity playerEntity && playerEntity.isSpectator()) {
       cir.setReturnValue(CarpetAddonsNotFoundSettings.portalSpectatorDelay);
     }
   }
+  //#endif
 }

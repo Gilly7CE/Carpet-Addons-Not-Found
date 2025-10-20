@@ -2,7 +2,11 @@ package carpetaddonsnotfound;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+//#if MC>11802
 import carpet.api.settings.SettingsManager;
+//#else
+//$$ import carpet.settings.SettingsManager;
+//#endif
 import carpet.utils.Translations;
 import carpetaddonsnotfound.ruleobservers.MovableBlockEntitiesRuleObserver;
 import net.fabricmc.api.ModInitializer;
@@ -33,7 +37,11 @@ public class CarpetAddonsNotFoundServer implements CarpetExtension, ModInitializ
 
   @Override
   public void onGameStarted() {
+    //#if MC>11802
     SettingsManager.registerGlobalRuleObserver(new MovableBlockEntitiesRuleObserver());
+    //#else
+    //$$ SettingsManager.addGlobalRuleObserver(new MovableBlockEntitiesRuleObserver());
+    //#endif
     CarpetServer.settingsManager.parseSettingsClass(CarpetAddonsNotFoundSettings.class);
   }
 

@@ -1,0 +1,39 @@
+name: Build Project
+description: Builds the project
+inputs:
+  artifact-name:
+    description: The name of the artifact to upload
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Setup JDK 21
+      uses: actions/setup-java@v5
+      with:
+        distribution: "adopt"
+        java-version: 21
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v5
+
+    - name: Make Gradle wrapper executable
+      shell: bash
+      run: chmod +x ./gradlew
+
+    - name: Build with Gradle
+      shell: bash
+      run: ./gradlew build
+
+    - name: Flatten build artifacts from versions folder to single folder
+      shell: bash
+      run: |
+        mkdir build-artifacts
+        cp versions/*/build/libs/*.jar build-artifacts/
+
+    - uses: actions/upload-artifact@v4
+      with:
+        name: build-artifacts-${{inputs.artifact-name}}
+        path: build-artifacts

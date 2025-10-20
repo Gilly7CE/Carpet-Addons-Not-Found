@@ -2,18 +2,23 @@ package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.dispenser.CarpetAddonsNotFoundDispenserBehaviors;
 import com.llamalad7.mixinextras.sugar.Local;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.DispenserBehavior;
 import net.minecraft.block.entity.DispenserBlockEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+//#if MC>11904
+import net.minecraft.block.BlockState;
+import net.minecraft.util.math.BlockPointer;
+//#else
+//$$ import net.minecraft.util.math.BlockPointerImpl;
+//#endif
 
 @Mixin(DispenserBlock.class)
 public abstract class DispenserBlock_GetCustomBehaviorMixin {
@@ -39,17 +44,28 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           method = "dispense",
           at = @At(
                   value = "INVOKE",
+                  //#if MC>11904
                   target = "Lnet/minecraft/block/DispenserBlock;getBehaviorForItem(Lnet/minecraft/world/World;" +
                            "Lnet/minecraft/item/ItemStack;)Lnet/minecraft/block/dispenser/DispenserBehavior;"
+                  //#else
+                  //$$ target = "Lnet/minecraft/block/DispenserBlock;getBehaviorForItem(Lnet/minecraft/item/ItemStack;)" +
+                  //$$          "Lnet/minecraft/block/dispenser/DispenserBehavior;"
+                  //#endif
           ),
           cancellable = true
   )
   private void dispenseCustomBehaviorNonEmptyItemStack(ServerWorld serverWorld,
+                                                       //#if MC>11904
                                                        BlockState state,
+                                                       //#endif
                                                        BlockPos pos,
                                                        CallbackInfo ci,
                                                        @Local DispenserBlockEntity dispenserBlockEntity,
+                                                       //#if MC>11904
                                                        @Local BlockPointer blockPointer,
+                                                       //#else
+                                                       //$$ @Local BlockPointerImpl blockPointer,
+                                                       //#endif
                                                        @Local int i,
                                                        @Local ItemStack itemStack) {
     DispenserBehavior customBehavior =
@@ -93,11 +109,18 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           cancellable = true
   )
   private void dispenseCustomBehaviorEmptyItemStack(ServerWorld serverWorld,
+                                                    //#if MC>11904
                                                     BlockState state,
+                                                    //#endif
                                                     BlockPos pos,
                                                     CallbackInfo ci,
                                                     @Local DispenserBlockEntity dispenserBlockEntity,
-                                                    @Local BlockPointer blockPointer) {
+                                                    //#if MC>11904
+                                                    @Local BlockPointer blockPointer
+                                                    //#else
+                                                    //$$ @Local BlockPointerImpl blockPointer
+                                                    //#endif
+                                                   ) {
     ItemStack itemStack = ItemStack.EMPTY;
     DispenserBehavior customBehavior =
             CarpetAddonsNotFoundDispenserBehaviors.getCustomDispenserBehavior(
@@ -111,7 +134,12 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
     }
 
     // Assign a random empty slot the result ItemStack
-    int slot = serverWorld.random.nextBetween(0, dispenserBlockEntity.size() - 1);
+    int slot;
+    //#if MC>11802
+    slot = serverWorld.random.nextBetween(0, dispenserBlockEntity.size() - 1);
+    //#else
+    //$$ slot = serverWorld.random.nextInt(0, dispenserBlockEntity.size());
+    //#endif
     ItemStack resultStack = customBehavior.dispense(blockPointer, itemStack);
     dispenserBlockEntity.setStack(slot, resultStack);
     ci.cancel();

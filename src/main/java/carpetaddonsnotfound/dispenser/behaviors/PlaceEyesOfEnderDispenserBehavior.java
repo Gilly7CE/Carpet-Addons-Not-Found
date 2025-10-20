@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.dispenser.behaviors;
 
 import carpetaddonsnotfound.dispenser.DispenserItemUsageContext;
+import carpetaddonsnotfound.helpers.BlockPointerHelper;
 import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -22,9 +23,10 @@ public final class PlaceEyesOfEnderDispenserBehavior extends FallibleItemDispens
   protected ItemStack dispenseSilently(BlockPointer pointer, ItemStack stack) {
     this.setSuccess(true);
     Item item = stack.getItem();
-    ServerWorld world = pointer.world();
-    Direction dispenserFacing = pointer.state().get(DispenserBlock.FACING);
-    BlockPos frontBlockPos = pointer.pos().offset(pointer.state().get(DispenserBlock.FACING));
+    ServerWorld world = BlockPointerHelper.getServerWorld(pointer);
+    Direction dispenserFacing = BlockPointerHelper.getBlockState(pointer).get(DispenserBlock.FACING);
+    BlockPos frontBlockPos = BlockPointerHelper.getBlockPos(pointer).offset(BlockPointerHelper.getBlockState(pointer)
+                                                                                              .get(DispenserBlock.FACING));
     BlockState frontBlockState = world.getBlockState(frontBlockPos);
     Block frontBlock = frontBlockState.getBlock();
 

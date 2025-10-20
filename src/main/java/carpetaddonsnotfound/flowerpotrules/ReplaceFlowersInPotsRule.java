@@ -37,7 +37,17 @@ public class ReplaceFlowersInPotsRule {
     world.setBlockState(blockPos, blockState, 3);
     world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, blockPos);
     player.incrementStat(Stats.POT_FLOWER);
-    playerStack.decrementUnlessCreative(1, player);
+    decrementPlayerStackUnlessInCreative(playerStack, player);
     return true;
+  }
+
+  private static void decrementPlayerStackUnlessInCreative(ItemStack playerStack, PlayerEntity player) {
+    //#if MC>11904
+    playerStack.decrementUnlessCreative(1, player);
+    //#else
+    //$$ if (!player.isCreative()) {
+    //$$   playerStack.decrement(1);
+    //$$ }
+    //#endif
   }
 }
