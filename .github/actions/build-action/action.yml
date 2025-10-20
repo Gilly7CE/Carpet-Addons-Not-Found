@@ -27,7 +27,13 @@ runs:
       shell: bash
       run: ./gradlew build
 
+    - name: Flatten build artifacts from versions folder to single folder
+      shell: bash
+      run: |
+        mkdir build-artifacts
+        cp versions/*/build/libs/*.jar build-artifacts/
+
     - uses: actions/upload-artifact@v4
       with:
         name: build-artifacts-${{inputs.artifact-name}}
-        path: versions/*/build/libs
+        path: build-artifacts

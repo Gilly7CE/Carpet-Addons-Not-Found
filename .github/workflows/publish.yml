@@ -30,7 +30,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-artifacts-${{ env.BUILD_ARTIFACT_NAME }}
-          path: build
+          path: build-artfacts
       - name: Publish mod
         uses: Kir-Antipov/mc-publish@v3.3.0
         with:
@@ -39,6 +39,8 @@ jobs:
           game-version-filter: releases
           dependencies: |-
             carpet(required)
+
+          files: build-artfacts/*.jar
 
           # Publish to modrinth
           modrinth-id: ${{ env.MODRINTH_PROJECT_ID }}
