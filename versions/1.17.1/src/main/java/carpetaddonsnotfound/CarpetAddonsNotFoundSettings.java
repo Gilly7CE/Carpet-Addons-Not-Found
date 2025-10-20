@@ -18,6 +18,10 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean alwaysPickFlowersFromPots = false;
 
+  @Rule(desc = "Allows players in Creative mode to kill entities in one hit. This only works on non-player entities.",
+        category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean creativePlayerOneHitKill = false;
+
   @Rule(desc = "Disables mobs from spawning in the End.", category = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean disableMobSpawningInEnd = false;
 
@@ -99,6 +103,10 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(desc = "Endermen will not be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static boolean passiveEndermen = false;
+
+  @Rule(desc = "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
+        category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  public static boolean phantomsObeyHostileMobCap = false;
 
   @Rule(desc = "Right-clicking on a flowerpot with a flower in it will put the flower into your inventory",
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
