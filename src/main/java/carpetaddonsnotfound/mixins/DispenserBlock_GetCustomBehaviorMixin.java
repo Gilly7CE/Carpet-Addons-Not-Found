@@ -44,7 +44,7 @@ public abstract class DispenserBlock_GetCustomBehaviorMixin {
           method = "dispense",
           at = @At(
                   value = "INVOKE",
-                  //#if MC>11904
+                  //#if MC>12004
                   target = "Lnet/minecraft/block/DispenserBlock;getBehaviorForItem(Lnet/minecraft/world/World;" +
                            "Lnet/minecraft/item/ItemStack;)Lnet/minecraft/block/dispenser/DispenserBehavior;"
                   //#else

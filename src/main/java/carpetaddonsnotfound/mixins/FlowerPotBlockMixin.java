@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-//#if MC>11904
+//#if MC>12004
 import net.minecraft.util.ItemActionResult;
 //#else
 //$$ import net.minecraft.util.ActionResult;
@@ -35,7 +35,7 @@ public abstract class FlowerPotBlockMixin {
   public abstract Block getContent();
 
   @Inject(
-          //#if MC>11904
+          //#if MC>12004
           method = "onUseWithItem",
           //#else
           //$$ method = "onUse",
@@ -46,7 +46,7 @@ public abstract class FlowerPotBlockMixin {
           cancellable = true
   )
   private void onUseCustom(
-          //#if MC>11904
+          //#if MC>12004
           ItemStack stack,
           //#endif
           BlockState state,
@@ -55,7 +55,7 @@ public abstract class FlowerPotBlockMixin {
           PlayerEntity player,
           Hand hand,
           BlockHitResult hit,
-          //#if MC>11904
+          //#if MC>12004
           CallbackInfoReturnable<ItemActionResult> cir
           //#else
           //$$ CallbackInfoReturnable<ActionResult> cir
@@ -66,7 +66,7 @@ public abstract class FlowerPotBlockMixin {
     if (!ruleExecuted) {
       return;
     }
-    //#if MC>11904
+    //#if MC>12004
     cir.setReturnValue(ItemActionResult.success(world.isClient));
     //#else
     //$$ cir.setReturnValue(ActionResult.success(world.isClient));

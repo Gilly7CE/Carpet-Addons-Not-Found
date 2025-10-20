@@ -1,7 +1,7 @@
 package carpetaddonsnotfound;
 
 // NOTE: These tests only work for 1.18.2 and above. Changing 1.17.1 code will require a manual test to verify it works.
-
+//#if MC>11701
 import carpet.CarpetServer;
 import net.minecraft.Bootstrap;
 import net.minecraft.SharedConstants;
@@ -29,3 +29,4 @@ public final class CarpetAddonsNotFoundServerTest {
     Assertions.assertDoesNotThrow(CarpetServer::onGameStarted);
   }
 }
+//#endif

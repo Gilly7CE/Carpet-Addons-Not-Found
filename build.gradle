@@ -1,22 +1,24 @@
 plugins {
     id 'maven-publish'
-    id 'fabric-loom' version '1.7-SNAPSHOT' apply false
+    id 'fabric-loom' version "${loom_version}" apply false
 
     // https://github.com/ReplayMod/preprocessor
-    id 'com.replaymod.preprocess' version '7de7ac9'
+    id 'com.replaymod.preprocess' version "${preprocess_version}"
 }
 
 preprocess {
-    strictExtraMappings.set(true)
+    strictExtraMappings = false
 
     def mc117 = createNode('1.17.1', 1_17_01, '')
     def mc118 = createNode('1.18.2', 1_18_02, '')
     def mc119  = createNode('1.19.4', 1_19_04, '')
-    def mc120  = createNode('1.20.6', 1_20_06, '')
+    def mc1204 = createNode('1.20.4', 1_20_04, '')
+    def mc1206  = createNode('1.20.6', 1_20_06, '')
     def mc121  = createNode('1.21.1', 1_21_01, '')
 
-    mc121.link(mc120, file('versions/mapping-1.21.1-1.20.6.txt'))
-    mc120.link(mc119, file('versions/mapping-1.20.6-1.19.4.txt'))
+    mc121.link(mc1206, file('versions/mapping-1.21.1-1.20.6.txt'))
+    mc1206.link(mc1204, file('versions/mapping-1.20.6-1.20.4.txt'))
+    mc1204.link(mc119, file('versions/mapping-1.20.4-1.19.4.txt'))
     mc119.link(mc118, file('versions/mapping-1.19.4-1.18.2.txt'))
     mc118.link(mc117, file('versions/mapping-1.18.2-1.17.1.txt'))
 }

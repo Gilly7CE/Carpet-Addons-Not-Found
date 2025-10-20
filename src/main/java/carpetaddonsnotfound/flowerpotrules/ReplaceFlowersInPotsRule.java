@@ -17,8 +17,12 @@ import net.minecraft.world.event.GameEvent;
 import java.util.Map;
 
 public class ReplaceFlowersInPotsRule {
-  public static boolean execute(Map<Block, Block> contentToPotted, PlayerEntity player, Hand hand, World world,
-                                BlockPos blockPos, Block currentContent) {
+  public static boolean execute(Map<Block, Block> contentToPotted,
+                                PlayerEntity player,
+                                Hand hand,
+                                World world,
+                                BlockPos blockPos,
+                                Block currentContent) {
     ItemStack playerStack = player.getStackInHand(hand);
     Item item = playerStack.getItem();
     Block newPot =
@@ -42,7 +46,7 @@ public class ReplaceFlowersInPotsRule {
   }
 
   private static void decrementPlayerStackUnlessInCreative(ItemStack playerStack, PlayerEntity player) {
-    //#if MC>11904
+    //#if MC>12004
     playerStack.decrementUnlessCreative(1, player);
     //#else
     //$$ if (!player.isCreative()) {
