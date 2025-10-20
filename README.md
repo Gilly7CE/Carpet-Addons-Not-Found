@@ -66,8 +66,8 @@ please still follow the branching and commit guidance below.
 
 To contribute a code change to the repository, please do the following:
 
-- Create a branch with a name that matches the following format: \<type of issue>-\<author name>-\<issue number>
-  -\<description>
+- Create a branch with a name that matches the following format: \<type of issue>/\<author name>/\<issue number>
+  /\<description>
   - The issue can be omitted until one is created, however the branch should be renamed to include the issue. You can
     do this before creating a PR. You can also create the issue in advance and assign yourself to indicate you're
     working on it.

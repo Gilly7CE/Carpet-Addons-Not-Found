@@ -28,19 +28,19 @@ dependencies {
     // You may need to force-disable transitiveness on them.
 }
 
-if (mcVersion > 11701) {
-    test {
-        useJUnitPlatform()
-        testLogging {
-            events "passed", "skipped", "failed", "standardOut", "standardError"
-            outputs.upToDateWhen {
-                false
-            }
+
+test {
+    failOnNoDiscoveredTests = false
+
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        outputs.upToDateWhen {
+            false
         }
     }
 }
 
-archivesBaseName = project.archives_base_name
 version = project.minecraft_version + '-' + project.mod_version
 group = project.maven_group
 
