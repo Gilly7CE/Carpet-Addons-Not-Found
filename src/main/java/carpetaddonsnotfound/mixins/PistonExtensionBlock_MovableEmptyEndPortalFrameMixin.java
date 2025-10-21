@@ -17,7 +17,11 @@ import java.util.Collections;
 import java.util.List;
 
 //#if MC>11904
-import net.minecraft.loot.context.LootContextParameterSet;
+//#if MC>12101
+import net.minecraft.loot.context.LootWorldContext;
+//#else
+//$$ import net.minecraft.loot.context.LootContextParameterSet;
+//#endif
 //#else
 //$$ import net.minecraft.loot.context.LootContext;
 //#endif
@@ -34,7 +38,11 @@ public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
           cancellable = true)
   private void getDroppedStacksForMovableBlock(BlockState state,
                                                //#if MC>11904
-                                               LootContextParameterSet.Builder builder,
+                                               //#if MC>12101
+                                               LootWorldContext.Builder builder,
+                                               //#else
+                                               //$$ LootContextParameterSet.Builder builder,
+                                               //#endif
                                                //#else
                                                //$$ LootContext.Builder builder,
                                                //#endif

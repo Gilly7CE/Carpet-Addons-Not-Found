@@ -1,5 +1,7 @@
 package carpetaddonsnotfound.instantmining;
 
+import carpetaddonsnotfound.helpers.CarpetAddonsNotFoundToolMaterials;
+import carpetaddonsnotfound.helpers.ToolMaterialHelper;
 import carpetaddonsnotfound.lists.BlockList;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,56 +15,56 @@ public enum ToolInstantMiningRatioCalculator implements InstantMiningRatioCalcul
           AxeItem.class,
           2,
           3,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.GOLD,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.GOLD,
           new HashSet<>(BlockList.wood)),
   NetheritePickaxeBlueIce(
           InstantMiningCarpetRuleKeys.netheritePickaxeBlueIce,
           PickaxeItem.class,
           2,
           7,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
           new HashSet<>(BlockList.blueIce)),
   NetheritePickaxeCobbledDeepslate(
           InstantMiningCarpetRuleKeys.netheritePickaxeDeepslate,
           PickaxeItem.class,
           2,
           10,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
           new HashSet<>(BlockList.cobbledDeepslate)),
   NetheritePickaxeCobblestone(
           InstantMiningCarpetRuleKeys.netheritePickaxeCobblestone,
           PickaxeItem.class,
           2,
           3,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.GOLD,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.GOLD,
           new HashSet<>(BlockList.cobblestone)),
   NetheritePickaxeDeepslate(
           InstantMiningCarpetRuleKeys.netheritePickaxeDeepslate,
           PickaxeItem.class,
           2,
           8,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
           new HashSet<>(BlockList.deepslate)),
   NetheritePickaxeEndStone(
           InstantMiningCarpetRuleKeys.netheritePickaxeEndStone,
           PickaxeItem.class,
           2,
           8,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
           new HashSet<>(BlockList.endStone)),
   NetheritePickaxeNetherBricks(
           InstantMiningCarpetRuleKeys.netheritePickaxeNetherBricks,
           PickaxeItem.class,
           2,
           3,
-          ToolMaterials.NETHERITE,
-          ToolMaterials.GOLD,
+          CarpetAddonsNotFoundToolMaterials.NETHERITE,
+          CarpetAddonsNotFoundToolMaterials.GOLD,
           new HashSet<>(BlockList.netherBricks));
 
   private final String carpetRuleKey;
@@ -109,6 +111,6 @@ public enum ToolInstantMiningRatioCalculator implements InstantMiningRatioCalcul
       return false;
     }
 
-    return miningToolItem.getMaterial() == this.originalHasteToolMaterial;
+    return ToolMaterialHelper.getToolMaterial(miningToolItem) == this.originalHasteToolMaterial;
   }
 }

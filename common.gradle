@@ -2,7 +2,9 @@ apply plugin: 'maven-publish'
 apply plugin: 'fabric-loom'
 apply plugin: 'com.replaymod.preprocess'
 
-int mcVersion = project.mcVersion
+base {
+    archivesName = project.archives_base_name
+}
 
 repositories {
     maven {

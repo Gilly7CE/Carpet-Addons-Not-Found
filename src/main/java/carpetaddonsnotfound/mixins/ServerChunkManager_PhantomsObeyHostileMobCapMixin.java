@@ -19,7 +19,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(ServerChunkManager.class)
 public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
   @Redirect(
-          method = "tickChunks",
+          //#if MC>12101
+          method = "tickChunks(Lnet/minecraft/util/profiler/Profiler;JLjava/util/List;)V",
+          //#else
+          //$$ method = "tickChunks()V",
+          //#endif
           at = @At(
                   value = "INVOKE",
                   target = "Lnet/minecraft/world/SpawnHelper;setupSpawn(ILjava/lang/Iterable;" +

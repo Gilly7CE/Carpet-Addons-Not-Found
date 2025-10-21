@@ -13,6 +13,9 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.entry.RegistryEntry;
+//#if MC>12101
+import net.minecraft.registry.Registry;
+//#endif
 //#endif
 
 public class BlockBreakingSpeedRatioCalculator {
@@ -35,9 +38,14 @@ public class BlockBreakingSpeedRatioCalculator {
   private static int getEfficiencyLevel(LivingEntity livingEntity) {
     //#if MC>12006
     DynamicRegistryManager registryManager = livingEntity.getWorld().getRegistryManager();
-    RegistryEntry<Enchantment> efficienyRegistryEntry =
-            registryManager.get(RegistryKeys.ENCHANTMENT).entryOf(Enchantments.EFFICIENCY);
-    return EnchantmentHelper.getLevel(efficienyRegistryEntry, livingEntity.getWeaponStack());
+    //#if MC>12101
+    Registry<Enchantment> enchantmentsRegistry = registryManager.getOrThrow(RegistryKeys.ENCHANTMENT);
+    RegistryEntry<Enchantment> efficiencyRegistryEntry = enchantmentsRegistry.getEntry(enchantmentsRegistry.get(Enchantments.EFFICIENCY));
+    return EnchantmentHelper.getLevel(efficiencyRegistryEntry, livingEntity.getWeaponStack());
+    //#else
+    //$$ RegistryEntry<Enchantment> efficiencyRegistryEntry = registryManager.get(RegistryKeys.ENCHANTMENT).entryOf(Enchantments.EFFICIENCY);
+    //$$ return EnchantmentHelper.getLevel(efficiencyRegistryEntry, livingEntity.getWeaponStack());
+    //#endif
     //#else
     //$$ return EnchantmentHelper.getEfficiency(livingEntity);
     //#endif

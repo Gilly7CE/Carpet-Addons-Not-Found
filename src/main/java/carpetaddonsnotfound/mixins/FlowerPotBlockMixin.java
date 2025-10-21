@@ -18,7 +18,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 //#if MC>12004
-import net.minecraft.util.ItemActionResult;
+//#if MC>12101
+import net.minecraft.util.ActionResult;
+//#else
+//$$ import net.minecraft.util.ItemActionResult;
+//#endif
 //#else
 //$$ import net.minecraft.util.ActionResult;
 //#endif
@@ -56,7 +60,11 @@ public abstract class FlowerPotBlockMixin {
           Hand hand,
           BlockHitResult hit,
           //#if MC>12004
-          CallbackInfoReturnable<ItemActionResult> cir
+          //#if MC>12101
+          CallbackInfoReturnable<ActionResult> cir
+          //#else
+          //$$ CallbackInfoReturnable<ItemActionResult> cir
+          //#endif
           //#else
           //$$ CallbackInfoReturnable<ActionResult> cir
           //#endif
@@ -67,7 +75,11 @@ public abstract class FlowerPotBlockMixin {
       return;
     }
     //#if MC>12004
-    cir.setReturnValue(ItemActionResult.success(world.isClient));
+    //#if MC>12101
+    cir.setReturnValue(ActionResult.SUCCESS);
+    //#else
+    //$$ cir.setReturnValue(ItemActionResult.success(world.isClient));
+    //#endif
     //#else
     //$$ cir.setReturnValue(ActionResult.success(world.isClient));
     //#endif

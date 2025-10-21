@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -33,8 +34,12 @@ public class ReplaceFlowersInPotsRule {
     }
 
     ItemStack dropStack = new ItemStack(currentContent.asItem(), 1);
-    if (!player.giveItemStack(dropStack)) {
-      player.dropStack(dropStack);
+    if (!player.giveItemStack(dropStack) && world instanceof ServerWorld serverWorld) {
+      player.dropStack(
+              //#if MC>12101
+              serverWorld,
+              //#endif
+              dropStack);
     }
 
     BlockState blockState = newPot.getDefaultState();
