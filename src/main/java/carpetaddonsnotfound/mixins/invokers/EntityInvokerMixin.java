@@ -15,6 +15,8 @@ public interface EntityInvokerMixin {
   @Invoker("getZ")
   double invokeGetZ();
 
-  @Invoker("tryCheckBlockCollision")
-  void invokeTryCheckBlockCollision();
+  //#if MC<12103
+  //$$ @Invoker("tryCheckBlockCollision")
+  //$$ void invokeTryCheckBlockCollision();
+  //#endif
 }

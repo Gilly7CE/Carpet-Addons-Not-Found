@@ -10,12 +10,16 @@ import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.entity.player.PlayerAbilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.predicate.entity.EntityPredicates;
+//#if MC>12101
+import net.minecraft.server.world.ServerWorld;
+//#endif
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -32,6 +36,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
   @Shadow
   public abstract SoundCategory getSoundCategory();
 
+  @Unique
   private final List<EntityType<?>> excludedEntities = Arrays.asList(
           EntityType.PLAYER,
           EntityType.ITEM_FRAME,
@@ -58,7 +63,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
       return;
     }
 
-    instantKillTarget(target);
+    instantKillTarget(target, world);
     world.playSound(
             null,
             this.invokeGetX(),
@@ -71,6 +76,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
     ci.cancel();
   }
 
+  @Unique
   private boolean canCreativeKill(Entity target, World world) {
     return CarpetAddonsNotFoundSettings.creativePlayerOneHitKill
            && !world.isClient
@@ -79,18 +85,34 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
            && !(excludedEntities.contains(target.getType()));
   }
 
-  private void instantKillTarget(Entity target) {
+  @Unique
+  private void instantKillTarget(Entity target, World world) {
     if (target instanceof EnderDragonPart enderDragonPart) {
-      instantKillEnderDragon(enderDragonPart);
+      instantKillEnderDragon(enderDragonPart, world);
       return;
     }
 
-    target.kill();
+    killEntity(target, world);
   }
 
-  private void instantKillEnderDragon(EnderDragonPart enderDragonPart) {
+  @Unique
+  private void instantKillEnderDragon(EnderDragonPart enderDragonPart, World world) {
     EnderDragonEntity enderDragonEntity = enderDragonPart.owner;
-    Arrays.stream(enderDragonEntity.getBodyParts()).forEach(Entity::kill);
-    enderDragonEntity.kill();
+    for (Entity enderDragonEntityPart : enderDragonEntity.getBodyParts()) {
+      killEntity(enderDragonEntityPart, world);
+    }
+
+    killEntity(enderDragonEntity, world);
+  }
+
+  @Unique
+  private void killEntity(Entity entity, World world) {
+    //#if MC>12101
+    if (world instanceof ServerWorld serverWorld) {
+      entity.kill(serverWorld);
+    }
+    //#else
+    //$$ entity.kill();
+    //#endif
   }
 }
