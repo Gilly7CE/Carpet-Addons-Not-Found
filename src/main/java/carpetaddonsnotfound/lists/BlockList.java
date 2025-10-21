@@ -9,8 +9,8 @@ import java.util.List;
 
 public class BlockList {
   public static List<Block> blueIce = Collections.singletonList(
-          Blocks.BLUE_ICE
-                                                               );
+          Blocks.BLUE_ICE);
+
   public static List<Block> cobbledDeepslate = Arrays.asList(
           Blocks.COBBLED_DEEPSLATE,
           Blocks.COBBLED_DEEPSLATE_STAIRS,
@@ -31,6 +31,7 @@ public class BlockList {
           Blocks.CHISELED_DEEPSLATE,
           Blocks.CRACKED_DEEPSLATE_BRICKS,
           Blocks.CRACKED_DEEPSLATE_TILES);
+
   public static List<Block> cobblestone = Arrays.asList(
           Blocks.COBBLESTONE,
           Blocks.COBBLESTONE_SLAB,
@@ -39,17 +40,18 @@ public class BlockList {
           Blocks.MOSSY_COBBLESTONE,
           Blocks.MOSSY_COBBLESTONE_SLAB,
           Blocks.MOSSY_COBBLESTONE_STAIRS,
-          Blocks.MOSSY_COBBLESTONE_WALL
-                                                       );
+          Blocks.MOSSY_COBBLESTONE_WALL);
+
   public static List<Block> deepslate = Collections.singletonList(
           Blocks.DEEPSLATE);
+
   public static List<Block> endStone = Arrays.asList(
           Blocks.END_STONE,
           Blocks.END_STONE_BRICKS,
           Blocks.END_STONE_BRICK_SLAB,
           Blocks.END_STONE_BRICK_STAIRS,
-          Blocks.END_STONE_BRICK_WALL
-                                                    );
+          Blocks.END_STONE_BRICK_WALL);
+
   public static List<Block> netherBricks = Arrays.asList(
           Blocks.NETHER_BRICKS,
           Blocks.NETHER_BRICK_FENCE,
@@ -61,9 +63,10 @@ public class BlockList {
           Blocks.RED_NETHER_BRICKS,
           Blocks.RED_NETHER_BRICK_SLAB,
           Blocks.RED_NETHER_BRICK_STAIRS,
-          Blocks.RED_NETHER_BRICK_WALL
-                                                        );
+          Blocks.RED_NETHER_BRICK_WALL);
+
   public static List<Block> wood = Arrays.asList(
+          // Fence Gates
           Blocks.OAK_FENCE_GATE,
           Blocks.SPRUCE_FENCE_GATE,
           Blocks.BIRCH_FENCE_GATE,
@@ -77,6 +80,11 @@ public class BlockList {
           Blocks.CHERRY_FENCE_GATE,
           Blocks.BAMBOO_FENCE_GATE,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_FENCE_GATE,
+          //#endif
+
+          // Fences
           Blocks.OAK_FENCE,
           Blocks.SPRUCE_FENCE,
           Blocks.BIRCH_FENCE,
@@ -90,6 +98,11 @@ public class BlockList {
           Blocks.CHERRY_FENCE,
           Blocks.BAMBOO_FENCE,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_FENCE,
+          //#endif
+
+          // Logs
           Blocks.OAK_LOG,
           Blocks.SPRUCE_LOG,
           Blocks.BIRCH_LOG,
@@ -103,6 +116,11 @@ public class BlockList {
           Blocks.CHERRY_LOG,
           Blocks.BAMBOO_BLOCK,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_LOG,
+          //#endif
+
+          // Stripped Logs
           Blocks.STRIPPED_OAK_LOG,
           Blocks.STRIPPED_SPRUCE_LOG,
           Blocks.STRIPPED_BIRCH_LOG,
@@ -116,6 +134,11 @@ public class BlockList {
           Blocks.STRIPPED_CHERRY_LOG,
           Blocks.STRIPPED_BAMBOO_BLOCK,
           //#endif
+          //#if MC>12103
+          Blocks.STRIPPED_PALE_OAK_LOG,
+          //#endif
+
+          // Planks
           Blocks.OAK_PLANKS,
           Blocks.SPRUCE_PLANKS,
           Blocks.BIRCH_PLANKS,
@@ -129,6 +152,11 @@ public class BlockList {
           Blocks.CHERRY_PLANKS,
           Blocks.BAMBOO_PLANKS,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_PLANKS,
+          //#endif
+
+          // "Wood"s
           Blocks.OAK_WOOD,
           Blocks.SPRUCE_WOOD,
           Blocks.BIRCH_WOOD,
@@ -142,6 +170,11 @@ public class BlockList {
           Blocks.CHERRY_WOOD,
           Blocks.BAMBOO_MOSAIC,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_WOOD,
+          //#endif
+
+          // Stripped "Wood"s
           Blocks.STRIPPED_OAK_WOOD,
           Blocks.STRIPPED_SPRUCE_WOOD,
           Blocks.STRIPPED_BIRCH_WOOD,
@@ -154,6 +187,11 @@ public class BlockList {
           Blocks.STRIPPED_MANGROVE_WOOD,
           Blocks.STRIPPED_CHERRY_WOOD,
           //#endif
+          //#if MC>12103
+          Blocks.STRIPPED_PALE_OAK_WOOD,
+          //#endif
+
+          // Slabs
           Blocks.OAK_SLAB,
           Blocks.SPRUCE_SLAB,
           Blocks.BIRCH_SLAB,
@@ -168,6 +206,11 @@ public class BlockList {
           Blocks.BAMBOO_SLAB,
           Blocks.BAMBOO_MOSAIC_SLAB,
           //#endif
+          //#if MC>12103
+          Blocks.PALE_OAK_SLAB,
+          //#endif
+
+          // Stairs
           Blocks.OAK_STAIRS,
           Blocks.SPRUCE_STAIRS,
           Blocks.BIRCH_STAIRS,
@@ -177,11 +220,13 @@ public class BlockList {
           Blocks.CRIMSON_STAIRS,
           Blocks.WARPED_STAIRS
           //#if MC>11802
-          ,Blocks.MANGROVE_STAIRS,
+          , Blocks.MANGROVE_STAIRS,
           Blocks.CHERRY_STAIRS,
           Blocks.BAMBOO_STAIRS,
-          Blocks.BAMBOO_MOSAIC_STAIRS);
-          //#else
-          //$$ );
+          Blocks.BAMBOO_MOSAIC_STAIRS
           //#endif
+          //#if MC>12103
+          , Blocks.PALE_OAK_STAIRS
+          //#endif
+  );
 }
