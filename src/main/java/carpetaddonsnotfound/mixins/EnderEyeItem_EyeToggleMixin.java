@@ -28,7 +28,8 @@ public abstract class EnderEyeItem_EyeToggleMixin extends Item {
     BlockPos blockPos = context.getBlockPos();
     BlockState blockState = world.getBlockState(blockPos);
     if (!CarpetAddonsNotFoundSettings.dropEyesOfEnderFromEndPortalFrame ||
-        !blockState.isOf((Blocks.END_PORTAL_FRAME)) || !blockState.get(EndPortalFrameBlock.EYE)) {
+        !blockState.isOf((Blocks.END_PORTAL_FRAME)) ||
+        !blockState.get(EndPortalFrameBlock.EYE)) {
       return;
     }
 
