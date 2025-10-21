@@ -18,16 +18,23 @@ import net.minecraft.server.world.ServerWorld;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntity_DropAllXpOnPlayerDeathMixin {
-  @Redirect(method = "dropXp", at = @At(value = "INVOKE",
-                                        //#if MC>12006
-                                        target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop" +
-                                                 "(Lnet/minecraft/server/world/ServerWorld;" +
-                                                 "Lnet/minecraft/entity/Entity;)I"
-                                        //#elseif MC>11802
-                                        //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop()I"
-                                        //#else
-                                        //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop(Lnet/minecraft/entity/player/PlayerEntity;)I"
-                                        //#endif
+  @Redirect(
+          //#if MC>12103
+          method = "dropExperience",
+          //#else
+          //$$ method = "dropXp",
+          //#endif
+          at = @At(
+                  value = "INVOKE",
+                  //#if MC>12103
+                  target = "Lnet/minecraft/entity/LivingEntity;getExperienceToDrop(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;)I"
+                  //#elseif MC>12006
+                  //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop(Lnet/minecraft/server/world/ServerWorld;Lnet/minecraft/entity/Entity;)I"
+                  //#elseif MC>11802
+                  //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop()I"
+                  //#else
+                  //$$ target = "Lnet/minecraft/entity/LivingEntity;getXpToDrop(Lnet/minecraft/entity/player/PlayerEntity;)I"
+                  //#endif
   ))
   private int onDropXp(
           //#if MC>12006
@@ -43,8 +50,10 @@ public abstract class LivingEntity_DropAllXpOnPlayerDeathMixin {
                       ) {
     if (!CarpetAddonsNotFoundSettings.dropAllXpOnPlayerDeath ||
         !((LivingEntity) instance instanceof PlayerEntity player)) {
-      //#if MC>12006
-      return instance.getXpToDrop(world, attacker);
+      //#if MC>12103
+      return instance.getExperienceToDrop(world, attacker);
+      //#elseif MC>12006
+      //$$ return instance.getXpToDrop(world, attacker);
       //#elseif MC>11802
       //$$ return instance.getXpToDrop();
       //#else
