@@ -24,6 +24,11 @@ public final class MovableBlockEntitiesRuleObserver
   //#if MC>11802
   @Override
   public void ruleChanged(ServerCommandSource source, CarpetRule<?> changedRule, String userInput) {
+    // Using a string here directly feels wrong but likelihood of renaming this rule is low
+    if (!Objects.equals(changedRule.name(), "movableBlockEntities")) {
+      return;
+    }
+
     boolean ruleEnabled = (boolean) changedRule.value();
     onRuleChanged(source, changedRule.name(), ruleEnabled);
   }
@@ -36,11 +41,6 @@ public final class MovableBlockEntitiesRuleObserver
   //#endif
 
   private void onRuleChanged(ServerCommandSource source, String ruleName, boolean ruleEnabled) {
-    // Using a string here directly feels wrong but likelihood of renaming this rule is low
-    if (!Objects.equals(ruleName, "movableBlockEntities")) {
-      return;
-    }
-
     if (ruleEnabled || !CarpetAddonsNotFoundSettings.movableSpawners) {
       return;
     }
