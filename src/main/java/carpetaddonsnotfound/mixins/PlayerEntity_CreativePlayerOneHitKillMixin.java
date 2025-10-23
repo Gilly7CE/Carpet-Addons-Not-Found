@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.WorldHelper;
 import carpetaddonsnotfound.mixins.accessors.EntityAccessorMixin;
 import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
 import net.minecraft.entity.Entity;
@@ -79,7 +80,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
   @Unique
   private boolean canCreativeKill(Entity target, World world) {
     return CarpetAddonsNotFoundSettings.creativePlayerOneHitKill
-           && !world.isClient
+           && !WorldHelper.isClient(world)
            && this.abilities.creativeMode
            && EntityPredicates.EXCEPT_CREATIVE_OR_SPECTATOR.test(target)
            && !(excludedEntities.contains(target.getType()));

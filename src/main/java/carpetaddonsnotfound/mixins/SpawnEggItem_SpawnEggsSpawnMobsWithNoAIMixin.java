@@ -23,61 +23,84 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(SpawnEggItem.class)
 public abstract class SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin {
 
+  //#if MC>12108
   @SuppressWarnings("unchecked")
-  @Redirect(method = "useOnBlock", at = @At(value = "INVOKE",
+  @Redirect(method = "spawnMobEntity", at = @At(value = "INVOKE",
                                             target = "Lnet/minecraft/entity/EntityType;spawnFromItemStack" +
                                                      "(Lnet/minecraft/server/world/ServerWorld;" +
                                                      "Lnet/minecraft/item/ItemStack;" +
-                                                     //#if MC>12104
                                                      "Lnet/minecraft/entity/LivingEntity;" +
-                                                     //#else
-                                                     //$$ "Lnet/minecraft/entity/player/PlayerEntity;" +
-                                                     //#endif
                                                      "Lnet/minecraft/util/math/BlockPos;" +
                                                      "Lnet/minecraft/entity/SpawnReason;ZZ)" +
                                                      "Lnet/minecraft/entity/Entity;"))
-  private <T extends Entity> T maybeDisableMobAiForUseOnBlock(EntityType<?> instance,
-                                                              ServerWorld world,
-                                                              @Nullable ItemStack stack,
-                                                              //#if MC>12104
-                                                              @Nullable LivingEntity spawner,
-                                                              //#else
-                                                              //$$ @Nullable PlayerEntity spawner,
-                                                              //#endif
-                                                              BlockPos pos,
-                                                              SpawnReason spawnReason,
-                                                              boolean alignPosition,
-                                                              boolean invertY) {
+  private <T extends Entity> T maybeDisableMobAiForSpawnMobEntity(EntityType<?> instance,
+                                                                  ServerWorld world,
+                                                                  @Nullable ItemStack stack,
+                                                                  @Nullable LivingEntity spawner,
+                                                                  BlockPos pos,
+                                                                  SpawnReason spawnReason,
+                                                                  boolean alignPosition,
+                                                                  boolean invertY) {
     return (T) maybeDisableMobAI(instance, world, stack, spawner, pos, spawnReason, alignPosition, invertY);
   }
 
-  @SuppressWarnings("unchecked")
-  @Redirect(method = "use",
-            at = @At(value = "INVOKE",
-                     target = "Lnet/minecraft/entity/EntityType;spawnFromItemStack" +
-                              "(Lnet/minecraft/server/world/ServerWorld;" +
-                              "Lnet/minecraft/item/ItemStack;" +
-                              //#if MC>12104
-                              "Lnet/minecraft/entity/LivingEntity;" +
-                              //#else
-                              //$$ "Lnet/minecraft/entity/player/PlayerEntity;" +
-                              //#endif
-                              "Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/SpawnReason;" +
-                              "ZZ)Lnet/minecraft/entity/Entity;"))
-  private <T extends Entity> T maybeDisableMobAiForUse(EntityType<?> instance,
-                                                       ServerWorld world,
-                                                       @Nullable ItemStack stack,
-                                                       //#if MC>12104
-                                                       @Nullable LivingEntity spawner,
-                                                       //#else
-                                                       //$$ @Nullable PlayerEntity spawner,
-                                                       //#endif
-                                                       BlockPos pos,
-                                                       SpawnReason spawnReason,
-                                                       boolean alignPosition,
-                                                       boolean invertY) {
-    return (T) maybeDisableMobAI(instance, world, stack, spawner, pos, spawnReason, alignPosition, invertY);
-  }
+  //#else
+  //$$ @SuppressWarnings("unchecked")
+  //$$ @Redirect(method = "useOnBlock", at = @At(value = "INVOKE",
+  //$$                                           target = "Lnet/minecraft/entity/EntityType;spawnFromItemStack" +
+  //$$                                                    "(Lnet/minecraft/server/world/ServerWorld;" +
+  //$$                                                    "Lnet/minecraft/item/ItemStack;" +
+  //$$                                                    //#if MC>12104
+  //$$                                                    "Lnet/minecraft/entity/LivingEntity;" +
+  //$$                                                    //#else
+  //$$                                                    //$$ "Lnet/minecraft/entity/player/PlayerEntity;" +
+  //$$                                                    //#endif
+  //$$                                                    "Lnet/minecraft/util/math/BlockPos;" +
+  //$$                                                    "Lnet/minecraft/entity/SpawnReason;ZZ)" +
+  //$$                                                    "Lnet/minecraft/entity/Entity;"))
+  //$$ private <T extends Entity> T maybeDisableMobAiForUseOnBlock(EntityType<?> instance,
+  //$$                                                             ServerWorld world,
+  //$$                                                            @Nullable ItemStack stack,
+  //$$                                                             //#if MC>12104
+  //$$                                                             @Nullable LivingEntity spawner,
+  //$$                                                             //#else
+  //$$                                                             //$$ @Nullable PlayerEntity spawner,
+  //$$                                                             //#endif
+  //$$                                                             BlockPos pos,
+  //$$                                                             SpawnReason spawnReason,
+  //$$                                                             boolean alignPosition,
+  //$$                                                             boolean invertY) {
+  //$$   return (T) maybeDisableMobAI(instance, world, stack, spawner, pos, spawnReason, alignPosition, invertY);
+  //$$ }
+  //$$
+  //$$ @SuppressWarnings("unchecked")
+  //$$ @Redirect(method = "use",
+  //$$           at = @At(value = "INVOKE",
+  //$$                    target = "Lnet/minecraft/entity/EntityType;spawnFromItemStack" +
+  //$$                             "(Lnet/minecraft/server/world/ServerWorld;" +
+  //$$                             "Lnet/minecraft/item/ItemStack;" +
+  //$$                             //#if MC>12104
+  //$$                             "Lnet/minecraft/entity/LivingEntity;" +
+  //$$                             //#else
+  //$$                             //$$ "Lnet/minecraft/entity/player/PlayerEntity;" +
+  //$$                             //#endif
+  //$$                             "Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/entity/SpawnReason;" +
+  //$$                             "ZZ)Lnet/minecraft/entity/Entity;"))
+  //$$ private <T extends Entity> T maybeDisableMobAiForUse(EntityType<?> instance,
+  //$$                                                      ServerWorld world,
+  //$$                                                      @Nullable ItemStack stack,
+  //$$                                                      //#if MC>12104
+  //$$                                                      @Nullable LivingEntity spawner,
+  //$$                                                      //#else
+  //$$                                                      //$$ @Nullable PlayerEntity spawner,
+  //$$                                                      //#endif
+  //$$                                                      BlockPos pos,
+  //$$                                                      SpawnReason spawnReason,
+  //$$                                                      boolean alignPosition,
+  //$$                                                      boolean invertY) {
+  //$$   return (T) maybeDisableMobAI(instance, world, stack, spawner, pos, spawnReason, alignPosition, invertY);
+  //$$ }
+  //#endif
 
   @Unique
   private Entity maybeDisableMobAI(EntityType<?> instance,

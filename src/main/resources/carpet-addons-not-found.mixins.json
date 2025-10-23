@@ -10,17 +10,14 @@
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlockMixin",
     "LivingEntity_DropAllXpOnPlayerDeathMixin",
-    "NetherPortalBlock_PortalSpectatorDelayMixin",
+    "LivingEntityMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",
     "PistonBlock_MovableSpawnersMixin",
     "PistonExtensionBlock_MovableEmptyEndPortalFrameMixin",
     "PlayerEntity_CreativePlayerOneHitKillMixin",
     "PlayerEntity_InstantMineMixin",
-    "PlayerEntity_PortalSpectatorDelayMixin",
-    "PlayerEntity_SpectatorPlayersUsePortalsMixin",
     "ServerChunkManager_PhantomsObeyHostileMobCapMixin",
-    "ServerPlayerEntity_SpectatorPlayersUsePortalsMixin",
     "SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin",
     "SpawnHelper_DisableMobSpawningInMixin",
     "SpawnHelper_EndermenSpawnOnlyInTheEndMixin",
@@ -34,8 +31,5 @@
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "client": [
-    "ClientPlayerEntity_SpectatorPlayersUsePortalsMixin"
-  ]
+  }
 }

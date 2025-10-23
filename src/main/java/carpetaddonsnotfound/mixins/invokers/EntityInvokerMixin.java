@@ -14,14 +14,4 @@ public interface EntityInvokerMixin {
 
   @Invoker("getZ")
   double invokeGetZ();
-
-  //#if MC<12103
-  //$$ @Invoker("tryCheckBlockCollision")
-  //$$ void invokeTryCheckBlockCollision();
-  //#endif
-
-  //#if MC>12104
-  @Invoker("tickBlockCollision")
-  void invokeTickBlockCollision();
-  //#endif
 }
