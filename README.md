@@ -88,3 +88,4 @@ If you have any issues doing any of these, please contact the following:
 - Gilly7CE
   - Discord: Gilly7CE#7462
   - Email: gilly7ce@gmail.com
+- Join the discord server: https://discord.gg/WQ66TAmJeS
