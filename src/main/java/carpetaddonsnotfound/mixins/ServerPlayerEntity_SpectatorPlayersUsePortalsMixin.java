@@ -7,7 +7,9 @@ import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.MovementType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.util.math.BlockPos;
+//#if MC<12108
+//$$ import net.minecraft.util.math.BlockPos;
+//#endif
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,9 +18,19 @@ import org.spongepowered.asm.mixin.Mixin;
 public abstract class ServerPlayerEntity_SpectatorPlayersUsePortalsMixin
         extends PlayerEntity
         implements EntityAccessorMixin, EntityInvokerMixin {
-  public ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(World world, BlockPos pos, float yaw,
-                                                            GameProfile gameProfile) {
-    super(world, pos, yaw, gameProfile);
+  protected ServerPlayerEntity_SpectatorPlayersUsePortalsMixin(
+          World world,
+          //#if MC<12108
+          //$$ BlockPos pos,
+          //$$ float yaw,
+          //#endif
+          GameProfile gameProfile) {
+    super(world,
+          //#if MC<12108
+          //$$ pos,
+          //$$ yaw,
+          //#endif
+          gameProfile);
   }
 
   @Override
