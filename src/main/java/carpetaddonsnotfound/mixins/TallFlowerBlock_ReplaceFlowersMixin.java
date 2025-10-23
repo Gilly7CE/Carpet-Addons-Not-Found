@@ -6,8 +6,12 @@ import net.minecraft.block.TallFlowerBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+//#if MC>12104
+import net.minecraft.server.world.ServerWorld;
+//#else
+//$$ import net.minecraft.world.World;
+//#endif
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 
 import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.ReplaceableFlowersOptions;
@@ -30,10 +34,32 @@ public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {
   }
 
   @Override
-  public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-    if (state.get(TallFlowerBlock.HALF) == DoubleBlockHalf.LOWER && !newState.isAir()) {
+  public void onStateReplaced(
+          BlockState state,
+          //#if MC>12104
+          ServerWorld world,
+          //#else
+          //$$ World world,
+          //#endif
+          BlockPos pos,
+          //#if MC<12105
+          //$$ BlockState newState,
+          //#endif
+          boolean moved) {
+    BlockState blockState;
+    //#if MC>12104
+    blockState = state;
+    //#else
+    //$$ blockState = newState;
+    //#endif
+    if (state.get(TallFlowerBlock.HALF) == DoubleBlockHalf.LOWER && !blockState.isAir()) {
       dropStack(world, pos, new ItemStack(this.asItem(), 1));
     }
-    super.onStateReplaced(state, world, pos, newState, moved);
+
+    //#if MC>12104
+    super.onStateReplaced(blockState, world, pos, moved);
+    //#else
+    //$$ super.onStateReplaced(state, world, pos, blockState, moved);
+    //#endif
   }
 }

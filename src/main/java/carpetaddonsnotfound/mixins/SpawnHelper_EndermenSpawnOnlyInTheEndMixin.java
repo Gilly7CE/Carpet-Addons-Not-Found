@@ -1,6 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
+import carpetaddonsnotfound.helpers.SpawnEntryHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.server.world.ServerWorld;
@@ -25,7 +26,8 @@ public abstract class SpawnHelper_EndermenSpawnOnlyInTheEndMixin {
                                  final StructureAccessor structureAccessor, final ChunkGenerator chunkGenerator,
                                  final SpawnSettings.SpawnEntry spawnEntry, final BlockPos.Mutable pos,
                                  final double squaredDistance, final CallbackInfoReturnable<Boolean> cir) {
-    if (CarpetAddonsNotFoundSettings.endermenSpawnOnlyInTheEnd && spawnEntry.type == EntityType.ENDERMAN &&
+    if (CarpetAddonsNotFoundSettings.endermenSpawnOnlyInTheEnd &&
+        SpawnEntryHelper.getEntityType(spawnEntry) == EntityType.ENDERMAN &&
         world.getRegistryKey().getValue() != World.END.getValue()) {
       cir.setReturnValue(false);
     }
