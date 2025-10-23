@@ -10,6 +10,7 @@
     "FlowerBlock_ReplaceFlowersMixin",
     "FlowerPotBlockMixin",
     "LivingEntity_DropAllXpOnPlayerDeathMixin",
+    "LivingEntityMixin",
     "NetherPortalBlock_PortalSpectatorDelayMixin",
     "PhantomSpawnerMixin",
     "PistonBlock_MovableEmptyEndPortalFrameMixin",

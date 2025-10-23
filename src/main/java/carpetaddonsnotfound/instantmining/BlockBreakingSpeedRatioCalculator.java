@@ -1,5 +1,6 @@
 package carpetaddonsnotfound.instantmining;
 
+import carpetaddonsnotfound.helpers.WorldHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
@@ -37,7 +38,7 @@ public class BlockBreakingSpeedRatioCalculator {
 
   private static int getEfficiencyLevel(LivingEntity livingEntity) {
     //#if MC>12006
-    DynamicRegistryManager registryManager = livingEntity.getWorld().getRegistryManager();
+    DynamicRegistryManager registryManager = WorldHelper.getWorld(livingEntity).getRegistryManager();
     //#if MC>12101
     Registry<Enchantment> enchantmentsRegistry = registryManager.getOrThrow(RegistryKeys.ENCHANTMENT);
     RegistryEntry<Enchantment> efficiencyRegistryEntry = enchantmentsRegistry.getEntry(enchantmentsRegistry.get(Enchantments.EFFICIENCY));
