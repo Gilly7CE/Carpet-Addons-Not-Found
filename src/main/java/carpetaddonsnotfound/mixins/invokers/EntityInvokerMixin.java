@@ -19,4 +19,9 @@ public interface EntityInvokerMixin {
   //$$ @Invoker("tryCheckBlockCollision")
   //$$ void invokeTryCheckBlockCollision();
   //#endif
+
+  //#if MC>12104
+  @Invoker("tickBlockCollision")
+  void invokeTickBlockCollision();
+  //#endif
 }

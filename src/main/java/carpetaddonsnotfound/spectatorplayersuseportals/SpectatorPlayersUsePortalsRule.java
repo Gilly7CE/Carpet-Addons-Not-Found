@@ -1,9 +1,7 @@
 package carpetaddonsnotfound.spectatorplayersuseportals;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
-//#if MC<12103
-//$$ import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
-//#endif
+import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -20,16 +18,20 @@ public class SpectatorPlayersUsePortalsRule {
       return;
     }
 
+    EntityInvokerMixin playerEntityInvoker = (EntityInvokerMixin) playerEntity;
+
     BlockPos actualPlayerPos = getActualPlayerPos(playerEntity);
     BlockPos shiftedPlayerPos = getShiftedPlayerPos(playerEntity);
 
     // Bit hacky but this temporarily sets the players bounding box to be closer to the camera for the check block
     // collision method
     playerEntity.setBoundingBox(new Box(shiftedPlayerPos));
-    //#if MC>12101
-    playerEntity.tickBlockCollision();
+    //#if MC>12104
+    playerEntityInvoker.invokeTickBlockCollision();
+    //#elseif MC>12101
+    //$$ playerEntity.tickBlockCollision();
     //#else
-    //$$ ((EntityInvokerMixin) playerEntity).invokeTryCheckBlockCollision();
+    //$$ playerEntityInvoker.invokeTryCheckBlockCollision();
     //#endif
     playerEntity.setBoundingBox(new Box(actualPlayerPos));
   }

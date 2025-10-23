@@ -20,7 +20,11 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
   @Redirect(
           //#if MC>12101
-          method = "tickChunks(Lnet/minecraft/util/profiler/Profiler;JLjava/util/List;)V",
+          method = "tickChunks(Lnet/minecraft/util/profiler/Profiler;J" +
+                   //#if MC<12105
+                   //$$ "Ljava/util/List;" +
+                   //#endif
+                   ")V",
           //#else
           //$$ method = "tickChunks()V",
           //#endif
