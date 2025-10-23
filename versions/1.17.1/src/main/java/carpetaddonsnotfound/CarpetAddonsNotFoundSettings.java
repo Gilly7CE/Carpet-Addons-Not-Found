@@ -112,15 +112,6 @@ public class CarpetAddonsNotFoundSettings {
         category = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean pickFlowersFromPots = false;
 
-  @Rule(
-          desc = "Amount of delay ticks to use a nether portal in spectator mode. Requires the `spectatorPlayersUsePortals` rule to be enabled.",
-          options = { "1", "40", "80", "72000" },
-          category = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
-          strict = false,
-          validate = OneHourMaxDelayLimit.class
-  )
-  public static int portalSpectatorDelay = 1;
-
   @Rule(desc = "Placing blocks on flowers will replace them like grass.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
@@ -131,10 +122,6 @@ public class CarpetAddonsNotFoundSettings {
 
   @Rule(desc = "A spawn egg will spawn a mob with no AI.", category = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
-
-  @Rule(desc = "Spectator players can go through nether portals, end portals and end gateways.",
-        category = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
-  public static boolean spectatorPlayersUsePortals = false;
 
   @Rule(desc = "When a stonecutter is powered by redstone, it will damage entities standing on top of it.",
         category = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND },

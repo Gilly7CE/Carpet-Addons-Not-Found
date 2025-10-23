@@ -81,14 +81,6 @@ public class CarpetAddonsNotFoundSettings {
   @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
   public static boolean phantomsObeyHostileMobCap = false;
 
-  @Rule(
-          options = { "1", "40", "80", "72000" },
-          categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND },
-          strict = false,
-          validators = OneHourMaxDelayLimit.class
-  )
-  public static int portalSpectatorDelay = 1;
-
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
@@ -97,9 +89,6 @@ public class CarpetAddonsNotFoundSettings {
 
   @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
-
-  @Rule(categories = { SPECTATOR, CARPET_ADDONS_NOT_FOUND })
-  public static boolean spectatorPlayersUsePortals = false;
 
   @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND }, strict = false, options = { "-1", "0", "1", "2" })
   public static float stonecuttersDoDamage = 0.0f;
