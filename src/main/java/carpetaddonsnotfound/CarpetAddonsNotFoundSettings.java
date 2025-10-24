@@ -1,99 +1,96 @@
 package carpetaddonsnotfound;
 
-import carpet.api.settings.Rule;
-import carpetaddonsnotfound.validators.OneHourMaxDelayLimit;
+import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRule;
 import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import static carpet.api.settings.RuleCategory.*;
+import static carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleCategory.*;
 
 public class CarpetAddonsNotFoundSettings {
-  public static final Logger LOG = LoggerFactory.getLogger("carpet-addons-not-found");
-
-  private static final String CARPET_ADDONS_NOT_FOUND = "carpet-addons-not-found";
-  private static final String SPECTATOR = "spectator";
-
-  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean alwaysPickFlowersFromPots = false;
 
-  @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, CREATIVE })
   public static boolean creativePlayerOneHitKill = false;
 
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { CREATIVE })
   public static boolean disableMobSpawningInEnd = false;
 
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { CREATIVE })
   public static boolean disableMobSpawningInNether = false;
 
-  @Rule(categories = { CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { CREATIVE })
   public static boolean disableMobSpawningInOverworld = false;
 
-  @Rule(categories = { CREATIVE, FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { CREATIVE, FEATURE })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 
-  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean disablePhantomSpawningInMushroomFields = false;
 
-  @Rule(categories = { FEATURE, DISPENSER, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, DISPENSER })
   public static boolean dispensersPlaceEyesOfEnder = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, DISPENSER, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL, DISPENSER })
   public static boolean dispensersRemoveEyesOfEnder = false;
 
-  @Rule(categories = { CARPET_ADDONS_NOT_FOUND, SURVIVAL })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean dropAllXpOnPlayerDeath = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
   public static boolean dropEyesOfEnderFromEndPortalFrame = false;
 
-  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean endermenSpawnOnlyInTheEnd = false;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
   public static MovableBlockOptions movableEmptyEndPortalFrames = MovableBlockOptions.FALSE;
 
-  @Rule(categories = { FEATURE, EXPERIMENTAL, CARPET_ADDONS_NOT_FOUND },
-        validators = RequiresMovableBlockEntities.class)
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL },
+                            validators = RequiresMovableBlockEntities.class)
   public static boolean movableSpawners = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheriteAxeInstantMineWood = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineBlueIce = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineCobblestone = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineDeepslate = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineEndStone = false;
 
-  @Rule(categories = { SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
-  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean passiveEndermen = false;
 
-  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean phantomsObeyHostileMobCap = false;
 
-  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
-  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean replaceFlowersInPots = false;
 
-  @Rule(categories = { FEATURE, CREATIVE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, CREATIVE })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
 
-  @Rule(categories = { FEATURE, SURVIVAL, CARPET_ADDONS_NOT_FOUND }, strict = false, options = { "-1", "0", "1", "2" })
+  //#if MC>11802
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL }, strict = false, options = { "-1.0", "0.0", "1.0", "2.0" })
   public static float stonecuttersDoDamage = 0.0f;
+  //#else
+  //$$ @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL }, strict = false, options = { "-1", "0", "1", "2" })
+  //$$ public static int stonecuttersDoDamage = 0;
+  //#endif
 
-  @Rule(categories = { FEATURE, CARPET_ADDONS_NOT_FOUND })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean xpBubbleColumnInteraction = false;
 
   public enum MovableBlockOptions {
