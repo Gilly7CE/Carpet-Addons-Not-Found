@@ -24,7 +24,7 @@ runs:
       shell: bash
       run: |
         chmod +x gradlew
-        ./gradlew runServer --args="-- -carpetDumpRules -dumpPath '../wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
+        ./gradlew 1.21.10:runServer --args="-- -carpetDumpRules -dumpPath '../wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
         sed -i '1d' wiki/Available-Rules.md # Removes title from page
     - name: Commit updated wiki page
       continue-on-error: true
