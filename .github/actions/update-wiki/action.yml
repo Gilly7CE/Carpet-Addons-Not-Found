@@ -14,7 +14,14 @@ runs:
       with:
         distribution: "adopt"
         java-version: 21
-        cache: "gradle"
+
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v5
+
+    - name: Make Gradle wrapper executable
+      shell: bash
+      run: chmod +x ./gradlew
+
     - name: Checkout wiki
       uses: actions/checkout@v4
       with:
@@ -22,10 +29,8 @@ runs:
         path: wiki
     - name: Create wiki page
       shell: bash
-      run: |
-        chmod +x gradlew
-        ./gradlew 1.21.10:runServer --args="-- -carpetDumpRules -dumpPath '../wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
-        sed -i '1d' wiki/Available-Rules.md # Removes title from page
+      run: ./gradlew 1.21.10:runServer --args="-- -carpetDumpRules -dumpPath '../wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
+
     - name: Commit updated wiki page
       continue-on-error: true
       shell: bash
