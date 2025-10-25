@@ -21,7 +21,7 @@ import net.minecraft.util.math.BlockPointer;
 //#endif
 
 @Mixin(DispenserBlock.class)
-public abstract class DispenserBlock_GetCustomBehaviorMixin {
+public abstract class DispenserBlockMixin {
   /**
    * Gets the custom dispenser behavior for a non-empty item stack
    *

@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(ExperienceOrbEntity.class)
-public abstract class ExperienceOrbEntity_XpBubbleColumnInteractionMixin {
+public abstract class ExperienceOrbEntityMixin {
   @Redirect(
           method = "tick",
           at = @At(

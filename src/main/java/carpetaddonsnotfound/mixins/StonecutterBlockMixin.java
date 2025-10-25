@@ -27,8 +27,8 @@ import org.spongepowered.asm.mixin.Unique;
 import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.stonecuttersDoDamage;
 
 @Mixin(StonecutterBlock.class)
-public abstract class StonecutterBlock_StonecuttersDoDamageMixin extends Block {
-  StonecutterBlock_StonecuttersDoDamageMixin(AbstractBlock.Settings settings) {
+public abstract class StonecutterBlockMixin extends Block {
+  StonecutterBlockMixin(AbstractBlock.Settings settings) {
     super(settings);
   }
 

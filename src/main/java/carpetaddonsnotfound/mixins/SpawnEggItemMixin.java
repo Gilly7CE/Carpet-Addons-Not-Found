@@ -21,7 +21,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(SpawnEggItem.class)
-public abstract class SpawnEggItem_SpawnEggsSpawnMobsWithNoAIMixin {
+public abstract class SpawnEggItemMixin {
 
   //#if MC>12108
   @SuppressWarnings("unchecked")
