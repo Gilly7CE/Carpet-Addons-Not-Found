@@ -2,10 +2,14 @@ package carpetaddonsnotfound.mixins;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.helpers.WorldHelper;
+import carpetaddonsnotfound.instantmining.BlockBreakingSpeedRatioCalculator;
 import carpetaddonsnotfound.mixins.accessors.EntityAccessorMixin;
 import carpetaddonsnotfound.mixins.invokers.EntityInvokerMixin;
+import com.llamalad7.mixinextras.sugar.Local;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonPart;
 import net.minecraft.entity.player.PlayerAbilities;
@@ -24,12 +28,20 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Arrays;
 import java.util.List;
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements EntityAccessorMixin, EntityInvokerMixin {
+public abstract class PlayerEntityMixin
+        extends LivingEntity
+        implements EntityAccessorMixin, EntityInvokerMixin {
+  protected PlayerEntityMixin(EntityType<? extends LivingEntity> entityType,
+                                          World world) {
+    super(entityType, world);
+  }
+
   @Shadow
   @Final
   private PlayerAbilities abilities;
@@ -58,7 +70,7 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
           ),
           cancellable = true
   )
-  public void creativeKill(Entity target, CallbackInfo ci) {
+  private void creativeKill(Entity target, CallbackInfo ci) {
     World world = this.getWorld();
     if (!canCreativeKill(target, world)) {
       return;
@@ -75,6 +87,28 @@ public abstract class PlayerEntity_CreativePlayerOneHitKillMixin implements Enti
             1.0f,
             1.0f);
     ci.cancel();
+  }
+
+  /**
+   * Calculates the instant mining block breaking speed ratio and applies it to the vanilla block breaking speed
+   *
+   * @param block
+   *         the block state
+   * @param cir
+   *         the callback returnable, which is always set
+   * @param f
+   *         the vanilla block breaking speed
+   */
+  @Inject(
+          method = "getBlockBreakingSpeed",
+          at = @At(
+                  value = "TAIL"
+          ),
+          cancellable = true)
+  private void getInstantMiningBlockBreakingSpeed(BlockState block, CallbackInfoReturnable<Float> cir, @Local float f) {
+    float blockBreakingSpeedRatio =
+            BlockBreakingSpeedRatioCalculator.getBlockBreakingSpeedRatio(this, block);
+    cir.setReturnValue(f * blockBreakingSpeedRatio);
   }
 
   @Unique

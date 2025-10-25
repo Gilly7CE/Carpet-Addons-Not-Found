@@ -17,8 +17,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(EnderEyeItem.class)
-public abstract class EnderEyeItem_EyeToggleMixin extends Item {
-  protected EnderEyeItem_EyeToggleMixin(Settings settings) {
+public abstract class EnderEyeItemMixin extends Item {
+  protected EnderEyeItemMixin(Settings settings) {
     super(settings);
   }
 

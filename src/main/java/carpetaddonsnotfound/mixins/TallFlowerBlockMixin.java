@@ -18,8 +18,8 @@ import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.ReplaceableFlowe
 import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.replaceableFlowers;
 
 @Mixin(TallFlowerBlock.class)
-public abstract class TallFlowerBlock_ReplaceFlowersMixin extends Block {
-  public TallFlowerBlock_ReplaceFlowersMixin(Settings settings) {
+public abstract class TallFlowerBlockMixin extends Block {
+  public TallFlowerBlockMixin(Settings settings) {
     super(settings);
   }
 

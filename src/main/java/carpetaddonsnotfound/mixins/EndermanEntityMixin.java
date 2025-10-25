@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(EndermanEntity.class)
-public abstract class EndermanEntity_PassiveEndermenMixin {
+public abstract class EndermanEntityMixin {
   @Inject(method = "setTarget", at = @At("HEAD"), cancellable = true)
   private void setTarget(final LivingEntity target, final CallbackInfo ci) {
     if (CarpetAddonsNotFoundSettings.passiveEndermen && target instanceof PlayerEntity) {

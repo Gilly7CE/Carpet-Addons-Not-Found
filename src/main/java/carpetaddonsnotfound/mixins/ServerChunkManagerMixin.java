@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
  * The mod has been archived.
  */
 @Mixin(ServerChunkManager.class)
-public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
+public abstract class ServerChunkManagerMixin {
   @Redirect(
           //#if MC>12101
           method = "tickChunks(Lnet/minecraft/util/profiler/Profiler;J" +
@@ -38,7 +38,7 @@ public abstract class ServerChunkManager_PhantomsObeyHostileMobCapMixin {
                            ")Lnet/minecraft/world/SpawnHelper$Info;"
           )
   )
-  public SpawnHelper.Info infoSetter(
+  private SpawnHelper.Info infoSetter(
           int spawningChunkCount,
           Iterable<Entity> entities,
           SpawnHelper.ChunkSource chunkSource

@@ -27,7 +27,7 @@ import net.minecraft.loot.context.LootWorldContext;
 //#endif
 
 @Mixin(PistonExtensionBlock.class)
-public abstract class PistonExtensionBlock_MovableEmptyEndPortalFrameMixin {
+public abstract class PistonExtensionBlockMixin {
   @Inject(
           method = "getDroppedStacks",
           at = @At(

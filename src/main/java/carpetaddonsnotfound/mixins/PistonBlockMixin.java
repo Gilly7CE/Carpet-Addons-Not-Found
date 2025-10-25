@@ -1,10 +1,7 @@
 package carpetaddonsnotfound.mixins;
 
-import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
-import carpetaddonsnotfound.helpers.EndPortalFrameHelper;
-import net.minecraft.block.Block;
+import carpetaddonsnotfound.movableblocks.MovableBlockRuleHelper;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -15,11 +12,10 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(PistonBlock.class)
-public abstract class PistonBlock_MovableEmptyEndPortalFrameMixin {
+public abstract class PistonBlockMixin {
   /**
    * This was originally a redirect but that made the mod incompatible with the carpet-fixes mod. So instead of
-   * redirecting the getHardness method, we're simply injecting the behavior before it is called. If the block is an
-   * empty end portal and the rule is enabled, it will be movable.
+   * redirecting the getHardness method, we're simply injecting the behavior before it is called.
    */
   @Inject(
           method = "isMovable",
@@ -36,12 +32,9 @@ public abstract class PistonBlock_MovableEmptyEndPortalFrameMixin {
                                                    boolean canBreak,
                                                    Direction pistonDir,
                                                    CallbackInfoReturnable<Boolean> cir) {
-    Block currentBlock = state.getBlock();
-    // Only allow empty end portal frames to be moved
-    if (CarpetAddonsNotFoundSettings.movableEmptyEndPortalFrames !=
-        CarpetAddonsNotFoundSettings.MovableBlockOptions.FALSE
-        && currentBlock == Blocks.END_PORTAL_FRAME
-        && !EndPortalFrameHelper.hasEyeOfEnder(state)) {
+    // if this is false it just means to use the default MC behaviour
+    boolean isMovable = MovableBlockRuleHelper.isBlockMovable(state);
+    if (isMovable) {
       cir.setReturnValue(true);
     }
   }
