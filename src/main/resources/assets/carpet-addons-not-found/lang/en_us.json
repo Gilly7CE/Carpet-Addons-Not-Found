@@ -27,5 +27,8 @@
   "carpet.rule.replaceFlowersInPots.desc": "Right clicking a flower pot with a flower will replace the flower that's in the pot with the one in the players hand",
   "carpet.rule.spawnEggsSpawnMobsWithNoAI.desc": "A spawn egg will spawn a mob with no AI.",
   "carpet.rule.stonecuttersDoDamage.desc": "When a stonecutter is powered by redstone, it will damage entities standing on top of it.",
+  "carpet.rule.unobtainableBlocksDropAsItems.desc": "Unobtainable blocks can be dropped as items when an end portal frame is blown up above it.",
+  "carpet.rule.unobtainableBlocksDropAsItems.extra.0": "Requires the `movableEmptyEndPortalFrames` rule to be enabled with the `true` or `drop_as_items_on_explosion` options enabled.",
+  "carpet.rule.unobtainableBlocksDropAsItems.extra.1": "List of blocks that can be dropped: [bedrock, spawner, reinforced deepslate, budding amethyst, summonable sculk shrieker, trial spawner, vault]",
   "carpet.rule.xpBubbleColumnInteraction.desc": "Bubble columns will push or pull XP orb entities like with other entities and items."
 }

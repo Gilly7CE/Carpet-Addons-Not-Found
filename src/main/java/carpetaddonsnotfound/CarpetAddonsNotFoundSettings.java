@@ -93,6 +93,9 @@ public class CarpetAddonsNotFoundSettings {
   //$$ public static int stonecuttersDoDamage = 0;
   //#endif
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
+  public static boolean unobtainableBlocksDropAsItems = false;
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean xpBubbleColumnInteraction = false;
 

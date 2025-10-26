@@ -2,10 +2,12 @@ package carpetaddonsnotfound.lists;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
+import static java.util.Map.entry;
 
 public class BlockList {
   public static List<Block> blueIce = Collections.singletonList(
@@ -227,6 +229,19 @@ public class BlockList {
           //#endif
           //#if MC>12103
           , Blocks.PALE_OAK_STAIRS
+          //#endif
+  );
+
+  public static final Map<Block, Item> unobtainableBlocks = Map.ofEntries(
+          entry(Blocks.BEDROCK, Items.BEDROCK),
+          entry(Blocks.BUDDING_AMETHYST, Items.BUDDING_AMETHYST),
+          entry(Blocks.SPAWNER, Items.SPAWNER)
+          //#if MC>11802
+          , entry(Blocks.REINFORCED_DEEPSLATE, Items.REINFORCED_DEEPSLATE)
+          //#if MC>12006
+          , entry(Blocks.TRIAL_SPAWNER, Items.TRIAL_SPAWNER),
+          entry(Blocks.VAULT, Items.VAULT)
+          //#endif
           //#endif
   );
 }
