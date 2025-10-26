@@ -235,8 +235,13 @@ public class BlockList {
   public static final Map<Block, Item> unobtainableBlocks = Map.ofEntries(
           entry(Blocks.BEDROCK, Items.BEDROCK),
           entry(Blocks.BUDDING_AMETHYST, Items.BUDDING_AMETHYST),
-          entry(Blocks.REINFORCED_DEEPSLATE, Items.REINFORCED_DEEPSLATE),
-          entry(Blocks.SPAWNER, Items.SPAWNER),
-          entry(Blocks.TRIAL_SPAWNER, Items.TRIAL_SPAWNER),
-          entry(Blocks.VAULT, Items.VAULT));
+          entry(Blocks.SPAWNER, Items.SPAWNER)
+          //#if MC>11802
+          , entry(Blocks.REINFORCED_DEEPSLATE, Items.REINFORCED_DEEPSLATE)
+          //#if MC>12006
+          , entry(Blocks.TRIAL_SPAWNER, Items.TRIAL_SPAWNER),
+          entry(Blocks.VAULT, Items.VAULT)
+          //#endif
+          //#endif
+  );
 }
