@@ -5,6 +5,7 @@
   "carpet.rule.disableMobSpawningInEnd.desc": "Disables mobs from spawning in the End.",
   "carpet.rule.disableMobSpawningInNether.desc": "Disables mobs from spawning in the Nether.",
   "carpet.rule.disableMobSpawningInOverworld.desc": "Disables mobs from spawning in the Overworld.",
+  "carpet.rule.disableEndSpikeRegen.desc": "Disables the regeneration of the end spike obsidian towers when the ender dragon is respawned.",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn around a player that is in a mushroom fields biome.",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",

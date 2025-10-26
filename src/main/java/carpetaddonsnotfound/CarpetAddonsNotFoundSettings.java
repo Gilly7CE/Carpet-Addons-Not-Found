@@ -21,6 +21,9 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { CREATIVE })
   public static boolean disableMobSpawningInOverworld = false;
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
+  public static boolean disableEndSpikeRegen = false;
+
   @CarpetAddonsNotFoundRule(categories = { CREATIVE, FEATURE })
   public static boolean disablePhantomSpawningForCreativePlayers = false;
 

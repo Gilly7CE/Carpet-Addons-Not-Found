@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "DispenserBlockMixin",
+    "EnderDragonFightMixin",
     "EnderEyeItemMixin",
     "EndermanEntityMixin",
     "ExperienceOrbEntityMixin",
