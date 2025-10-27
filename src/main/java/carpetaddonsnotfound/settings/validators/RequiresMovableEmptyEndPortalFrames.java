@@ -1,4 +1,4 @@
-package carpetaddonsnotfound.validators;
+package carpetaddonsnotfound.settings.validators;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleValidator;

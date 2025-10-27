@@ -1,8 +1,8 @@
 package carpetaddonsnotfound;
 
 import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRule;
-import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
-import carpetaddonsnotfound.validators.RequiresMovableEmptyEndPortalFrames;
+import carpetaddonsnotfound.settings.validators.RequiresMovableBlockEntities;
+import carpetaddonsnotfound.settings.validators.RequiresMovableEmptyEndPortalFrames;
 
 import static carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleCategory.*;
 
