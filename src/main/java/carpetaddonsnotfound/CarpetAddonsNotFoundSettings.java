@@ -1,8 +1,8 @@
 package carpetaddonsnotfound;
 
 import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRule;
-import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
-import carpetaddonsnotfound.validators.RequiresMovableEmptyEndPortalFrames;
+import carpetaddonsnotfound.settings.validators.RequiresMovableBlockEntities;
+import carpetaddonsnotfound.settings.validators.RequiresMovableEmptyEndPortalFrames;
 
 import static carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleCategory.*;
 
@@ -82,6 +82,9 @@ public class CarpetAddonsNotFoundSettings {
 
   @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean replaceFlowersInPots = false;
+
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
+  public static boolean replaceMyceliumWithGrass = false;
 
   @CarpetAddonsNotFoundRule(categories = { FEATURE, CREATIVE })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
