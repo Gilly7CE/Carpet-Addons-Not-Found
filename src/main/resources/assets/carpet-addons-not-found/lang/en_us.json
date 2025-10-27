@@ -25,6 +25,7 @@
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
   "carpet.rule.replaceFlowersInPots.desc": "Right clicking a flower pot with a flower will replace the flower that's in the pot with the one in the players hand",
+  "carpet.rule.replaceMyceliumWithGrass.desc": "Bonemealing a grass block will replace adjacent mycelium blocks similar to how moss spreads to stone/deepslate when bonemealed.",
   "carpet.rule.spawnEggsSpawnMobsWithNoAI.desc": "A spawn egg will spawn a mob with no AI.",
   "carpet.rule.stonecuttersDoDamage.desc": "When a stonecutter is powered by redstone, it will damage entities standing on top of it.",
   "carpet.rule.unobtainableBlocksDropAsItems.desc": "Unobtainable blocks can be dropped as items when an end portal frame is blown up above it.",

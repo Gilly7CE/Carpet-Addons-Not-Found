@@ -83,6 +83,9 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean replaceFlowersInPots = false;
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
+  public static boolean replaceMyceliumWithGrass = false;
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE, CREATIVE })
   public static boolean spawnEggsSpawnMobsWithNoAI = false;
 
