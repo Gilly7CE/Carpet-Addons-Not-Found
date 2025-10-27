@@ -1,4 +1,4 @@
-package carpetaddonsnotfound.ruleobservers;
+package carpetaddonsnotfound.settings.ruleobservers;
 
 import carpetaddonsnotfound.CarpetAddonsNotFoundSettings;
 import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleObserver;
@@ -8,16 +8,18 @@ import net.minecraft.text.Text;
 
 import java.util.Objects;
 
-public final class MovableBlockEntitiesRuleObserver extends CarpetAddonsNotFoundRuleObserver {
+import static carpetaddonsnotfound.CarpetAddonsNotFoundSettings.MovableBlockOptions;
+
+public final class MovableEmptyEndPortalFramesRuleObserver extends CarpetAddonsNotFoundRuleObserver {
   @Override
   public void ruleChanged(ServerCommandSource source, ParsedCarpetAddonsNotFoundRule<?> changedRule, String userInput) {
     // Using a string here directly feels wrong but likelihood of renaming this rule is low
-    if (!Objects.equals(changedRule.name(), "movableBlockEntities")) {
+    if (!Objects.equals(changedRule.name(), "movableEmptyEndPortalFrames")) {
       return;
     }
 
-    boolean ruleEnabled = (boolean) changedRule.value();
-    if (ruleEnabled || !CarpetAddonsNotFoundSettings.movableSpawners) {
+    boolean ruleEnabled = changedRule.value() != MovableBlockOptions.FALSE;
+    if (ruleEnabled || !CarpetAddonsNotFoundSettings.unobtainableBlocksDropAsItems) {
       return;
     }
 
@@ -25,8 +27,8 @@ public final class MovableBlockEntitiesRuleObserver extends CarpetAddonsNotFound
             //#if MC>11904
             () ->
             //#endif
-            Text.of("Warning: disabling `movableSpawners` as it requires `movableBlockEntities` to be enabled"),
+            Text.of("Warning: disabling `unobtainableBlocksDropAsItems` as it requires `movableEmptyEndPortalFrames` to be enabled"),
     true);
-    CarpetAddonsNotFoundSettings.movableSpawners = false;
+    CarpetAddonsNotFoundSettings.unobtainableBlocksDropAsItems = false;
   }
 }

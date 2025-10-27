@@ -11,7 +11,8 @@ import carpet.api.settings.SettingsManager;
 //$$ import org.jetbrains.annotations.Nullable;
 //$$ import java.util.Map;
 //#endif
-import carpetaddonsnotfound.ruleobservers.MovableBlockEntitiesRuleObserver;
+import carpetaddonsnotfound.settings.ruleobservers.MovableBlockEntitiesRuleObserver;
+import carpetaddonsnotfound.settings.ruleobservers.MovableEmptyEndPortalFramesRuleObserver;
 import com.google.common.collect.Lists;
 
 import java.lang.reflect.Constructor;
@@ -23,7 +24,8 @@ import java.util.List;
 public final class CarpetAddonsNotFoundRuleRegistrar {
   private static boolean hasRegistered = false;
   private static final List<CarpetAddonsNotFoundRuleObserver> ruleObservers = new ArrayList<>(List.of(
-          new MovableBlockEntitiesRuleObserver()));
+          new MovableBlockEntitiesRuleObserver(),
+          new MovableEmptyEndPortalFramesRuleObserver()));
 
   private final SettingsManager settingsManager;
   private final List<ParsedCarpetAddonsNotFoundRule<?>> rules = Lists.newArrayList();
