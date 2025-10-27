@@ -2,6 +2,7 @@ package carpetaddonsnotfound;
 
 import carpetaddonsnotfound.settings.CarpetAddonsNotFoundRule;
 import carpetaddonsnotfound.validators.RequiresMovableBlockEntities;
+import carpetaddonsnotfound.validators.RequiresMovableEmptyEndPortalFrames;
 
 import static carpetaddonsnotfound.settings.CarpetAddonsNotFoundRuleCategory.*;
 
@@ -93,7 +94,8 @@ public class CarpetAddonsNotFoundSettings {
   //$$ public static int stonecuttersDoDamage = 0;
   //#endif
 
-  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL },
+                            validators = RequiresMovableEmptyEndPortalFrames.class)
   public static boolean unobtainableBlocksDropAsItems = false;
 
   @CarpetAddonsNotFoundRule(categories = { FEATURE })
