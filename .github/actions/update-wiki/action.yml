@@ -36,6 +36,11 @@ runs:
       run: |
         mv -f versions/1.21.10/run/wiki/Available-Rules.md wiki/Available-Rules.md
 
+    - name: Strip title from wiki page
+      shell: bash
+      run: |
+        sed -i '1d' wiki/Available-Rules.md
+
     - name: Commit updated wiki page
       continue-on-error: true
       shell: bash
