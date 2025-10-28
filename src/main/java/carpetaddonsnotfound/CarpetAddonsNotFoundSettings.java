@@ -10,6 +10,9 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean alwaysPickFlowersFromPots = false;
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL }, strict = false, options = { "0", "600", "1200", "6000", "12000"})
+  public static int beeBreedingCooldown = 6000;
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE, CREATIVE })
   public static boolean creativePlayerOneHitKill = false;
 

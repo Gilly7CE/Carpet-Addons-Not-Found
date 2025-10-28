@@ -3,6 +3,7 @@
   "package": "carpetaddonsnotfound.mixins",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "AnimalEntityMixin",
     "DispenserBlockMixin",
     "EnderDragonFightMixin",
     "EnderEyeItemMixin",
