@@ -16,7 +16,6 @@ import java.util.Map;
 
 public final class CarpetAddonsNotFoundTranslations {
   public static final String DEFAULT_LANGUAGE = "en_us";
-  public static final String CARPET_TRANSLATIONS_KEY_PREFIX = "carpet.rule.";
 
   private static final String RESOURCE_DIR = "assets/carpet-addons-not-found/lang";
   private static final Map<String, Map<String, String>> translationStorage = Maps.newLinkedHashMap();
