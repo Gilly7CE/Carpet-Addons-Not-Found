@@ -9,6 +9,10 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.Version;
 import net.fabricmc.loader.api.metadata.ModMetadata;
 
+//#if MC<11904
+//$$ import carpetaddonsnotfound.settings.CarpetAddonsNotFoundTranslations;
+//#endif
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -33,6 +37,9 @@ public class CarpetAddonsNotFoundServer implements CarpetExtension, ModInitializ
   @Override
   public void onInitialize() {
     CarpetServer.manageExtension(new CarpetAddonsNotFoundServer());
+    //#if MC<11904
+    //$$ CarpetAddonsNotFoundTranslations.loadTranslations();
+    //#endif
   }
 
   @Override

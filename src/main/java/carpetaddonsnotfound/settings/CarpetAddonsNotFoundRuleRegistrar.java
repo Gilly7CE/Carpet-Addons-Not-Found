@@ -100,7 +100,7 @@ public final class CarpetAddonsNotFoundRuleRegistrar {
     }
     //#else
     //$$ carpet.settings.Rule cmRule = new carpet.settings.Rule() {
-    //$$   private final String basedKey = CarpetAddonsNotFoundTranslations.CARPET_TRANSLATIONS_KEY_PREFIX + "rule." + this.name() + ".";
+    //$$   private final String basedKey = "carpet.rule." + this.name() + ".";
     //$$
     //$$   @Nullable
     //$$   private String tr(String key) {

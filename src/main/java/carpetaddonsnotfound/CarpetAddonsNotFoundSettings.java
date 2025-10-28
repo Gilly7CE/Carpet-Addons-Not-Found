@@ -71,6 +71,9 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { SURVIVAL })
   public static boolean netheritePickaxeInstantMineNetherBricks = false;
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, EXPERIMENTAL })
+  public static boolean netherWater = false;
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static boolean passiveEndermen = false;
 
