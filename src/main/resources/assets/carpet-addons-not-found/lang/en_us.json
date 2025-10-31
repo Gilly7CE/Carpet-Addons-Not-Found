@@ -9,6 +9,7 @@
   "carpet.rule.disableEndSpikeRegen.desc": "Disables the regeneration of the end spike obsidian towers when the ender dragon is respawned.",
   "carpet.rule.disablePhantomSpawningForCreativePlayers.desc": "Phantoms will no longer spawn for creative players.",
   "carpet.rule.disablePhantomSpawningInMushroomFields.desc": "Phantoms will no longer spawn around a player that is in a mushroom fields biome.",
+  "carpet.rule.disableSpidersClimbingWalls.desc": "Spiders will no longer attempt to climb walls",
   "carpet.rule.dispensersPlaceEyesOfEnder.desc": "Dispensers can place eyes of ender into end portal frames.",
   "carpet.rule.dispensersRemoveEyesOfEnder.desc": "Dispensers can remove eyes of ender from full end portal frames. Any connecting end portals will break.",
   "carpet.rule.dropAllXpOnPlayerDeath.desc": "When a player dies, all of their XP will be dropped.",

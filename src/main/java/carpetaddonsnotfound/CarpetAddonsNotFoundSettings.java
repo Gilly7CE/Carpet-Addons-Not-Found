@@ -34,6 +34,9 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean disablePhantomSpawningInMushroomFields = false;
 
+  @CarpetAddonsNotFoundRule(categories = { FEATURE })
+  public static boolean disableSpidersClimbingWalls = false;
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE, DISPENSER })
   public static boolean dispensersPlaceEyesOfEnder = false;
 
