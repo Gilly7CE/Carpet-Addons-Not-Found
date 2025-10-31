@@ -83,6 +83,11 @@ public class CarpetAddonsNotFoundSettings {
   @CarpetAddonsNotFoundRule(categories = { FEATURE })
   public static boolean phantomsObeyHostileMobCap = false;
 
+  //#if MC>11802
+  @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
+  public static boolean placeSugarCaneWithoutWater = false;
+  //#endif
+
   @CarpetAddonsNotFoundRule(categories = { FEATURE, SURVIVAL })
   public static ReplaceableFlowersOptions replaceableFlowers = ReplaceableFlowersOptions.FALSE;
 
