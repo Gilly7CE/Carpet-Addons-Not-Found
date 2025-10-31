@@ -25,6 +25,8 @@
   "carpet.rule.netherWater.desc": "A charged creeper blowing up ice in the nether creates a water source.",
   "carpet.rule.passiveEndermen.desc": "Endermen will not be provoked by the player when attacked or looked at. They will still be provoked by other mobs.",
   "carpet.rule.phantomsObeyHostileMobCap.desc": "Phantoms will no longer spawn if the hostile mobcap is full. This is per player.",
+  "carpet.rule.placeSugarCaneWithoutWater.desc": "Sugarcane can be placed on mudblocks without adjacent water sources.",
+  "carpet.rule.placeSugarCaneWithoutWater.extra.0": "Only usable in Minecraft 1.19+",
   "carpet.rule.replaceableFlowers.desc": "Placing blocks on flowers will replace them like grass.",
   "carpet.rule.replaceFlowersInPots.desc": "Right clicking a flower pot with a flower will replace the flower that's in the pot with the one in the players hand",
   "carpet.rule.replaceMyceliumWithGrass.desc": "Bonemealing a grass block will replace adjacent mycelium blocks similar to how moss spreads to stone/deepslate when bonemealed.",

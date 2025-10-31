@@ -22,6 +22,7 @@
     "SpawnEggItemMixin",
     "SpawnHelperMixin",
     "StonecutterBlockMixin",
+    "SugarCaneBlockMixin",
     "TallFlowerBlockMixin",
     "VegetationPatchFeatureMixin",
     "accessors.CreeperEntityAccessor",
