@@ -21,6 +21,7 @@
     "ServerChunkManagerMixin",
     "SpawnEggItemMixin",
     "SpawnHelperMixin",
+    "SpiderEntityMixin",
     "StonecutterBlockMixin",
     "SugarCaneBlockMixin",
     "TallFlowerBlockMixin",
