@@ -17,6 +17,7 @@ import com.google.common.collect.Lists;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -91,12 +92,26 @@ public final class CarpetAddonsNotFoundRuleRegistrar {
       Object ruleAnnotation = ctr1.newInstance(false, null, null, null, categoriesArray, rule.options(), rule.strict(), "", validators);
 
       Class<?> parsedRuleClass = Class.forName("carpet.settings.ParsedRule");
-      Constructor<?> ctr2 = parsedRuleClass.getDeclaredConstructors()[0];
+      Constructor<?> ctr2 = Arrays.stream(parsedRuleClass.getDeclaredConstructors())
+                                  .filter(ctr -> ctr.getParameterTypes().length == 3)
+                                  .filter(ctr -> ctr.getParameterTypes()[0] == Field.class)
+                                  .filter(ctr -> ctr.getParameterTypes()[1].isAssignableFrom(ruleAnnotationClass))
+                                  .filter(ctr -> ctr.getParameterTypes()[2] == SettingsManager.class)
+                                  .findFirst()
+                                  .orElseThrow(() -> new NoSuchMethodException("Failed to get matched ParsedRule constructor"));
       ctr2.setAccessible(true);
-      carpetRule = (CarpetRule<?>)ctr2.newInstance(field, ruleAnnotation, this.settingsManager);
-    }
-    catch (Exception e) {
-      throw new RuntimeException(e);
+      Object carpetRuleInstance = ctr2.newInstance(field, ruleAnnotation, this.settingsManager);
+      if (!(carpetRuleInstance instanceof CarpetRule<?> carpetRuleInstance2)) {
+        throw new ClassCastException("Failed to cast to CarpetRule.");
+      }
+
+      carpetRule = carpetRuleInstance2;
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException(e.getTargetException());
+    } catch (NoSuchMethodException | ClassNotFoundException e) {
+      throw new RuntimeException("Reflection error: " + e.getMessage(), e);
+    } catch (IllegalAccessException | InstantiationException | IllegalArgumentException e) {
+      throw new RuntimeException("Instantiation error: " + e.getMessage(), e);
     }
     //#else
     //$$ carpet.settings.Rule cmRule = new carpet.settings.Rule() {
@@ -163,13 +178,27 @@ public final class CarpetAddonsNotFoundRuleRegistrar {
     //$$
     //$$ ParsedRule<?> carpetRule;
     //$$ try {
-    //$$   Class<?> parsedRuleClass = Class.forName("carpet.settings.ParsedRule");
-    //$$   Constructor<?> ctr = parsedRuleClass.getDeclaredConstructors()[0];
-    //$$   ctr.setAccessible(true);
-    //$$   carpetRule = (ParsedRule<?>)ctr.newInstance(field, cmRule, this.settingsManager);
-    //$$ }
-    //$$ catch (Exception e) {
-    //$$   throw new RuntimeException(e);
+    //$$  Class<?> parsedRuleClass = Class.forName("carpet.settings.ParsedRule");
+    //$$  Constructor<?> constructor = Arrays.stream(parsedRuleClass.getDeclaredConstructors())
+    //$$                                     .filter(ctr -> ctr.getParameterTypes().length == 3)
+    //$$                                     .filter(ctr -> ctr.getParameterTypes()[0] == Field.class)
+    //$$                                     .filter(ctr -> ctr.getParameterTypes()[1].isAssignableFrom(carpet.settings.Rule.class))
+    //$$                                     .filter(ctr -> ctr.getParameterTypes()[2] == SettingsManager.class)
+    //$$                                     .findFirst()
+    //$$                                     .orElseThrow(() -> new NoSuchMethodException("Failed to get matched ParsedRule constructor"));
+    //$$   constructor.setAccessible(true);
+    //$$   Object carpetRuleInstance = constructor.newInstance(field, cmRule, this.settingsManager);
+    //$$   if (!(carpetRuleInstance instanceof ParsedRule<?> carpetRuleInstance2)) {
+    //$$     throw new ClassCastException("Failed to cast to ParsedRule.");
+    //$$   }
+    //$$
+    //$$   carpetRule = carpetRuleInstance2;
+    //$$ } catch (InvocationTargetException e) {
+    //$$   throw new RuntimeException(e.getTargetException());
+    //$$ } catch (NoSuchMethodException | ClassNotFoundException e) {
+    //$$   throw new RuntimeException("Reflection error: " + e.getMessage(), e);
+    //$$ } catch (IllegalAccessException | InstantiationException | IllegalArgumentException e) {
+    //$$   throw new RuntimeException("Instantiation error: " + e.getMessage(), e);
     //$$ }
     //#endif
 
