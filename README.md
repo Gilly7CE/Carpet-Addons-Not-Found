@@ -2,13 +2,11 @@
 
 # Carpet-Addons-Not-Found
 
-![Curseforge downloads](https://cf.way2muchnoise.eu/full_862771_downloads.svg)
 ![Modrinth Downloads](https://img.shields.io/modrinth/dt/iIPoKpIW?style=social&logo=modrinth)
 ![GitHub all releases](https://img.shields.io/github/downloads/Gilly7CE/Carpet-Addons-Not-Found/total?style=social)
 
 ![GitHub](https://img.shields.io/github/license/Gilly7CE/Carpet-Addons-Not-Found)
 
-![Curseforge available for](https://cf.way2muchnoise.eu/versions/862771.svg)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Gilly7CE/Carpet-Addons-Not-Found?label=latest%20release)
 
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Gilly7CE/Carpet-Addons-Not-Found/mainbuild.yml?label=Main%20build)

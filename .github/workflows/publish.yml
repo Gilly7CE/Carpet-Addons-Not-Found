@@ -62,10 +62,6 @@ jobs:
           modrinth-id: ${{ env.MODRINTH_PROJECT_ID }}
           modrinth-token: "${{ secrets.MODRINTH_TOKEN }}"
 
-          # Publish to curseforge
-          curseforge-id: ${{ env.CURSEFORGE_PROJECT_ID }}
-          curseforge-token: "${{ secrets.CURSEFORGE_TOKEN }}"
-
           # Publish to github
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
