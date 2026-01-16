@@ -64,9 +64,13 @@ public abstract class PlayerEntityMixin
           method = "attack",
           at = @At(
                   value = "INVOKE",
-                  target = "Lnet/minecraft/entity/Entity;handleAttack(Lnet/minecraft/entity/Entity;)Z",
-                  shift = At.Shift.BY,
-                  by = -2
+                  //#if MC>12110
+                  target = "Lnet/minecraft/entity/Entity;sidedDamage(Lnet/minecraft/entity/damage/DamageSource;F)Z"
+                  //#else
+                  //$$ target = "Lnet/minecraft/entity/Entity;handleAttack(Lnet/minecraft/entity/Entity;)Z",
+                  //$$ shift = At.Shift.BY,
+                  //$$ by = -2
+                  //#endif
           ),
           cancellable = true
   )
