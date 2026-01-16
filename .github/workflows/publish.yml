@@ -10,7 +10,6 @@ permissions:
 env:
   BUILD_ARTIFACT_NAME: release-${{ github.event.release.tag_name }}
   MODRINTH_PROJECT_ID: iIPoKpIW
-  CURSEFORGE_PROJECT_ID: 862771
 
 jobs:
   build:
