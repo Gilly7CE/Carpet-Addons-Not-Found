@@ -29,12 +29,12 @@ runs:
         path: wiki
     - name: Create wiki page
       shell: bash
-      run: ./gradlew 1.21.10:runServer --args="-- -carpetDumpRules -dumpPath 'wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
+      run: ./gradlew 1.21.11:runServer --args="-- -carpetDumpRules -dumpPath 'wiki/Available-Rules.md' -dumpFilter carpet-addons-not-found"
 
     - name: Move wiki page to correct location
       shell: bash
       run: |
-        mv -f versions/1.21.10/run/wiki/Available-Rules.md wiki/Available-Rules.md
+        mv -f versions/1.21.11/run/wiki/Available-Rules.md wiki/Available-Rules.md
 
     - name: Strip title from wiki page
       shell: bash
