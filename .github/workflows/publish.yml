@@ -44,15 +44,16 @@ jobs:
           files: build-artfacts/*.jar
 
           game-versions: |-
+            1.21.11
             1.21.10
             1.21.8
             1.21.5
             1.21.4
             1.21.3
             1.21.1
+            1.21
             1.20.6
             1.20.4
-            1.20.2
             1.20.2
             1.19.4
             1.18.2
@@ -61,10 +62,6 @@ jobs:
           # Publish to modrinth
           modrinth-id: ${{ env.MODRINTH_PROJECT_ID }}
           modrinth-token: "${{ secrets.MODRINTH_TOKEN }}"
-
-          # Publish to curseforge
-          curseforge-id: ${{ env.CURSEFORGE_PROJECT_ID }}
-          curseforge-token: "${{ secrets.CURSEFORGE_TOKEN }}"
 
           # Publish to github
           github-token: ${{ secrets.GITHUB_TOKEN }}
